@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ingreso de Administradores</title>
+  <title>Encargado</title>
   
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -38,13 +38,12 @@
 
 <body class="body-wrapper">
 
-
 <section>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="homeAdm.html">
 						<img src="images/logo.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,20 +51,34 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item">
-								<a class="nav-link" href="index.html">Inicio</a>
+							<li class="nav-item ">
+								<a class="nav-link" href="homeAdm.html">Inicio</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="logEst.html">Estudiantes</a>
+							<li class="nav-item ">
+								<a class="nav-link" href="solicitudesAdm.html">Solicitudes</a>
 							</li>
 							<li class="nav-item active">
-								<a class="nav-link" href="logAdm.html">Administradores</a>
+								<a class="nav-link" href="cancelacionAdm.html">Cancelaciones</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="logCom.html">Comision de Becas</a>
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Reportes <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<div class="dropdown-menu dropdown-menu-right">
+									<a class="dropdown-item " href="repInAdm.html">Reporte inicial Trabajo Social</a>
+									<a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
+									<a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
+									<a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
+								</div>
 							</li>
+							<li class="nav-item ">
+								<a class="nav-link" href="configAdm.html">Configuracion</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav ml-auto mt-10">
 							<li class="nav-item">
-								<a class="nav-link" href="logCom.html">Encargados</a>
+								<a class="nav-link login-button" href="index.html">Logout</a>
 							</li>
 						</ul>
 					</div>
@@ -75,67 +88,9 @@
 	</div>
 </section>
 
-<!--===============================
-=            Hero Area            =
-================================-->
-
-<section class="hero-area bg-1 text-center overly">
-	<!-- Container Start -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<!-- Header Contetnt -->
-				<div class="content-block">
-					<h1>Horas Beca</h1>
-					<p>Ing Computadores</p>					
-				</div>
-				
-			</div>
-		</div>
-	</div>
-	<!-- Container End -->
-</section>
-
-<!--===================================
-=            Client Slider            =
-====================================-->
-
-
-<!--===========================================
-=            Popular deals section            =
-============================================-->
-<section class="user-profile section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-				<!-- Edit Personal Info -->
-				<div class="widget personal-info">
-					<h2 class="widget-header user">Ingreso de Administradores</h2>
-					<form action="#">
-						<!-- First Name -->
-						<div class="form-group">
-							<center>
-							    <label>Identificacion</label>
-							    <input type="number" class="form-control" id="first-name">
-						    </center>
-						</div>
-						<!-- Last Name -->
-						<div class="form-group">
-							<center>
-							    <label>Contraseña</label>
-							    <input type="password" class="form-control" id="password">
-							    <button class="btn btn-transparent">Ingresar</button>
-						    </center>
-						</div>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-</section>
-
-
+<!--============================
+=            Footer            =
+=============================-->
 <!--============================
 =            Footer            =
 =============================-->
@@ -186,6 +141,3 @@
 </body>
 
 </html>
-
-
-
