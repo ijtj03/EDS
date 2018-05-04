@@ -33,7 +33,63 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+    <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
 
+    .switch input {display:none;}
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    </style>
 </head>
 
 <body class="body-wrapper">
@@ -95,10 +151,10 @@
 		<div class="row">
 			<div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
 				<div class="block comment">
+          <form>
                     <h2>Configuracion de Parametros</h2>
                     <div class="block comment">
                        <h3>Fechas</h3>
-                        <form action="#">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <!-- Name -->
@@ -106,7 +162,7 @@
                                         <center>
                                             <label for="email">Fecha de Apertura de Solicitudes</label>
                                         </center>
-                                        <input type="date" class="form-control" id="name">
+                                        <input required  type="date" class="form-control" id="name">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
@@ -115,7 +171,7 @@
                                         <center>
                                             <label for="email">Fecha de Cierre de Solicitudes</label>
                                         </center>
-                                        <input type="date" class="form-control" id="email">
+                                        <input required type="date" class="form-control" id="email">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-12">
@@ -124,7 +180,7 @@
                                         <center>
                                             <label for="email">Fecha de Envio a Trabajo Social</label>
                                         </center>
-                                        <input type="date" class="form-control" id="email">
+                                        <input required type="date" class="form-control" id="email">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
@@ -133,7 +189,7 @@
                                         <center>
                                             <label for="email">Fecha de Apertura de Evaluacion</label>
                                         </center>
-                                        <input type="date" class="form-control" id="name">
+                                        <input required type="date" class="form-control" id="name">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
@@ -142,14 +198,12 @@
                                         <center>
                                             <label for="email">Fecha de Cierre de Evaluacion</label>
                                         </center>
-                                        <input type="date" class="form-control" id="email">
+                                        <input required type="date" class="form-control" id="email">
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
                     <div class="block comment">
-                        <form action="#">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <!-- Email -->
@@ -157,102 +211,82 @@
                                         <center>
                                             <label for="email">Numero maximo de Horas Beca</label>
                                         </center>
-                                        <input type="number" class="form-control" id="email" min=0>
+                                        <input required type="number" class="form-control" id="email" min=0>
                                     </div>
                                 </div>
                             </div>
-                         </form>
                     </div>
                     <div class="block comment">
                       <div class="block comment">
                         <h4>Horas Asisintente</h4>
-                        <form action="#">
                           <div class="row">
-                            <div class="col-sm-12 col-md-8">
+                            <div class="col-sm-12 col-md-9">
                               <!-- Name -->
                               <div class="form-group mb-30">
                                 <center>
                                   <label for="name">Horas maxima para los estudiantes</label></center>
-                                  <input type="number" class="form-control" min=0 id="name">
+                                  <input required type="number" class="form-control" min=0 id="name">
                               </div>
                             </div>
-                            <div class="col-sm-12 col-md-4">
-                              <!-- Email -->
+                            <div class="col-sm-12 col-md-3">
+                              <label for="name">Participacion</label>
                               <div class="form-group mb-30">
-                                <center>
-                                  <label for="email">Participacion</label><br></center>
-                                  <center>
-                                    <form action="">
-                                      <input type="radio" name="yes" value="1">Si
-                                      <input type="radio" name="yes" value="0">No
-                                  </form>
-                                </center>
+                                  <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
                               </div>
                             </div>
                           </div>
-                        </form>
                       </div>
                       <div class="block comment">
                         <h4>Horas Estuudiante</h4>
-                        <form action="#">
                           <div class="row">
-                            <div class="col-sm-12 col-md-8">
+                            <div class="col-sm-12 col-md-9">
                               <!-- Name -->
                               <div class="form-group mb-30">
                                 <center>
                                   <label for="name">Horas maxima para los estudiantes</label></center>
-                                  <input type="number" class="form-control" min=0 id="name">
+                                  <input required type="number" class="form-control" min=0 id="name">
                               </div>
                             </div>
-                            <div class="col-sm-12 col-md-4">
-                              <!-- Email -->
+                            <div class="col-sm-12 col-md-3">
+                              <label for="name">Participacion</label>
                               <div class="form-group mb-30">
-                                <center>
-                                  <label for="email">Participacion</label><br></center>
-                                  <center>
-                                    <form action="">
-                                      <input type="radio" name="yes" value="1">Si
-                                      <input type="radio" name="yes" value="0">No
-                                  </form>
-                                </center>
+                                  <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
                               </div>
                             </div>
                           </div>
-                        </form>
                       </div>
                       <div class="block comment">
                         <h4>Horas Asisintente Especial</h4>
-                        <form action="#">
                           <div class="row">
-                            <div class="col-sm-12 col-md-8">
+                            <div class="col-sm-12 col-md-9">
                               <!-- Name -->
                               <div class="form-group mb-30">
                                 <center>
                                   <label for="name">Horas maxima para los estudiantes</label></center>
-                                  <input type="number" class="form-control" min=0 id="name">
+                                  <input required type="number" class="form-control" min=0 id="name">
                               </div>
                             </div>
-                            <div class="col-sm-12 col-md-4">
-                              <!-- Email -->
+                            <div class="col-sm-12 col-md-3">
+                              <label for="name">Participacion</label>
                               <div class="form-group mb-30">
-                                <center>
-                                  <label for="email">Participacion</label><br></center>
-                                  <center>
-                                    <form action="">
-                                      <input type="radio" name="yes" value="1">Si
-                                      <input type="radio" name="yes" value="0">No
-                                  </form>
-                                </center>
+                                  <label  class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
                               </div>
                             </div>
                           </div>
-                        </form>
                       </div>
                       <div class="block comment">
                         <h4>Horas Tutor</h4>
-                        <form action="#">
                           <div class="row">
-                            <div class="col-sm-12 col-md-8">
+                            <div class="col-sm-12 col-md-9">
                               <!-- Name -->
                               <div class="form-group mb-30">
                                 <center>
@@ -260,26 +294,21 @@
                                   <input type="number" class="form-control" min=0 id="name">
                               </div>
                             </div>
-                            <div class="col-sm-12 col-md-4">
-                              <!-- Email -->
+                            <div class="col-sm-12 col-md-3">
+                              <label for="name">Participacion</label>
                               <div class="form-group mb-30">
-                                <center>
-                                  <label for="email">Participacion</label><br></center>
-                                  <center>
-                                    <form action="">
-                                      <input type="radio" name="yes" value="1">Si
-                                      <input type="radio" name="yes" value="0">No
-                                  </form>
-                                </center>
+                                  <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
                               </div>
                             </div>
                           </div>
-                        </form>
-                      </div>
                     </div>
                     <center>
-                         <button class="btn btn-transparent">Terminar</button>
+                         <button type="submit" class="btn btn-transparent">Terminar</button>
                     </center>
+                  </form>
 				</div>
 			    </div>
 			</div>
