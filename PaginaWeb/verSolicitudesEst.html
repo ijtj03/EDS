@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Encargado</title>
+  <title>Solicitudes</title>
   
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="homeAdm.html">
+					<a class="navbar-brand" href="homeEst.html">
 						<img src="images/logo.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,6 +62,7 @@
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item active" href="verSolicitudesEst.html">Mis solicitudes</a>
 									<a class="dropdown-item" href="reaSolicitudesEst.html">Realizar solicitud</a>
+									<a class="dropdown-item" href="solicitudesGuarEst.html">Solicitudes Guardas</a>
 								</div>
 							</li>
 						</ul>
@@ -79,6 +80,76 @@
 <!--==================================
 =            User Profile            =
 ===================================-->
+
+<section class="dashboard section">
+	<!-- Container Start -->
+	<div class="container">
+		<!-- Row Start -->
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+				<!-- Recently Favorited -->
+				<div class="widget dashboard-container my-adslist">
+					<h3 class="widget-header">Solicitudes Enviadas</h3>
+					
+					<table class="table product-dashboard-table">
+						<thead>
+							<tr>
+								<th class="text-center">Id de Solicitud</th>
+								<th class="text-center">Tipo de Beca</th>
+								<th class="text-center">Estado</th>
+								<th class="text-center">Horas Solicitadas</th>
+								<th class="text-center">Editar</th>
+								<th class="text-center">Resultado</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="product-category" data-title="Nombre"><span class="categories">1</span></td>
+								<td class="product-category" data-title="Tipo de Beca"><span class="categories">HT</span></td>
+								<td class="product-category" data-title="Estado"><span class="categories">Sin Revisar</span></td>
+								<td class="product-category" data-title="Nombre"><span class="categories">50</span></td>
+								<td class="action" data-title="Accion">
+									<div class="">
+										<ul class="list-inline justify-content-center">
+											<li class="list-inline-item">
+												<a class="edit">
+													<i class="fa fa-pencil"></i>
+												</a>		
+											</li>
+										</ul>
+									</div>
+								</td>
+								<td class="product-category" data-title="Nombre"><span class="categories"></span></td>
+							</tr>
+							<tr>
+								<td class="product-category" data-title="Nombre"><span class="categories">2</span></td>
+								<td class="product-category" data-title="Tipo de Beca"><span class="categories">AE</span></td>
+								<td class="product-category" data-title="Estado"><span class="categories">Revisada</span></td>
+								<td class="product-category" data-title="Nombre"><span class="categories">100</span></td>
+								<td class="action" data-title="Accion">
+									<div class="">
+										<ul class="list-inline justify-content-center">
+											<li class="list-inline-item">
+												<a class="edit">
+													<i class="fa fa-pencil"></i>
+												</a>		
+											</li>
+										</ul>
+									</div>
+								</td>
+								<td class="product-category" data-title="Nombre"><span class="categories">Aprobada</span></td>
+							</tr>
+						</tbody>
+					</table>
+					
+				</div>
+			</div>
+		</div>
+		<!-- Row End -->
+	</div>
+	<!-- Container End -->
+</section>
+
 
 <!--============================
 =            Footer            =

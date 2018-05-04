@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Estudiante</title>
+  <title>Comision Beca</title>
   
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="homeEst.html">
+					<a class="navbar-brand" href="homeCom.html">
 						<img src="images/logo.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,18 +52,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li class="nav-item active">
-								<a class="nav-link" href="homeEst.html">Inicio</a>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Solicitudes <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="verSolicitudesEst.html">Mis solicitudes</a>
-									<a class="dropdown-item" href="reaSolicitudesEst.html">Realizar solicitud</a>
-									<a class="dropdown-item" href="solicitudesGuarEst.html">Solicitudes Guardas</a>
-								</div>
+								<a class="nav-link" href="homeCom.html">Aspirante por Beca</a>
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
@@ -85,26 +74,96 @@
 	<div class="container">
 		<!-- Row Start -->
 		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
-				<div class="sidebar">
-					<!-- User Widget -->
-					<div class="widget user-dashboard-profile">
-						<!-- User Name -->
-						<h5 class="text-center">Nombre del Estudiante</h5>
-						<p>Indentificacion</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+			<div class="col-md-12 offset-md-1 col-lg-12 offset-lg-0">
 				<!-- Recently Favorited -->
-				<div class="card">
-					<div class="card-body">
-						<center>
-						    <h4 class="card-title"><a>Bienvenido al sistema</a></h4>
-						    <p class="card-text">Este es el sistema para la gestion de horas beca del Area de Ingenieria en Computadores</p>
-						</center>
-					</div>
+				<div class="widget dashboard-container my-adslist">
+					<h3 class="widget-header">Estudiantes</h3>
+					<table class="table product-dashboard-table">
+						<thead>
+							<tr>
+								<th class="text-center">Nombre</th>
+								<th class="text-center">Tipo de Beca</th>
+								<th class="text-center">Horas Solicitadas</th>
+								<th class="text-center">Promedio Ponderado</th>
+								<th class="text-center">Horas a Asignar</th>
+								<th class="text-center">Encargado</th>
+								<th class="text-center">Accion</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="product-category" data-title="Nombre"><span class="categories">Isaac Trejos Jara</span></td>
+								<td class="product-category" data-title="Tipo de Beca"><span class="categories">HT</span></td>
+								<td class="product-category" data-title="Estado"><span class="categories">50</span></td>
+								<td class="product-category" data-title="Estado"><span class="categories">80</span></td>
+								<td class="product-category" data-title="Estado"> 
+									<input type="number" name="" value=50 min=0>
+								</td>
+								<td class="product-category" data-title="Estado">
+									<div class="">
+										<select>
+											<option>Encargados</option>
+											<option value="1">Marco Rivera</option>
+											<option value="2">Marco Herandez</option>
+											<option value="4">Laura Cortes</option>
+										</select>
+									</div>
+								</td>
+								<td class="action" data-title="Accion">
+									<div class="">
+										<ul class="list-inline justify-content-center">
+											<li title="Aprobar Solicitud" onclick="myfunction()" class="list-inline-item">
+												<a class="edit">
+													<i class="fa fa-check"></i>
+												</a>		
+											</li>
+											<li title="Rechazar Solicitud" class="list-inline-item">
+												<a class="delete">
+													<i class="fa fa-close"></i>
+												</a>		
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="product-category" data-title="Nombre"><span class="categories">Isaac Trejos Jara</span></td>
+								<td class="product-category" data-title="Tipo de Beca"><span class="categories">AE</span></td>
+								<td class="product-category" data-title="Estado"><span class="categories">50</span></td>
+								<td class="product-category" data-title="Estado"><span class="categories">80</span></td>
+								<td class="product-category" data-title="Estado"> 
+									<input type="number" name="" value=50 min=0>
+								</td>
+								<td class="product-category" data-title="Estado"> 
+									<div class="">
+										<select>
+											<option>Encargados</option>
+											<option value="1">Marco Rivera</option>
+											<option value="2">Marco Herandez</option>
+											<option value="4">Laura Cortes</option>
+										</select>
+									</div>
+								</td>
+								<td class="action" data-title="Accion">
+									<div class="">
+										<ul class="list-inline justify-content-center">
+											<li title="Aprobar Solicitud" onclick="myfunction()" class="list-inline-item">
+												<a class="edit">
+													<i class="fa fa-check"></i>
+												</a>		
+											</li>
+											<li title="Rechazar Solicitud" class="list-inline-item">
+												<a class="delete">
+													<i class="fa fa-close"></i>
+												</a>		
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
 				</div>
 			</div>
 		</div>
@@ -161,6 +220,12 @@
   <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
   <script src="js/scripts.js"></script>
+
+	<script>
+	function myfunction() {
+	    var person = prompt("Observaciones", );
+	}
+	</script>
 
 </body>
 
