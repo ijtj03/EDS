@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Encargado</title>
+  <title>Horas Asistente</title>
   
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -61,8 +61,8 @@
 								<!-- Dropdown list -->
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item " href="verSolicitudesEst.html">Mis solicitudes</a>
-									<a class="dropdown-item " href="reaSolicitudesEst.html">Realizar solicitud</a>
-                  <a class="dropdown-item active" href="solicitudesGuarEst.html">Solicitudes Guardas</a>
+                                    <a class="dropdown-item " href="reaSolicitudesEst.html">Realizar solicitud</a>
+                                    <a class="dropdown-item active" href="solicitudesGuarEst.html">Solicitudes Guardas</a>
 								</div>
 							</li>
 						</ul>
@@ -77,16 +77,250 @@
 		</div>
 	</div>
 </section>
-<!--==================================
-=            User Profile            =
-===================================-->
-
-<!--============================
-=            Footer            =
-=============================-->
-<!--============================
-=            Footer            =
-=============================-->
+<section>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+                        <div class="widget personal-info">
+                            <h3 class="widget-header user">1. Datos del Estudiante</h3>
+                            <form action="#">
+                                <div class="row">        
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-id">Cédula</label>
+                                            <input type="text" class="form-control" id="student-id">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-uid">Carné</label>
+                                            <input type="text" class="form-control" id="student-uid">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-phone">Teléfono</label>
+                                            <input type="text" class="form-control" id="student-phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-lastname">Primer Apellido</label>
+                                            <input type="text" class="form-control" id="student-lastname">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-secondname">Segundo Apellido</label>
+                                            <input type="text" class="form-control" id="student-secondname">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-name">Nombre</label>
+                                            <input type="text" class="form-control" id="student-name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="student-email">Correo Electrónico (GMAIL)</label>
+                                            <input type="text" class="form-control" id="student-email">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-5">
+                                            <div class="form-group">
+                                                <label for="student-lastnote">Promedio Ponderado del Semestre Anterior</label>
+                                                <input type="text" class="form-control" id="student-lastnote">
+                                            </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-7">
+                                        <div class="form-group">
+                                            <label for="student-note">Promedio Ponderado General</label>
+                                            <input type="text" class="form-control" id="student-note">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+                        <div class="widget personal-info">
+                            <h3 class="widget-header user">2. Tipo de Beca Estudiante</h3>
+                            <form action="#">
+                                 <div class="row">        
+                                     <div class="col-sm-12 col-md-12">
+                                            <h3 class="widget-header"><b>INFORMACIÓN SOBRE EL PROGRAMA DE ASISTENCIA Y TUTORÍA ESTUDIANTIL</b></h3>
+                                            <table class="table">
+                                              <thead class="col-lg-12">
+                                                <tr>
+                                                  <th class="text-center">Tipo de Nombramiento</th>
+                                                  <th class="text-center">Requisitos</th>
+                                                  <th class="text-center">Beneficios</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody class="col-lg-12">
+                                                <tr>
+                                                  <td class="product-category" data-title="Tipo de Nombramiento"><span class="categories">Horas Asistente(HA)</span></td>
+                                                  <td class="product-category" data-title="Requisitos">
+                                                      <span class="categories">
+                                                          <div class="ul offset-lg-1">
+                                                                <li>Promedio ponderado igual o superior a 70 en el último semestre cursado.</li>
+                                                                <li>Laborar mínimo 50 horas semestrales.</li>
+                                                                <li>Nota igual o superior a 80 en el curso de asistencia.</li>
+                                                          </div>
+                                                      </span></td>
+                                                  <td class="product-category" data-title="Beneficios">
+                                                      <span class="categories">
+                                                        <div class="ul offset-lg-1">
+                                                                <li>Exoneración total del pago de derechos de estudio.</li>
+                                                                <li>Remuneración económica de 600 colones por
+                                                                    hora laborada al finalizar el semestre.</li>
+                                                        </div>
+                                                      </span></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>      
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                            <div class="form-group">
+                                                <label for="student-tutor">Nombre de Profesor</label>
+                                                <input type="text" class="form-control" id="student-tutor">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="form-group">
+                                                <label for="student-curse">Código del Curso a Asistir</label>
+                                                <input type="text" class="form-control" id="student-curse">
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-grade">Nota Obtenida en el Curso</label>
+                                            <input type="text" class="form-control" id="student-grade">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+                        <div class="widget personal-info">
+                        <h3 class="widget-header user">3. Información Bancaria (Complete el número de cuenta)</h3>
+                        <p>Consideraciones Importantes de la Cuenta Bancaria:</p>
+                        <div class="ul offset-lg-1">
+                            <li>Debe estar activa</li>
+                            <li>En colones</li>
+                            <li>A nombre del estudiante al que se le hará el nombramiento</li>
+                        </div>
+                        <p></p>
+                        <p>Complete el número de cuenta en el que desea, se le realice el depósito, en caso de ser nombrado.</p>
+                        <form action="#">
+                                <div class="row">        
+                                    <div class="col-sm-12 col-md-3">
+                                        <select class="nice-select">
+                                            <option value="bncr">Banco Nacional de Costa Rica</option>
+                                            <option value="bp">Banco Popular</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <input type="text" class="form-control" id="student-bank">
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+                    <div class="widget personal-info">
+                        <h3 class="widget-header user">4. Cumplimiento de requisitos</h3>
+                        <p><b>Antes de marcar la opción</b>, hacer lectura del documento <i>Información sobre el Programa de Asistencias y Tutoría Estudiantil:</i></p>
+                        <form action="#">
+                                <div class="row">        
+                                    <div class="col-sm-12 col-md-4">
+                                        <p>Cumple con <b>TODOS</b> los requisitos solicitados:</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+                    <div class="widget personal-info">
+                        <h3 class="widget-header user">5. Nombramiento(s) en otras instancias</h3>
+                        <p>Para el<b> Semestre en curso</b>, tiene asignada algún tipo de beca en otra Escuela, Área Académica o Departamento del TEC</p>
+                        <p>(incluyendo el Área Académica de Ingeniería en Computadores):</p>
+                        <form action="#">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <label class="switch ">
+                                                
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                        </label>
+                                    </div> 
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="student-hours">Cantidad de Horas</label>
+                                            <input type="text" class="form-control" id="student-hours">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-8">
+                                        <div class="form-group">
+                                            <label for="student-scholarship">Tipo de Beca</label>
+                                            <input type="text" class="form-control" id="student-scholarship">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="student-school">Nombre de Escuela, Área Académica o Departamento</label>
+                                            <input type="text" class="form-control" id="student-school">
+                                        </div>
+                                    </div>             
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+                    <div class="widget personal-info">
+                        <h3 class="widget-header user">6. Declaración Jurada</h3>
+                        <p> <i>[...] Declaro bajo juramento que los datos incluidos en la presente boleta son fidedignos. Por lo que cualquier dato que
+                                induzca a error en el proceso de nombramiento y posterior pago, me haré responsable de las consecuencias que de
+                                esto se deriven. Exonerando de responsabilidades al personal del ITCR. [...]</i></p>
+                        <form action="#">
+                                <div class="row">        
+                                    <div class="col-sm-12 col-md-4">
+                                        <p>Acepta la Declaración Anterior:</p>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                        </form>
+                        <h3 class="widget-header user"></h3>
+                        <p>Consideraciones Importantes:</p>
+                        <div class="ul offset-lg-1">
+                            <li>Se requiere que los estudiantes nombrados, tengan disponibilidad para atender las actividades y firmar un documento de confidencialidad.</li>
+                            <li>Si hay espacios en blanco, la información no es legible o se detecta alguna falsedad, la solicitud no será tramitada.</li>
+                            <li>Debe adjuntar al formulario, el documento Información sobre el Programa de Asistencia y Tutoría Estudiantil firmado. (Consentimiento informado).</li>
+                        </div>
+                        <h3 class="widget-header user"></h3>
+                        <p>Con el fin de cumplir con lo requerido por el Departamento de Trabajo Social y Salud (TSS) del TEC, alguna información y Declaración Jurada, fueron
+                            tomadas de los documentos Boleta de Solicitud de Asistencia Estudiantil e Información sobre el Programa de Asistencia y Tutoría Estudiantil, suministrados
+                            por dicho departamento.</p>
+                    </div>
+                </div>    
+        </div>
+    </div>
+    
+</section>
 
 <footer class="footer section section-sm">
   <!-- Container Start -->
@@ -131,6 +365,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
   <script src="js/scripts.js"></script>
 
+  
+  
 </body>
 
-</html>
