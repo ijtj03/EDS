@@ -462,6 +462,7 @@ button {
   border-color: #fff;
 }
 
+
 .btn-transparent {
   background: transparent;
   color: #5672f9;
@@ -470,6 +471,66 @@ button {
 
 .btn-transparent:hover {
   background: #082de1;
+  color: #fff;
+}
+
+.btn-transparent-blue {
+  background: transparent;
+  color: #5672f9;
+  border: 1px solid #5672f9;
+  display: block;
+  margin: 10px;
+  height: 7%;
+  width: 100%;
+}
+
+.btn-transparent-blue:hover {
+  background: #082de1;
+  color: #fff;
+}
+
+.btn-transparent-green {
+  background: transparent;
+  color: #3dac4c;
+  border: 1px solid #3dac4c;
+  display: block;
+  margin: 10px;
+  height: 7%;
+  width: 100%;
+}
+
+.btn-transparent-green:hover {
+  background: #189b23e8;
+  color: #fff;
+}
+
+.btn-transparent-red {
+  background: transparent;
+  color: #d14541;
+  border: 1px solid #d14541;
+  display: block;
+  margin: 10px;
+  height: 7%;
+  width: 100%;
+}
+
+.btn-transparent-red:hover {
+  background: #f70303;
+  color: #fff;
+}
+
+.btn-transparent-yellow {
+  background: transparent;
+  color: #cecb41;
+  border: 1px solid #cecb41;
+  display: block;
+  margin: 10px;
+  height: 7%;
+  width: 100%;
+}
+
+.btn-transparent-yellow:hover {
+  background: #ece916;
   color: #fff;
 }
 
@@ -1543,6 +1604,7 @@ ul.pagination .active a {
   padding: 25px 30px 30px;
   margin-bottom: 30px;
   border-radius: 2px;
+  
 }
 
 .widget .widget-header {
@@ -1763,6 +1825,7 @@ ul.pagination .active a {
 
 .widget.personal-info .form-group, .widget.change-password .form-group, .widget.change-email .form-group {
   margin-bottom: 25px;
+  
 }
 
 .widget.personal-info .form-group i, .widget.change-password .form-group i, .widget.change-email .form-group i {
@@ -1774,11 +1837,13 @@ ul.pagination .active a {
   line-height: 50px;
   margin-right: 15px;
   border-radius: 100%;
+  
 }
 
 @media (max-width: 768px) {
   .widget.personal-info .form-group i, .widget.change-password .form-group i, .widget.change-email .form-group i {
     margin-bottom: 20px;
+    
   }
 }
 
@@ -2539,4 +2604,168 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/*# sourceMappingURL=maps/style.css.map */
+.top-to a:hover {
+  text-decoration: none;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: "Muli", sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+  pointer-events: none;
+  
+  
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 1100px;
+  height: 700px;
+	position: relative;
+	margin: 1% auto;
+	padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+	/*background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);*/
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #999; }
+
+
+.bg-modal{
+  width: 100%;
+  height: 100%;
+  background-color:rgb(0,0,0,0.7);
+  position: absolute;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.form-header{
+  font-size: 16px;
+  color: rgb(83, 78, 78);
+  margin: 2px;
+  display: inline-block;
+}
+
+.form-tittle{
+  margin: 2px;
+  font-size: 14px;
+  color: #848484;
+  display: inline-table;
+}
+
+.form-tittle-1{
+  margin: 10px;
+  font-size: 14px;
+  color: #848484;
+  display: block;
+}
+
+.widget-personal{
+  
+  background: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  padding: 25px 30px 30px;
+  margin-bottom: 30px;
+  border-radius: 2px;
+  overflow: auto;
+  max-height: 550px;
+}
+.widget-personal-header {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dedede;
+}
+
+.w3-modal{
+  z-index:3;
+  display:none;
+  margin: 10px;
+  padding-top:100px;
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background-color:rgb(0,0,0);
+  background-color:rgba(0,0,0,0.4);
+  
+}
+
+.w3-modal-content{
+  margin:auto;
+  background-color:#fff;
+  position:relative;
+  padding:0;
+  outline:0;
+  width:600px;
+}
+
+@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}
+@media (max-width:768px){.w3-modal-content{width:500px}.w3-modal{padding-top:50px}}
+@media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidebar.w3-collapse{display:block!important}}
+
+
+
+
+
+/*
+.modal-content{
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.close{
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+# sourceMappingURL=maps/style.css.map */
