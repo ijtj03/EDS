@@ -36,7 +36,9 @@
 
 </head>
 
-<body class="body-wrapper">
+<body class="body-wrapper" ng-app="myApp" ng-controller="myCtrl">
+
+
 
 
 <section>
@@ -104,7 +106,7 @@
 				<!-- Edit Personal Info -->
 				<div class="widget personal-info">
 					<h2 class="widget-header user">Ingreso de Estudiantes</h2>
-					<form>
+					<form ng-submit="myFunc()">
 						<!-- First Name -->
 							<div class="form-group">
 								<center>
@@ -186,7 +188,15 @@
   <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
   <script src="js/scripts.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script>
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function($scope) {
+		    $scope.myFunc = function () {
+		        window.location = "file:///C:/Users/ijtj0/Desktop/EDS/PaginaWeb/homeEst.html";
+		    }
+		});
+  </script>
 </body>
 
 </html>
