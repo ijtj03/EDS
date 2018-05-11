@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- SITE TITTLE -->
@@ -7,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Encargado</title>
-  
+
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
   <!-- Bootstrap -->
@@ -38,102 +39,259 @@
 
 <body class="body-wrapper">
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="homeAdm.html">
-						<img src="images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item ">
-								<a class="nav-link" href="homeAdm.html">Inicio</a>
-							</li>
-              <li class="nav-item active dropdown dropdown-slide">
-                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Solicitudes <span><i class="fa fa-angle-down"></i></span>
-                </a>
-                <!-- Dropdown list -->
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item " href="solHAAdm.html">Horas Asistente</a>
-                  <a class="dropdown-item active" href="solTEAdm.html">Tutoria Estudiantil</a>
-                  <a class="dropdown-item" href="solAEAdm.html">Horas Asitente Especial</a>
-                  <a class="dropdown-item" href="solHEAdm.html">Horas Estudiante</a>
-                </div>
-              </li>
-							<li class="nav-item ">
-								<a class="nav-link" href="cancelacionAdm.html">Cancelaciones</a>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Reportes <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item " href="repInAdm.html">Reporte inicial Trabajo Social</a>
-									<a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
-									<a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
-									<a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
-								</div>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="configAdm.html">Configuracion</a>
-							</li>
-              <li class="nav-item ">
-                <a class="nav-link" href="registroAdm.html">Regitro</a>
-              </li>
-						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="index.html">Logout</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!--============================
-=            Footer            =
-=============================-->
-<!--============================
-=            Footer            =
-=============================-->
-
-<footer class="footer section section-sm">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
-        <!-- About -->
-        <div class="block about">
-          <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="">
-          <!-- description -->
-        </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-3 offset-lg-3 col-md-3">
-        <div class="block">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-          </ul>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg  navigation">
+            <a class="navbar-brand" href="homeAdm.html">
+              <img src="images/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto main-nav ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="homeAdm.html">Inicio</a>
+                </li>
+                <li class="nav-item active dropdown dropdown-slide">
+                  <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Solicitudes
+                    <span>
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <!-- Dropdown list -->
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item " href="solHAAdm.html">Horas Asistente</a>
+                    <a class="dropdown-item active" href="solTEAdm.html">Tutoria Estudiantil</a>
+                    <a class="dropdown-item" href="solAEAdm.html">Horas Asitente Especial</a>
+                    <a class="dropdown-item" href="solHEAdm.html">Horas Estudiante</a>
+                  </div>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="cancelacionAdm.html">Cancelaciones</a>
+                </li>
+                <li class="nav-item dropdown dropdown-slide">
+                  <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Reportes
+                    <span>
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <!-- Dropdown list -->
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item " href="repInAdm.html">Reporte inicial Trabajo Social</a>
+                    <a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
+                    <a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
+                    <a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
+                  </div>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="configAdm.html">Configuracion</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="registroAdm.html">Regitro</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto mt-10">
+                <li class="nav-item">
+                  <a class="nav-link login-button" href="index.html">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
       </div>
     </div>
+  </section>
+
+
+
+  <!-- Tabla -->
+
+
+  <section class="dashboard section">
+    <div class="container">
+      <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+        <div class="widget dashboard-container my-adslist">
+          <table class="table product-dashboard-table">
+            <thead class="col-lg-12">
+              <tr>
+                <th class="text-center">Estudiante</th>
+                <th class="text-center">Carné</th>
+                <th class="text-center">Tipo de Beca</th>
+                <!--<th class="text-center">Promedio</th>
+              <th class="text-center">Horas Asignadas</th>
+              <th class="text-center">Horas Laboradas</th>-->
+              </tr>
+
+            </thead>
+            <tbody>
+              <tr>
+                <td class="product-category" data-title="Estudiante">
+                  <a href="#openModal" class="open">Adrian Villalobos Cano</a>
+                </td>
+                <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
+                <td class="product-category" data-title="Carné">
+                  <span class="categories">2015088132</span>
+                </td>
+                <td class="product-category" data-title="Tipo de Beca">
+                  <span class="categories">TE</span>
+                </td>
+                <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
+                      <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
+                      <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>-->
+
+              </tr>
+
+
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Modal -->
+
+
+  <div id="openModal" class="modalDialog">
+    <div class="modalDialog-div1">
+      <a href="#close" title="Close" class="close">X</a>
+      <section class="user-profile section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+              <div class="sidebar">
+                <div class="widget user-dashboard-profile">
+                  <!-- User Image -->
+                  <div class="profile-thumb">
+                    <img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
+                  </div>
+                  <!-- User Name -->
+                  <h5 class="text-center">Adrian Villalobos Cano</h5>
+
+                </div>
+              </div>
+              <button type="button" class="btn-transparent-red">NO CUMPLE CON LOS REQUISITOS</button>
+              <button type="button" class="btn-transparent-green">CUMPLE CON LOS REQUISITOS</button>
+
+
+            </div>
+
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+              <div class="widget-personal">
+                <h3 class="widget-personal-header">Datos del Estudiante</h3>
+                <div class="form-group">
+                  <label class="form-tittle">Nombre Completo</label>
+                  <label class="form-header">Adrian Villalobos Cano</label>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-tittle">Carrera</label>
+                  <label class="form-header">Ingenieria en Mecatronica</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-tittle">Carné</label>
+                  <label class="form-header">2015088132</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-tittle">Tipo de Beca</label>
+                  <label class="form-header">TE</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-tittle">Horas Solicitadas</label>
+                  <label class="form-header">50</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-tittle-1">Cédula</label>
+                  <img src="images/Adm/id.jpg" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal01').style.display='block'">
+                  <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+                    <div class="w3-modal-content w3-animate-zoom">
+                      <img src="images/Adm/id.jpg" style="width:100%">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-tittle-1">Cuenta Bancaria</label>
+                  <img src="images/Adm/cuentabancaria.gif" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal01').style.display='block'">
+                  <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+                    <div class="w3-modal-content w3-animate-zoom">
+                      <img src="images/Adm/cuentabancaria.gif" style="width:100%">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-tittle-1">Registro de Notas</label>
+                  <img src="images/Adm/notas.jpg" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal02').style.display='block'">
+                  <div id="modal02" class="w3-modal" onclick="this.style.display='none'">
+                    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+                    <div class="w3-modal-content w3-animate-zoom">
+                      <img src="images/Adm/notas.jpg" style="width:100%">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
   </div>
-  <!-- Container End -->
-</footer>
+  <!--============================
+=            Footer            =
+=============================-->
+  <!--============================
+=            Footer            =
+=============================-->
+
+  <footer class="footer section section-sm">
+    <!-- Container Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
+          <!-- About -->
+          <div class="block about">
+            <!-- footer logo -->
+            <img src="images/logo-footer.png" alt="">
+            <!-- description -->
+          </div>
+        </div>
+        <!-- Link list -->
+        <div class="col-lg-3 offset-lg-3 col-md-3">
+          <div class="block">
+            <h4>Contacto</h4>
+            <ul>
+              <li>
+                <a>Telefono 1: (506)2222 2222</a>
+              </li>
+              <li>
+                <a>Telefono 1: (506)2222 2222</a>
+              </li>
+              <li>
+                <a>Telefono 1: (506)2222 2222</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container End -->
+  </footer>
 
   <!-- JAVASCRIPTS -->
   <script src="plugins/jquery/jquery.min.js"></script>
