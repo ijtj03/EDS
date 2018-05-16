@@ -2648,8 +2648,8 @@ input:checked + .slider:before {
 }
 
 .modalDialog-div2 {
-  width: 400px;
-  height: 200px;
+  width: 360px;
+  height: 220px;
 	position: relative;
 	margin: 15% auto;
 	padding: 20px;

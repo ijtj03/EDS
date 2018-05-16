@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- SITE TITTLE -->
@@ -7,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Encargado</title>
-  
+
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
   <!-- Bootstrap -->
@@ -38,260 +39,336 @@
 
 <body class="body-wrapper">
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="homeAdm.html">
-						<img src="images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item ">
-								<a class="nav-link" href="homeAdm.html">Inicio</a>
-							</li>
-              <li class="nav-item active dropdown dropdown-slide">
-                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Revisión <span><i class="fa fa-angle-down"></i></span>
-                </a>
-                <!-- Dropdown list -->
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="solHAAdm.html">Horas Asistente</a>
-                  <a class="dropdown-item" href="solTEAdm.html">Tutoria Estudiantil</a>
-                  <a class="dropdown-item" href="solAEAdm.html">Horas Asitente Especial</a>
-                  <a class="dropdown-item" href="solHEAdm.html">Horas Estudiante</a>
-                  <a class="dropdown-item active" href="cancelacionAdm.html">Cancelaciones</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown dropdown-slide">
-                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Solicitudes <span><i class="fa fa-angle-down"></i></span>
-                </a>
-                <!-- Dropdown list -->
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="cumReqAdm.html">Cumplen Requisitos</a>
-                  <a class="dropdown-item" href="noCumReqAdm.html">No Cumplen Requisitos</a>
-                </div>
-              </li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Reportes <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item " href="repInAdm.html">Reporte inicial Trabajo Social</a>
-									<a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
-									<a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
-									<a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
-								</div>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="configAdm.html">Ajustes</a>
-							</li>
-              <li class="nav-item ">
-                <a class="nav-link" href="registroAdm.html">Regitro</a>
-              </li>
-						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="index.html">Logout</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg  navigation">
+            <a class="navbar-brand" href="homeAdm.html">
+              <img src="images/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto main-nav ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="homeAdm.html">Inicio</a>
+                </li>
+                <li class="nav-item active dropdown dropdown-slide">
+                  <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Revisión
+                    <span>
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <!-- Dropdown list -->
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="solHAAdm.html">Horas Asistente</a>
+                    <a class="dropdown-item" href="solTEAdm.html">Tutoria Estudiantil</a>
+                    <a class="dropdown-item" href="solAEAdm.html">Horas Asitente Especial</a>
+                    <a class="dropdown-item" href="solHEAdm.html">Horas Estudiante</a>
+                    <a class="dropdown-item active" href="cancelacionAdm.html">Cancelaciones</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown dropdown-slide">
+                  <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Solicitudes
+                    <span>
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <!-- Dropdown list -->
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="cumReqAdm.html">Cumplen Requisitos</a>
+                    <a class="dropdown-item" href="noCumReqAdm.html">No Cumplen Requisitos</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown dropdown-slide">
+                  <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Reportes
+                    <span>
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <!-- Dropdown list -->
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item " href="repInAdm.html">Reporte inicial Trabajo Social</a>
+                    <a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
+                    <a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
+                    <a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
+                  </div>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="configAdm.html">Ajustes</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="registroAdm.html">Regitro</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto mt-10">
+                <li class="nav-item">
+                  <a class="nav-link login-button" href="index.html">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
-<section class="dashboard section">
-  <div class="container">
-    <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
-      <div class="widget dashboard-container my-adslist">
-        <table class="table product-dashboard-table">
-          <thead class="col-lg-12">
-            <tr>
-              <th class="text-center">Estudiante</th>
-              <th class="text-center">Carné</th>
-              <th class="text-center">Tipo de Beca</th>
-              <th class="text-center">Estado</th>
-              <th class="text-center">Cancelar</th>
-              <!--<th class="text-center">Promedio</th>
+  <section class="dashboard section">
+    <div class="container">
+      <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+        <div class="widget dashboard-container my-adslist">
+          <table class="table product-dashboard-table">
+            <thead class="col-lg-12">
+              <tr>
+                <th class="text-center">Estudiante</th>
+                <th class="text-center">Carné</th>
+                <th class="text-center">Tipo de Beca</th>
+                <th class="text-center">Estado</th>
+                <th class="text-center">Cancelar</th>
+                <th class="text-center">Revisado</th>
+                <!--<th class="text-center">Promedio</th>
             <th class="text-center">Horas Asignadas</th>
             <th class="text-center">Horas Laboradas</th>-->
-            </tr>
+              </tr>
 
-          </thead>
-          <tbody>
-            <tr>
-              <td class="product-category" data-title="Estudiante">
-                <a href="#openModal1" class="open">Andre Herrera Chacon</a>
-              </td>
-              <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
-              <td class="product-category" data-title="Carné">
-                <span class="categories">2015183074</span>
-              </td>
-              <td class="product-category" data-title="Tipo de Beca">
-                <span class="categories">EA</span>
-              </td>
-              <td class="product-category" data-title="Estado">
-                <span class="categories">Revisado</span>
-              </td>
-              <td class="product-category" data-title="Switch">
-                <div class="form-group mb-30">
-                  <label  class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                  </label>
-              </div>
-              </td>
-              <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="product-category" data-title="Estudiante">
+                  <a href="#openModal1" class="open">Andre Herrera Chacon</a>
+                </td>
+                <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
+                <td class="product-category" data-title="Carné">
+                  <span class="categories">2015183074</span>
+                </td>
+                <td class="product-category" data-title="Tipo de Beca">
+                  <span class="categories">EA</span>
+                </td>
+                <td class="product-category" data-title="Estado">
+                  <span class="categories">Revisado</span>
+                </td>
+                <td class="product-category" data-title="Switch">
+                  <div class="form-group mb-30">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </td>
+                <td class="product-category" data-title="Switch">
+                    <div class="form-group mb-30">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                  </td>
+                <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
                     <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
                     <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>-->
 
-            </tr>
-            <tr>
-              <td class="product-category" data-title="Estudiante">
-                <a href="#openModal1" class="open">Adrian Villalobos Cano</a>
-              </td>
-              <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
-              <td class="product-category" data-title="Carné">
-                <span class="categories">2015088132</span>
-              </td>
-              <td class="product-category" data-title="Tipo de Beca">
-                <span class="categories">TE</span>
-              </td>
-              <td class="product-category" data-title="Estado">
-                <span class="categories">Pendiente</span>
-              </td>
-              <td class="product-category" data-title="Switch">
-                <div class="form-group mb-30">
-                  <label  class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                  </label>
-              </div>
-              </td>
-              <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
+              </tr>
+              <tr>
+                <td class="product-category" data-title="Estudiante">
+                  <a href="#openModal2" class="open">Adrian Villalobos Cano</a>
+                </td>
+                <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
+                <td class="product-category" data-title="Carné">
+                  <span class="categories">2015088132</span>
+                </td>
+                <td class="product-category" data-title="Tipo de Beca">
+                  <span class="categories">TE</span>
+                </td>
+                <td class="product-category" data-title="Estado">
+                  <span class="categories">Pendiente</span>
+                </td>
+                <td class="product-category" data-title="Switch">
+                  <div class="form-group mb-30">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </td>
+                <td class="product-category" data-title="Switch">
+                    <div class="form-group mb-30">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                  </td>
+                <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
                     <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
                     <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>-->
 
-            </tr>
-            <tr>
-              <td class="product-category" data-title="Estudiante">
-                <a href="#openModal1" class="open">Isaac Trejos Jara</a>
-              </td>
-              <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
-              <td class="product-category" data-title="Carné">
-                <span class="categories">2015127287</span>
-              </td>
-              <td class="product-category" data-title="Tipo de Beca">
-                <span class="categories">HE</span>
-              </td>
-              <td class="product-category" data-title="Estado">
-                <span class="categories">Pendiente</span>
-              </td>
-              <td class="product-category" data-title="Switch">
-                <div class="form-group mb-30">
-                  <label  class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                  </label>
-              </div>
-              </td>
-              
-              <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
+              </tr>
+              <tr>
+                <td class="product-category" data-title="Estudiante">
+                  <a href="#openModal2" class="open">Isaac Trejos Jara</a>
+                </td>
+                <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
+                <td class="product-category" data-title="Carné">
+                  <span class="categories">2015127287</span>
+                </td>
+                <td class="product-category" data-title="Tipo de Beca">
+                  <span class="categories">HE</span>
+                </td>
+                <td class="product-category" data-title="Estado">
+                  <span class="categories">Pendiente</span>
+                </td>
+                <td class="product-category" data-title="Switch">
+                  <div class="form-group mb-30">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </td>
+                <td class="product-category" data-title="Switch">
+                    <div class="form-group mb-30">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                  </td>
+
+                <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
                     <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
                     <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>-->
 
-            </tr>
-            <tr>
-              <td class="product-category" data-title="Estudiante">
-                <a href="#openModal1" class="open">Esteban Herrera Vargas</a>
-              </td>
-              <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
-              <td class="product-category" data-title="Carné">
-                <span class="categories">2015012410</span>
-              </td>
-              <td class="product-category" data-title="Tipo de Beca">
-                <span class="categories">AE</span>
-              </td>
-              <td class="product-category" data-title="Estado">
-                <span class="categories">Pendiente</span>
-              </td>
-              <td class="product-category" data-title="Switch">
-                <div class="form-group mb-30">
-                  <label  class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                  </label>
-              </div>
-              </td>
-              <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
+              </tr>
+              <tr>
+                <td class="product-category" data-title="Estudiante">
+                  <a href="#openModal2" class="open">Esteban Herrera Vargas</a>
+                </td>
+                <!--<td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>-->
+                <td class="product-category" data-title="Carné">
+                  <span class="categories">2015012410</span>
+                </td>
+                <td class="product-category" data-title="Tipo de Beca">
+                  <span class="categories">AE</span>
+                </td>
+                <td class="product-category" data-title="Estado">
+                  <span class="categories">Pendiente</span>
+                </td>
+                <td class="product-category" data-title="Switch">
+                  <div class="form-group mb-30">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </td>
+                <td class="product-category" data-title="Switch">
+                    <div class="form-group mb-30">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                  </td>
+                <!--<td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
                     <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
                     <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>-->
 
-            </tr>
+              </tr>
 
 
 
-          </tbody>
+            </tbody>
 
-        </table>
+          </table>
+        </div>
       </div>
+      <center>
+          <button type="button" class="btn btn-transparent">Aplicar</button>
+     </center>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<div id="openModal1" class="modalDialog">
+  <div id="openModal1" class="modalDialog">
     <div class="modalDialog-div2">
       <a href="#close" title="Close" class="close">X</a>
-      <h1>HOLA</h1>
+      <div class="container">
+        <!-- Edit Personal Info -->
+        <div class="widget personal-info">
+          <h3 class="widget-header user">DESCRIPCION CANCELACION</h3>
+          <p>
+            Por motivos de salud no se podra llevar a cabo la 
+            asistencia solicitada este semestre.
+          </p>
+        </div>
+      </div>
 
     </div>
   </div>
-
-<!--============================
-=            Footer            =
-=============================-->
-<!--============================
-=            Footer            =
-=============================-->
-
-<footer class="footer section section-sm">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
-        <!-- About -->
-        <div class="block about">
-          <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="">
-          <!-- description -->
+  <div id="openModal2" class="modalDialog">
+      <div class="modalDialog-div2">
+        <a href="#close" title="Close" class="close">X</a>
+        <div class="container">
+          <!-- Edit Personal Info -->
+          <div class="widget personal-info">
+            <h3 class="widget-header user">DESCRIPCION CANCELACION</h3>
+            <p>
+              NO APLICA
+            </p>
+          </div>
         </div>
+  
       </div>
-      <!-- Link list -->
-      <div class="col-lg-3 offset-lg-3 col-md-3">
-        <div class="block">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-          </ul>
+    </div>
+
+  <!--============================
+=            Footer            =
+=============================-->
+  <!--============================
+=            Footer            =
+=============================-->
+
+  <footer class="footer section section-sm">
+    <!-- Container Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
+          <!-- About -->
+          <div class="block about">
+            <!-- footer logo -->
+            <img src="images/logo-footer.png" alt="">
+            <!-- description -->
+          </div>
+        </div>
+        <!-- Link list -->
+        <div class="col-lg-3 offset-lg-3 col-md-3">
+          <div class="block">
+            <h4>Contacto</h4>
+            <ul>
+              <li>
+                <a>Telefono 1: (506)2222 2222</a>
+              </li>
+              <li>
+                <a>Telefono 1: (506)2222 2222</a>
+              </li>
+              <li>
+                <a>Telefono 1: (506)2222 2222</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Container End -->
-</footer>
+    <!-- Container End -->
+  </footer>
 
   <!-- JAVASCRIPTS -->
   <script src="plugins/jquery/jquery.min.js"></script>
