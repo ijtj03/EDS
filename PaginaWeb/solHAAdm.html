@@ -187,8 +187,17 @@
 
                 </div>
               </div>
-              <button type="button" class="btn-transparent-red">NO CUMPLE CON LOS REQUISITOS</button>
-              <button type="button" class="btn-transparent-green">CUMPLE CON LOS REQUISITOS</button>
+              <form>
+                  <h2 class="in-line">Descripcion:</h2><input id="Descripcion" type="checkbox">
+                  <textarea class="text-area"  id="textDescripcion" disabled></textarea>
+              </form>
+              <script>
+              document.getElementById('Descripcion').onchange = function() {
+                document.getElementById('textDescripcion').disabled = !this.checked;
+              };
+              </script>
+
+              
 
 
             </div>
@@ -219,18 +228,18 @@
                 </div>
                 <div class="form-group">
                   <label class="form-tittle-1">Cédula</label>
-                  <img src="images/Adm/id.jpg" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal01').style.display='block'">
+                  <img src="images/Adm/id.png" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal01').style.display='block'">
                   <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
                     <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
                     <div class="w3-modal-content w3-animate-zoom">
-                      <img src="images/Adm/id.jpg" style="width:100%">
+                      <img src="images/Adm/id.png" style="width:100%">
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="form-tittle-1">Cuenta Bancaria</label>
-                  <img src="images/Adm/cuentabancaria.gif" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal01').style.display='block'">
-                  <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                  <img src="images/Adm/cuentabancaria.gif" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal02').style.display='block'">
+                  <div id="modal02" class="w3-modal" onclick="this.style.display='none'">
                     <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
                     <div class="w3-modal-content w3-animate-zoom">
                       <img src="images/Adm/cuentabancaria.gif" style="width:100%">
@@ -239,8 +248,8 @@
                 </div>
                 <div class="form-group">
                   <label class="form-tittle-1">Registro de Notas</label>
-                  <img src="images/Adm/notas.jpg" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal02').style.display='block'">
-                  <div id="modal02" class="w3-modal" onclick="this.style.display='none'">
+                  <img src="images/Adm/notas.jpg" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal03').style.display='block'">
+                  <div id="modal03" class="w3-modal" onclick="this.style.display='none'">
                     <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
                     <div class="w3-modal-content w3-animate-zoom">
                       <img src="images/Adm/notas.jpg" style="width:100%">
@@ -251,6 +260,8 @@
               </div>
             </div>
           </div>
+          <button type="button" class="btn-transparent-red">NO CUMPLE CON LOS REQUISITOS</button>
+          <button type="button" class="btn-transparent-green">CUMPLE CON LOS REQUISITOS</button>
         </div>
       </section>
 
