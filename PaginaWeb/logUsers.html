@@ -36,7 +36,7 @@
 
 </head>
 
-<body class="body-wrapper">
+<body class="body-wrapper" ng-app="myApp" ng-controller="myCtrl">
 
 
 <section>
@@ -92,19 +92,19 @@
 				<!-- Edit Personal Info -->
 				<div class="widget personal-info">
 					<h2 class="widget-header user">Ingreso de Usuarios</h2>
-					<form>
+					<form ng-submit="myFunc()">
 						<!-- First Name -->
 						<div class="form-group">
 							<center>
 							    <label>Identificacion</label>
-							    <input required type="number" class="form-control" id="first-name">
+							    <input required type="number" class="form-control" id="first-name" ng-model="id">
 						    </center>
 						</div>
 						<!-- Last Name -->
 						<div class="form-group">
 							<center>
 							    <label>Contraseña</label>
-							    <input required type="password" class="form-control" id="password">
+							    <input required type="password" class="form-control" id="password" ng-model="password">
 							    <button  class="btn btn-transparent">Ingresar</button>
 						    </center>
 						</div>
@@ -163,6 +163,20 @@
   <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
   <script src="js/scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.myFunc = function () {
+          if($scope.id=="111111111" && $scope.password=="abc"){
+            window.location = "file:///D:/Documentos/TEC/Especificacion%20y%20Diseno%20de%20Software/EDS/PaginaWeb/homeAdm.html";
+          }else{
+            alert("La contraseña no coincide para ese  usuario");
+          }
+        }
+    });
+  </script>
+
 
 </body>
 

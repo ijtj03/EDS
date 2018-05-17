@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reporte Final Trabajo Social</title>
+  <title>Encargado</title>
   
   <!-- PLUGINS CSS STYLE -->
   <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
@@ -67,24 +67,24 @@
                   <a class="dropdown-item" href="cancelacionAdm.html">Cancelaciones</a>
                 </div>
               </li>
-              <li class="nav-item dropdown dropdown-slide">
+              <li class="nav-item active dropdown dropdown-slide">
                 <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Solicitudes <span><i class="fa fa-angle-down"></i></span>
                 </a>
                 <!-- Dropdown list -->
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="cumReqAdm.html">Cumplen Requisitos</a>
+                  <a class="dropdown-item active" href="cumReqAdm.html">Cumplen Requisitos</a>
                   <a class="dropdown-item" href="noCumReqAdm.html">No Cumplen Requisitos</a>
                 </div>
               </li>
-							<li class="nav-item active dropdown dropdown-slide">
+							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									Reportes <span><i class="fa fa-angle-down"></i></span>
 								</a>
 								<!-- Dropdown list -->
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item " href="repInAdm.html">Reporte inicial Trabajo Social</a>
-									<a class="dropdown-item active" href="repFiAdm.html">Reporte final Trabajo Social</a>
+									<a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
 									<a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
 									<a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
 								</div>
@@ -107,102 +107,36 @@
 		</div>
 	</div>
 </section>
-<section class="page-search">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<!-- Advance Search -->
-				<div class="advance-search">
-					<form>
-						<div class="form-row">
-							<div class="form-group col-md-3">
-                  <strong style="color: aliceblue">Año : </strong>
-                  <select  class="nice-select">
-                    <option>2018</option>
-                    <option value="1">2017</option>
-                    <option value="2">2016</option>
-                    <option value="4">2015</option>
-                  </select>
-              </div>
-							<div class="form-group col-md-3">
-                <strong style="color: aliceblue">Semestre : </strong>
-                  <select class="nice-select">
-                    <option>I</option>
-                    <option value="1">II</option>
-                  </select>
-							</div>
-							<div class="form-group col-md-3">
-                <strong style="color: aliceblue">Tipo de Beca : </strong>
-                  <select class="nice-select">
-                    <option>HT</option>
-                    <option value="1">HE</option>
-                    <option value="2">HA</option>
-                    <option value="4">HAE</option>
-                  </select>
-							</div>
-							<div class="form-group col-md-3">
-								<button type="submit" class="btn btn-primary">Buscar</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="dashboard section">
-    <!-- Container Start -->
-    <div class="container">
-        <!-- Row Start -->
-          <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
-            <!-- Recently Favorited -->
-            <div class="widget dashboard-container my-adslist">
-              <table class="table table-responsive product-dashboard-table">
-                  <thead class="col-lg-12">
-                    <tr>
-                      <th class="text-center">Estudiante</th>
-                      <th class="text-center">Carné</th>
-                      <th class="text-center">Tipo de Beca</th>
-                      <th class="text-center">Promedio</th>
-                      <th class="text-center">Horas Asignadas</th>
-                      <th class="text-center">Horas Laboradas</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="product-category" data-title="Estudiante"><span class="categories">Isaac Trejos Jara</span></td>
-                      <td class="product-category" data-title="Carné"><span class="categories">2015127287</span></td>
-                      <td class="product-category" data-title="Tipo de Beca"><span class="categories">HT</span></td>
-                      <td class="product-category" data-title="Promedio"><span class="categories"></span>100</td>
-                      <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
-                      <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>
-                    </tr>
-                    <tr>
-                      <td class="product-category" data-title="Estudiante"><span class="categories">André Herrera Chacón</span></td>
-                      <td class="product-category" data-title="Año"><span class="categories">2015183074</span></td>
-                      <td class="product-category" data-title="Tipo de Beca"><span class="categories">HT</span></td>
-                      <td class="product-category" data-title="Promedio"><span class="categories">100</span></td>
-                      <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
-                      <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>
-                    </tr>
-                    <tr>
-                      <td class="product-category" data-title="Estudiante"><span class="categories">Esteban Herrera Vargas</span></td>
-                      <td class="product-category" data-title="Año"><span class="categories">2015012410</span></td>
-                      <td class="product-category" data-title="Tipo de Beca"><span class="categories">HT</span></td>
-                      <td class="product-category" data-title="Promedio"><span class="categories">100</span></td>
-                      <td class="product-category" data-title="Horas Asignadas"><span class="categories">50</span></td>
-                      <td class="product-category" data-title="Horas Laboradas"><span class="categories">50</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-          </div>
-        </div>
-        <!-- Row End -->
-      </div>
-    <!-- Container End -->
-  </section>
 
+<section class="dashboard section">
+  <div class="container">
+    <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
+      <div class="widget dashboard-container my-adslist">
+        <table class="table product-dashboard-table">
+          <thead class="col-lg-12">
+            <tr >
+              <th class="text-center">Estudiante</th>
+              <th class="text-center">Carné</th>
+              <th class="text-center">Tipo de Beca</th>
+              <!--<th class="text-center">Promedio</th>
+              <th class="text-center">Horas Asignadas</th>
+              <th class="text-center">Horas Laboradas</th>-->
+            </tr>
+            
+          </thead>
+          <tbody>
+                <tr>
+                  <td class="product-category" data-title="Carné"><span class="categories">Isaac Trejos Jara</span></td>
+                  <td class="product-category" data-title="Carné"><span class="categories">2015127287</span></td>
+                  <td class="product-category" data-title="Tipo de Beca"><span class="categories">HA</span></td>
+                </tr>
+         </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 <!--============================
 =            Footer            =
 =============================-->
