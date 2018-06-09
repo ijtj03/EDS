@@ -96,12 +96,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\Formulario.cs" />
-    <Compile Include="Controllers\GuargarFormController.cs" />
+    <Compile Include="Controllers\FormulariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\GuardarFormService.cs" />
+    <Compile Include="Services\FormularioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
