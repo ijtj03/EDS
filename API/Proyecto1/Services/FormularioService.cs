@@ -103,7 +103,53 @@ namespace Proyecto1.Services
 
         }
 
-        internal List<Formulario> GetAllForms()
+        public List<Formulario> GetFormulariosGuardados(int estudiante)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+            SqlDataReader read;
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+            List<Formulario> ListForms = new List<Formulario>();
+
+            command = new SqlCommand("Select EF.IdFormulario,F.OtraBecaHoras,EF.IdCarnet,F.IdCurso,F.IdDepartamento,F.IdTipoBeca,F.Telefono,F.Correo,F.PromedioCurso,F.PromedioPonderadoAnterior,F.PromedioPonderadoGeneral,F.CuentaBancaria,F.ImgCedula,F.ImgCuentaBancaria,F.ImgPromedioGeneral,F.ImgPromedioPonderado,F.OtraBeca,F.Cedula from Formulario as F inner join EstudiantexFormulario as EF on F.IdFormulario=EF.IdFormulario where EF.[Delete] = 0 and F.[Delete] = 0 and EF.IdCarnet=" + estudiante.ToString(), conn);
+            read = command.ExecuteReader();
+            while (read.Read())
+            {
+                Formulario persona = new Formulario();
+                persona.IdCurso = Convert.ToInt32(read["IdCurso"]);
+                persona.IdForm = Convert.ToInt32(read["IdFormulario"]);
+                persona.IdDep = Convert.ToInt32(read["IdDepartamento"]);
+                persona.IdBeca = Convert.ToInt32(read["IdTipoBeca"]);
+                persona.Tel = read["Telefono"].ToString();
+                persona.Correo = read["Correo"].ToString();
+                persona.PromedioCurso = Convert.ToDecimal(read["IdTipoBeca"]);
+                persona.PromedioPonderadoAnterior = Convert.ToDecimal(read["PromedioPonderadoAnterior"]);
+                persona.PromedioPonderadoGen = Convert.ToDecimal(read["PromedioPonderadoGeneral"]);
+                persona.CuentaBancaria = Convert.ToInt32(read["CuentaBancaria"]);
+                persona.ImgCuentaBancaria = read["ImgCuentaBancaria"].ToString();
+                persona.ImgPromedioPonderadoAnterios = read["ImgPromedioPonderado"].ToString();
+                persona.ImgPromedioPonderadoGeneral = read["ImgPromedioGeneral"].ToString();
+                persona.ImgCedula = read["ImgCedula"].ToString();
+                persona.OtraBeca = read["OtraBeca"].ToString();
+                persona.OtraBecaHoras = Convert.ToInt32(read["OtraBecaHoras"]);
+                persona.Cedula = read["Cedula"].ToString();
+
+                ListForms.Add(persona);
+
+            }
+            read.Close();
+
+
+            conn.Close();
+            return ListForms;
+        }
+
+        public List<Formulario> GetAllForms()
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;
@@ -116,7 +162,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Formulario> ListForms = new List<Formulario>();
           
-                command = new SqlCommand("SELECT *  from Formulario", conn);
+                command = new SqlCommand("SELECT *  from Formulario where   Delete = 0", conn);
                 read = command.ExecuteReader();
                 while (read.Read())
                 {

@@ -22,10 +22,17 @@ namespace Proyecto1.Controllers
         }
         [HttpGet]
         [Route("GetAllForms")]
-        public IHttpActionResult GetUser()
+        public IHttpActionResult GetAllForms()
         {
             FormularioService con = new FormularioService();
             return Ok(con.GetAllForms());
+        }
+        [HttpGet]
+        [Route("GetFormulariosGuardados")]
+        public IHttpActionResult GetFormulariosGuardados(int estudiante)
+        {
+            FormularioService con = new FormularioService();
+            return Ok(con.GetFormulariosGuardados(estudiante));
         }
     }
 }
