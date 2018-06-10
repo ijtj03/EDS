@@ -62,3 +62,5 @@ Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015012410',1
 Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015127287',2)
 Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015183074',3)
 
+Insert into UsuarioxEstudiante (IdCarnet,IdUsuario,HorasAsignadas,HorasLaboradas,Observaciones,Recomienda)
+Values ('2015127287',2,50,0,'',0)
