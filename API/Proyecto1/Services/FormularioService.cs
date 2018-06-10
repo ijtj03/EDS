@@ -162,7 +162,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Formulario> ListForms = new List<Formulario>();
           
-                command = new SqlCommand("SELECT *  from Formulario where   Delete = 0", conn);
+                command = new SqlCommand("SELECT *  from Formulario where [Delete] = 0", conn);
                 read = command.ExecuteReader();
                 while (read.Read())
                 {
