@@ -10,7 +10,7 @@ namespace Proyecto1.Services
 {
     public class CalificarService
     {
-        public List<Estudiante> GetEstudiantesxUsuario(int encargado)
+        public List<UsuarioxEstudiante> GetEstudiantesxUsuario(int encargado)
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;
@@ -21,38 +21,28 @@ namespace Proyecto1.Services
 
             conn = new SqlConnection(strConnString);
             conn.Open();
-            List<Estudiante> ListForms = new List<Estudiante>();
+            List<UsuarioxEstudiante> ListForms = new List<UsuarioxEstudiante>();
 
-            /*command = new SqlCommand("SELECT *  from Formulario where [Delete] = 0", conn);
+            command = new SqlCommand("Select E.carne,E.primer_nombre,E.primer_apellido,UE.HorasAsignadas,UE.HorasLaboradas,UE.Observaciones from usuario as U inner join UsuarioxEstudiante as UE on U.id = UE.IdUsuario inner join estudiantes as E on E.carne=UE.IdCarnet where UE.[Delete] = 0 and U.id="+encargado.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
-                Formulario persona = new Formulario();
-                persona.IdCurso = Convert.ToInt32(read["IdCurso"]);
-                persona.IdForm = Convert.ToInt32(read["IdFormulario"]);
-                persona.IdDep = Convert.ToInt32(read["IdDepartamento"]);
-                persona.IdBeca = Convert.ToInt32(read["IdTipoBeca"]);
-                persona.Tel = read["Telefono"].ToString();
-                persona.Correo = read["Correo"].ToString();
-                persona.PromedioCurso = Convert.ToDecimal(read["IdTipoBeca"]);
-                persona.PromedioPonderadoAnterior = Convert.ToDecimal(read["PromedioPonderadoAnterior"]);
-                persona.PromedioPonderadoGen = Convert.ToDecimal(read["PromedioPonderadoGeneral"]);
-                persona.CuentaBancaria = Convert.ToInt32(read["CuentaBancaria"]);
-                persona.ImgCuentaBancaria = read["ImgCuentaBancaria"].ToString();
-                persona.ImgPromedioPonderadoAnterios = read["ImgPromedioPonderado"].ToString();
-                persona.ImgPromedioPonderadoGeneral = read["ImgPromedioGeneral"].ToString();
-                persona.ImgCedula = read["ImgCedula"].ToString();
-                persona.OtraBeca = read["OtraBeca"].ToString();
-                persona.OtraBecaHoras = Convert.ToInt32(read["OtraBecaHoras"]);
-                persona.Cedula = read["Cedula"].ToString();
-
+                UsuarioxEstudiante persona = new UsuarioxEstudiante();
+                persona.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
+                persona.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
+                persona.Carnet = read["carne"].ToString();
+                persona.Nombre = read["primer_nombre"].ToString();
+                persona.Apellido = read["primer_apellido"].ToString();
+                persona.Observaciones = read["Observaciones"].ToString();
+                if (persona.Observaciones=="") { persona.Revisado = false; }
+                else { persona.Revisado = true; }
                 ListForms.Add(persona);
 
             }
             read.Close();
 
 
-            conn.Close();*/
+            conn.Close();
             return ListForms;
         }
     }
