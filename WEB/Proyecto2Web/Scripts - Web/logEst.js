@@ -11,6 +11,9 @@ mA.controller('LogEstCtrl', function ($scope, $http) {
         });
     $scope.doLogin = function () {
         const ip = "http://" + $scope.config.ApiIp;
+        const loc = $scope.config.WebIp + "/PaginaWeb/homeEst.html";
+        window.localStorage.setItem("idCarnet", $scope.carnet);
+        window.location = loc;
     }
     $scope.doToken = function () {
         const ip = "http://" + $scope.config.ApiIp + "/APILogin/ce/StudentAuth/Token/";
@@ -25,6 +28,7 @@ mA.controller('LogEstCtrl', function ($scope, $http) {
                     console.log(response.data.Message);
                 }, function errorCallback(response) {
                     alert("El carnet no coincide con el correo escrito");
+                    
                     console.log(ip);
                     console.log(body);
                 });
