@@ -9,5 +9,6 @@
         public int HorasLaboradas { get; set; }
         public string Observaciones { get; set; }
         public bool Revisado { get; set; }
+
     }
 }
