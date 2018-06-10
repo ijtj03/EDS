@@ -96,8 +96,13 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\Formulario.cs" />
+    <Compile Include="Classes\Parametro.cs" />
+    <Compile Include="Classes\RevisionSolicitud.cs" />
+    <Compile Include="Classes\Solicitud.cs" />
     <Compile Include="Controllers\CalificarController.cs" />
     <Compile Include="Controllers\FormulariosController.cs" />
+    <Compile Include="Controllers\ParametroController.cs" />
+    <Compile Include="Controllers\SolicitudController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -105,6 +110,8 @@
     <Compile Include="Services\CalificarService.cs" />
     <Compile Include="Classes\UsuarioxEstudiante.cs" />
     <Compile Include="Services\FormularioService.cs" />
+    <Compile Include="Services\ParametroService.cs" />
+    <Compile Include="Services\SolicitudService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

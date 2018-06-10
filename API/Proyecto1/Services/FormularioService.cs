@@ -151,9 +151,7 @@ namespace Proyecto1.Services
             command = new SqlCommand("EXEC ActualizarFormularioEnviado @IdFormulario=@IdForm,@Carne=@Carnet,@Telefono=@Tel,@Correo=@C,@PromedioCurso = @PC,@PromedioPonderadoAnterior = @PPA,@PromedioPonderadoGeneral = @PPG,@CuentaBancaria = @CB, @ImgCuentaBancaria = @ICB, @ImgPromedioPonderado = @IPPA, @ImgPromedioGeneral = @IPPG, @ImgCedula = @IC, @OtraBeca = @OB, @OtraBecaHoras = @OBH, @Cedula = @Ced", conn);
 
             command.Parameters.AddWithValue("@IdForm", form.IdForm);
-            Console.WriteLine(form.IdForm);
             command.Parameters.AddWithValue("@Carnet", form.Carnet);
-            Console.WriteLine(form.Carnet);
             command.Parameters.AddWithValue("@Tel", form.Tel);
             command.Parameters.AddWithValue("@C", form.Correo);
             command.Parameters.AddWithValue("@PC", form.PromedioCurso);
