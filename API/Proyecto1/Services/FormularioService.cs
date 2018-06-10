@@ -45,7 +45,7 @@ namespace Proyecto1.Services
             ImgCuentaBancaria.Value = form.ImgCuentaBancaria;
 
             SqlParameter ImgPromPonderado = new SqlParameter("@IPPA", System.Data.SqlDbType.VarChar);
-            ImgPromPonderado.Value = form.ImgPromedioPonderadoAnterios;
+            ImgPromPonderado.Value = form.ImgPromedioPonderadoAnterior;
 
             SqlParameter ImgPromPonderadoGen = new SqlParameter("@IPPG", System.Data.SqlDbType.VarChar);
             ImgPromPonderadoGen.Value = form.ImgPromedioPonderadoGeneral;
@@ -78,7 +78,8 @@ namespace Proyecto1.Services
             PromedioPonderadoGenenral.Value = form.PromedioPonderadoGen;
 
 
-            command = new SqlCommand("EXEC GuardarFormulario @IdFormulario=@IdForm, @IdCurso=@IdCur,@IdDepartamento=@IdDep,@IdTipoBeca=@IdBeca,@Telefono=@Tel,@Correo=@Corr,@PromedioCurso=@PC,@PromedioPonderadoAnterior=@PPA,@PromedioPonderadoGeneral=@PPG,@CuentaBancaria=@CB, @ImgCuentaBancaria=@ICB, @ImgPromedioPonderado=@IPPA, @ImgPromedioGeneral=@IPPG, @ImgCedula=@IC, @OtraBeca=@OB, @OtraBecaHoras=@OBH, @Cedula=@Ced,@Carne=@Carnet", conn);
+            command = new SqlCommand("EXEC GuardarFormulario @IdCurso=@IdCur,@IdDepartamento=@IdDep,@IdTipoBeca=@IdBeca,@Telefono=@Tel,@Correo=@Corr,@PromedioCurso=@PC,@PromedioPonderadoAnterior=@PPA,@PromedioPonderadoGeneral=@PPG,@CuentaBancaria=@CB, @ImgCuentaBancaria=@ICB, @ImgPromedioPonderado=@IPPA, @ImgPromedioGeneral=@IPPG, @ImgCedula=@IC, @OtraBeca=@OB, @OtraBecaHoras=@OBH, @Cedula=@Ced,@Carne=@Carnet", conn);
+
             command.Parameters.Add(IdCurso);
             command.Parameters.Add(IdBeca);
             command.Parameters.Add(IdForm);
@@ -101,6 +102,75 @@ namespace Proyecto1.Services
 
             conn.Close();
 
+        }
+
+        public Int32 ActualizarFormularioGuardado(Formulario form)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+            command = new SqlCommand("EXEC ActualizarFormulario @IdFormulario=@IdForm,@Carne=@Carnet,@Telefono=@Tel,@Correo=@C,@PromedioCurso = @PC,@PromedioPonderadoAnterior = @PPA,@PromedioPonderadoGeneral = @PPG,@CuentaBancaria = @CB, @ImgCuentaBancaria = @ICB, @ImgPromedioPonderado = @IPPA, @ImgPromedioGeneral = @IPPG, @ImgCedula = @IC, @OtraBeca = @OB, @OtraBecaHoras = @OBH, @Cedula = @Ced", conn);
+
+            command.Parameters.AddWithValue("@IdForm", form.IdForm);
+            Console.WriteLine(form.IdForm);
+            command.Parameters.AddWithValue("@Carnet", form.Carnet);
+            Console.WriteLine(form.Carnet);
+            command.Parameters.AddWithValue("@Tel", form.Tel);
+            command.Parameters.AddWithValue("@C", form.Correo);
+            command.Parameters.AddWithValue("@PC", form.PromedioCurso);
+            command.Parameters.AddWithValue("@PPA", form.PromedioPonderadoAnterior);
+            command.Parameters.AddWithValue("@PPG", form.PromedioPonderadoGen);
+            command.Parameters.AddWithValue("@CB", form.CuentaBancaria);
+            command.Parameters.AddWithValue("@ICB", form.ImgCuentaBancaria);
+            command.Parameters.AddWithValue("@IC", form.ImgCedula);
+            command.Parameters.AddWithValue("@IPPA", form.ImgPromedioPonderadoAnterior);
+            command.Parameters.AddWithValue("@IPPG", form.ImgPromedioPonderadoGeneral);
+            command.Parameters.AddWithValue("@OB", form.OtraBeca);
+            command.Parameters.AddWithValue("@OBH", form.OtraBecaHoras);
+            command.Parameters.AddWithValue("@Ced", form.Cedula);
+            Int32 r = command.ExecuteNonQuery();
+
+            conn.Close();
+            return r;
+        }
+        public Int32 ActualizarFormularioEnviado(Formulario form)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+            command = new SqlCommand("EXEC ActualizarFormularioEnviado @IdFormulario=@IdForm,@Carne=@Carnet,@Telefono=@Tel,@Correo=@C,@PromedioCurso = @PC,@PromedioPonderadoAnterior = @PPA,@PromedioPonderadoGeneral = @PPG,@CuentaBancaria = @CB, @ImgCuentaBancaria = @ICB, @ImgPromedioPonderado = @IPPA, @ImgPromedioGeneral = @IPPG, @ImgCedula = @IC, @OtraBeca = @OB, @OtraBecaHoras = @OBH, @Cedula = @Ced", conn);
+
+            command.Parameters.AddWithValue("@IdForm", form.IdForm);
+            Console.WriteLine(form.IdForm);
+            command.Parameters.AddWithValue("@Carnet", form.Carnet);
+            Console.WriteLine(form.Carnet);
+            command.Parameters.AddWithValue("@Tel", form.Tel);
+            command.Parameters.AddWithValue("@C", form.Correo);
+            command.Parameters.AddWithValue("@PC", form.PromedioCurso);
+            command.Parameters.AddWithValue("@PPA", form.PromedioPonderadoAnterior);
+            command.Parameters.AddWithValue("@PPG", form.PromedioPonderadoGen);
+            command.Parameters.AddWithValue("@CB", form.CuentaBancaria);
+            command.Parameters.AddWithValue("@ICB", form.ImgCuentaBancaria);
+            command.Parameters.AddWithValue("@IC", form.ImgCedula);
+            command.Parameters.AddWithValue("@IPPA", form.ImgPromedioPonderadoAnterior);
+            command.Parameters.AddWithValue("@IPPG", form.ImgPromedioPonderadoGeneral);
+            command.Parameters.AddWithValue("@OB", form.OtraBeca);
+            command.Parameters.AddWithValue("@OBH", form.OtraBecaHoras);
+            command.Parameters.AddWithValue("@Ced", form.Cedula);
+            Int32 r = command.ExecuteNonQuery();
+
+            conn.Close();
+            return r;
         }
 
         public List<Formulario> GetFormulariosGuardados(int estudiante)
@@ -132,7 +202,7 @@ namespace Proyecto1.Services
                 persona.PromedioPonderadoGen = Convert.ToDecimal(read["PromedioPonderadoGeneral"]);
                 persona.CuentaBancaria = Convert.ToInt32(read["CuentaBancaria"]);
                 persona.ImgCuentaBancaria = read["ImgCuentaBancaria"].ToString();
-                persona.ImgPromedioPonderadoAnterios = read["ImgPromedioPonderado"].ToString();
+                persona.ImgPromedioPonderadoAnterior = read["ImgPromedioPonderado"].ToString();
                 persona.ImgPromedioPonderadoGeneral = read["ImgPromedioGeneral"].ToString();
                 persona.ImgCedula = read["ImgCedula"].ToString();
                 persona.OtraBeca = read["OtraBeca"].ToString();
@@ -178,7 +248,7 @@ namespace Proyecto1.Services
                     persona.PromedioPonderadoGen = Convert.ToDecimal(read["PromedioPonderadoGeneral"]);
                     persona.CuentaBancaria = Convert.ToInt32(read["CuentaBancaria"]);
                     persona.ImgCuentaBancaria = read["ImgCuentaBancaria"].ToString();
-                    persona.ImgPromedioPonderadoAnterios = read["ImgPromedioPonderado"].ToString();
+                    persona.ImgPromedioPonderadoAnterior = read["ImgPromedioPonderado"].ToString();
                     persona.ImgPromedioPonderadoGeneral = read["ImgPromedioGeneral"].ToString();
                     persona.ImgCedula = read["ImgCedula"].ToString();
                     persona.OtraBeca = read["OtraBeca"].ToString();

@@ -19,7 +19,7 @@ namespace Proyecto1.Classes
         public decimal PromedioPonderadoGen { get; set; }
         public int CuentaBancaria { get; set; }
         public string ImgCuentaBancaria { get; set; }
-        public string ImgPromedioPonderadoAnterios { get; set; }
+        public string ImgPromedioPonderadoAnterior { get; set; }
         public string ImgPromedioPonderadoGeneral { get; set; }
         public string ImgCedula { get; set; }
         public string OtraBeca { get; set; }

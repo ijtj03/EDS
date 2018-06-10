@@ -7,3 +7,13 @@ C:\Users\esteb\OneDrive\Documents\BD-TEC2017-P2\Proyecto2Web\Proyecto2Web\obj\Re
 C:\Users\esteb\OneDrive\Documents\BD-TEC2017-P2\Proyecto2Web\Proyecto2Web\obj\Release\Proyecto2Web.dll
 C:\Users\esteb\OneDrive\Documents\BD-TEC2017-P2\Proyecto2Web\Proyecto2Web\obj\Release\Proyecto2Web.pdb
 C:\Users\esteb\OneDrive\Documents\BD-TEC2017-P2\Proyecto2Web\Proyecto2Web\obj\Release\Proyecto2Web.csprojResolveAssemblyReference.cache
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\bin\Proyecto2Web.dll.config
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\bin\Proyecto2Web.dll
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\bin\Proyecto2Web.pdb
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Release\Proyecto2Web.csprojAssemblyReference.cache
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Release\Proyecto2Web.csproj.CoreCompileInputs.cache
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Release\Proyecto2Web.csproj.CopyComplete
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Release\Proyecto2Web.dll
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Release\Proyecto2Web.pdb

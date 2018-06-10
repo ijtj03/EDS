@@ -15,10 +15,11 @@ namespace Proyecto1.Controllers
     {
         [HttpPost]
         [Route("GuardarForm")]
-        public void PostSucursal([FromBody] Formulario form)
+        public IHttpActionResult GuardarForm([FromBody] Formulario form)
         {
             FormularioService con = new FormularioService();
             con.GuardarForm(form);
+            return Ok();
         }
         [HttpGet]
         [Route("GetAllForms")]
@@ -33,6 +34,23 @@ namespace Proyecto1.Controllers
         {
             FormularioService con = new FormularioService();
             return Ok(con.GetFormulariosGuardados(estudiante));
+        }
+        [HttpPost]
+        [Route("ActualizarFormularioGuardado")]
+        public IHttpActionResult ActualizarFormularioGuardado([FromBody] Formulario form)
+        {
+            FormularioService con = new FormularioService();
+            
+            return Ok(con.ActualizarFormularioGuardado(form));
+        }
+
+        [HttpPost]
+        [Route("ActualizarFormularioEnviado")]
+        public IHttpActionResult ActualizarFormularioEnviado([FromBody] Formulario form)
+        {
+            FormularioService con = new FormularioService();
+
+            return Ok(con.ActualizarFormularioEnviado(form));
         }
     }
 }

@@ -271,6 +271,7 @@
     <Content Include="PaginaWeb\plugins\slick-carousel\slick\slick-theme.scss" />
     <Content Include="PaginaWeb\plugins\slick-carousel\slick\slick.less" />
     <Content Include="PaginaWeb\plugins\slick-carousel\slick\slick.scss" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Proyecto2Web - Web Deploy.pubxml" />
     <Content Include="Scripts - Web\config.json" />
     <None Include="Web.Debug.config">
