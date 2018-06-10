@@ -293,7 +293,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Solicitud](
-	[IdSolicitud] [int] NOT NULL,
+	[IdSolicitud] [int] IDENTITY(1,1) NOT NULL,
 	[IdCarnet] [varchar](11) NOT NULL,
 	[IdFormulario] [int] NOT NULL,
 	[IdEstado] [int] NOT NULL,

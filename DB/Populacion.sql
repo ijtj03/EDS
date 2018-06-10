@@ -64,3 +64,21 @@ Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015183074',3
 
 Insert into UsuarioxEstudiante (IdCarnet,IdUsuario,HorasAsignadas,HorasLaboradas,Observaciones,Recomienda)
 Values ('2015127287',2,50,0,'',0)
+
+
+insert into EstadoSolicitud (Descripcion) values ('Enviado');
+insert into EstadoSolicitud (Descripcion) values ('Cancelado');
+insert into EstadoSolicitud (Descripcion) values ('Corregir');
+insert into EstadoSolicitud (Descripcion) values ('Aceptado');
+insert into EstadoSolicitud (Descripcion) values ('Denegado');
+
+insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud) values ('2015012410' , 1 , 3 , 'Esta Solicitud se hace para el Departamento de Admision y Registro' , '9/6/2018' , 'II');
+insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud) values ('2015127287' , 2 , 1 , 'Solicitud para escuela de Matematicas' , '7/6/2018' , 'I');
+insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud) values ('2015028430' , 3 , 1 , 'Solicitud para escuela de Matematicas' , '1/6/2018' , 'I');
+
+
+
+insert into SolicitudxFormulario (IdSolicitud, IdFormulario) values (4,1);
+insert into SolicitudxFormulario (IdSolicitud, IdFormulario) values (5,2);
+insert into SolicitudxFormulario (IdSolicitud, IdFormulario) values (6,3);
+
