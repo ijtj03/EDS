@@ -15,11 +15,10 @@ namespace Proyecto1.Controllers
     {
         [HttpPost]
         [Route("GuardarForm")]
-        public IHttpActionResult GuardarForm([FromBody] Formulario form)
+        public void GuardarForm([FromBody] Formulario form)
         {
             FormularioService con = new FormularioService();
             con.GuardarForm(form);
-            return Ok();
         }
         [HttpGet]
         [Route("GetAllForms")]
