@@ -195,7 +195,7 @@ namespace Proyecto1.Services
                 persona.IdBeca = Convert.ToInt32(read["IdTipoBeca"]);
                 persona.Tel = read["Telefono"].ToString();
                 persona.Correo = read["Correo"].ToString();
-                persona.PromedioCurso = Convert.ToDecimal(read["IdTipoBeca"]);
+                persona.PromedioCurso = Convert.ToDecimal(read["PromedioCurso"]);
                 persona.PromedioPonderadoAnterior = Convert.ToDecimal(read["PromedioPonderadoAnterior"]);
                 persona.PromedioPonderadoGen = Convert.ToDecimal(read["PromedioPonderadoGeneral"]);
                 persona.CuentaBancaria = Convert.ToInt32(read["CuentaBancaria"]);
@@ -206,6 +206,28 @@ namespace Proyecto1.Services
                 persona.OtraBeca = read["OtraBeca"].ToString();
                 persona.OtraBecaHoras = Convert.ToInt32(read["OtraBecaHoras"]);
                 persona.Cedula = read["Cedula"].ToString();
+                switch (persona.IdBeca)
+                {
+                    case 1:
+                        persona.TipoBeca = "Horas Estudiante";
+                        break;
+                    case 2:
+                        persona.TipoBeca = "Horas Asistente";
+                        break;
+                    case 3:
+                        persona.TipoBeca = "Tutoria Estudiantil";
+                        break;
+                    case 4:
+                        persona.TipoBeca = "Asistencia Especial";
+                        break;
+                    default:
+                        {
+                            persona.TipoBeca="NA";
+                            break;
+                        }
+
+                }
+
 
                 ListForms.Add(persona);
 
@@ -262,5 +284,37 @@ namespace Proyecto1.Services
             conn.Close();
             return ListForms;
         }
+        public void EnviarForm(int IdFormulario, int IdCarnet, string Periodo)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter formulario = new SqlParameter("@IF", System.Data.SqlDbType.Int);
+            formulario.Value = IdFormulario;
+
+            SqlParameter carnet = new SqlParameter("@IC", System.Data.SqlDbType.Int);
+            carnet.Value = IdCarnet;
+
+            SqlParameter periodo = new SqlParameter("@P", System.Data.SqlDbType.VarChar);
+            periodo.Value = Periodo;
+
+            command = new SqlCommand("EXEC EnviarFormulario @IdFormulario=@IF , @IdCarnet = @IC , @Periodo = @P ", conn);
+            command.Parameters.Add(formulario);
+            command.Parameters.Add(carnet);
+            command.Parameters.Add(periodo);
+
+            command.ExecuteNonQuery();
+
+
+            conn.Close();
+        }
+
     }
 }

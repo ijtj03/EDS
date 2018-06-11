@@ -191,6 +191,7 @@
     <Content Include="PaginaWeb\verSolicitudesEst.html" />
     <Content Include="PaginaWeb\xml\configText.xml" />
     <Content Include="Scripts - Web\controller.js" />
+    <Content Include="Scripts - Web\solGuarEst.js" />
     <Content Include="Scripts - Web\homeEst.js" />
     <Content Include="Scripts - Web\logEst.js" />
     <Content Include="Scripts\version.json" />

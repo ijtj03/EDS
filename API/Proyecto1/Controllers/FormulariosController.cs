@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Http.Cors;
 
 namespace Proyecto1.Controllers
 {
@@ -42,6 +42,14 @@ namespace Proyecto1.Controllers
             FormularioService con = new FormularioService();
             
             return Ok(con.ActualizarFormularioGuardado(form));
+        }
+        [HttpGet]
+        [Route("EnviarForm")]
+        public IHttpActionResult EnviarForm(int IdFormulario, int IdCarnet, string Periodo)
+        {
+            FormularioService con = new FormularioService();
+            con.EnviarForm(IdFormulario, IdCarnet, Periodo);
+            return Ok();
         }
 
         [HttpPost]

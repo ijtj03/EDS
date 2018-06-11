@@ -130,3 +130,6 @@ D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\API\Proyecto1\obj\Debu
 D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\API\Proyecto1\obj\Debug\Proyecto1.csproj.CopyComplete
 D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\API\Proyecto1\obj\Debug\Proyecto1.dll
 D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\API\Proyecto1\obj\Debug\Proyecto1.pdb
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\API\Proyecto1\bin\System.Web.Cors.dll
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\API\Proyecto1\bin\System.Web.Http.Cors.dll
+D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\API\Proyecto1\bin\System.Web.Http.Cors.xml

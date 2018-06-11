@@ -25,5 +25,6 @@ namespace Proyecto1.Classes
         public string OtraBeca { get; set; }
         public int OtraBecaHoras { get; set; }
         public string Cedula { get; set; }
+        public string TipoBeca { get; set; }
     }
 }
