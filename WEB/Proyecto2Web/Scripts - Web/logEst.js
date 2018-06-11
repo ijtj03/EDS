@@ -22,7 +22,14 @@ mA.controller('LogEstCtrl', function ($scope, $http) {
             "email": $scope.email
         };
         if ($scope.carnet != null && $scope.email != null) {
-            $http.post(ip , body)
+            $http({
+                url: ip,
+                dataType: "json",
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
                 .then(function successCallback(response) {
                     alert("Su clave ha sido enviada al correo");
                     console.log(response.data.Message);

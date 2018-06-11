@@ -35,44 +35,46 @@ mA.controller('DoFormCtrl', function($scope, $http) {
                }; reader2.readAsDataURL(imgCuenta);
 
                var imgCed = document.getElementById('imgCed').files[0];
-
                var reader3 = new FileReader();
                reader3.onloadend = function () {
-                   $scope.iCed = reader.result;
+                   $scope.iCed = reader3.result;
                }; reader3.readAsDataURL(imgCed);
                $scope.carga = 1;
                alert("Se cargaron las imagenes seleccionadas");
            }
            $scope.form = function () {
                if ($scope.carga == 1) {
-                   form = {
-                       "Carnet": window.localStorage.getItem("idCarnet"),
-                       "IdCurso": $scope.idCurso,
-                       "IdDep": $scope.idDep,
-                       "IdBeca": 2,
-                       "Tel": $scope.tel,
-                       "Correo": $scope.email,
-                       "PromedioCurso": $scope.pc,
-                       "PromedioPonderadoAnterior": $scope.ppa,
-                       "PromedioPonderadoGen": $scope.ppg,
-                       "CuentaBancaria": $scope.cuentaBanc,
-                       "ImgCuentaBancaria": $scope.iCuenta,
-                       "ImgPromedioPonderadoAnterior": $scope.iPPA,
-                       "ImgPromedioPonderadoGeneral": $scope.iPPG,
-                       "ImgCedula": $scope.iCed,
-                       "OtraBeca": $scope.ob,
-                       "OtraBecaHoras": $scope.obh,
-                       "Cedula": $scope.ced
-                   };
-                   console.log(form);
                    if ($scope.sub == 1) {
                        const url3 = $scope.config.MyApi + "api/Formularios/GuardarForm";
-                       $http.post(url3, form)
+                       var consulta = {
+                           Carnet: window.localStorage.getItem("idCarnet"),
+                           IdCurso: $scope.idCurso,
+                           IdForm: 0,
+                           IdDep: $scope.idDep,
+                           IdBeca: 2,
+                           Tel: $scope.tel,
+                           Correo: $scope.email,
+                           PromedioCurso: $scope.pc,
+                           PromedioPonderadoAnterior: $scope.ppa,
+                           PromedioPonderadoGen: $scope.ppg,
+                           CuentaBancaria: $scope.cuentaBanc,
+                           ImgCuentaBancaria: $scope.iCuenta,
+                           ImgPromedioPonderadoAnterior: $scope.iPPA,
+                           ImgPromedioPonderadoGeneral: $scope.iPPG,
+                           ImgCedula: $scope.iCed,
+                           OtraBeca: $scope.ob,
+                           OtraBecaHoras: $scope.obh,
+                           Cedula: $scope.ced,
+                           TipoBeca: "HA"
+                       };
+                       $http.post(url3, consulta)
                            .then(function successCallback(response) {
                                alert("Guardado con exito");
+                               console.log(consulta);
                                const loc = $scope.config.WebIp + "/PaginaWeb/homeEst.html";
                                window.location = loc
                            }, function errorCallback(response) {
+                               console.log(consulta);
                                alert("Ha ocurrido un error, intentelo mas tarde");
                            });
                    }

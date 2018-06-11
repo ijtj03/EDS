@@ -98,6 +98,7 @@ namespace Proyecto1.Services
             command.Parameters.Add(PromedioPonderadoGenenral);
             command.Parameters.Add(Telefono);
             command.Parameters.Add(Carnet);
+
             command.ExecuteNonQuery();
 
             conn.Close();
