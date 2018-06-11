@@ -36,12 +36,43 @@ namespace Proyecto1.Controllers
             SolicitudService con = new SolicitudService();
             return Ok(con.GetSolicitudesRevision(TipoBeca));
         }
-        /* [HttpGet]
-         [Route("GetFormulariosGuardados")]
-         public IHttpActionResult GetFormulariosGuardados(int estudiante)
-         {
-             FormularioService con = new FormularioService();
-             return Ok(con.GetFormulariosGuardados(estudiante));
-         }*/
+        
+
+        [HttpGet]
+        [Route("GetAllCancelaciones")]
+        public IHttpActionResult GetAllCancelaciones(int Estado)
+        {
+            SolicitudService con = new SolicitudService();
+            return Ok(con.GetAllCancelaciones(Estado));
+        }
+
+        [HttpGet]
+        [Route("GetAllAprobadasRechazadas")]
+        public IHttpActionResult GetAllAprobadasRechazadas(int Estado)
+        {
+            SolicitudService con = new SolicitudService();
+            return Ok(con.GetAllAprobadasRechazadas(Estado));
+        }
+
+        [HttpPost]
+        [Route("CancelarSolicitudEstudiante")]
+        public IHttpActionResult CancelarSolicitudEstudiante(int IdSolicitud)
+        {
+            SolicitudService con = new SolicitudService();
+
+            con.CancelarSolicitudEstudiante(IdSolicitud);
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("CancelarSolicitudUsuario")]
+        public IHttpActionResult CancelarSolicitudUsuario(int IdSolicitud)
+        {
+            SolicitudService con = new SolicitudService();
+
+            con.CancelarSolicitudUsuario(IdSolicitud);
+            return Ok();
+        }
+
     }
 }

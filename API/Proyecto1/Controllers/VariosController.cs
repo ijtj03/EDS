@@ -9,15 +9,22 @@ using System.Web.Http;
 
 namespace Proyecto1.Controllers
 {
-    [RoutePrefix("api/Departamentos")]
-    public class DepartamentoController : ApiController
+    [RoutePrefix("api/Varios")]
+    public class VariosController : ApiController
     {
         [HttpGet]
         [Route("GetAllDeps")]
         public IHttpActionResult GetAllDeps()
         {
-            DepartamentoService con = new DepartamentoService();
+            VariosService con = new VariosService();
             return Ok(con.GetAllDeps());
+        }
+        [HttpGet]
+        [Route("GetAllCursos")]
+        public IHttpActionResult GetAllCursos()
+        {
+            VariosService con = new VariosService();
+            return Ok(con.GetAllCursos());
         }
     }
 }
