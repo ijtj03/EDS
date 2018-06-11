@@ -190,6 +190,7 @@
     <Content Include="PaginaWeb\solTEAdm.html" />
     <Content Include="PaginaWeb\verSolicitudesEst.html" />
     <Content Include="PaginaWeb\xml\configText.xml" />
+    <Content Include="Scripts - Web\doForm.js" />
     <Content Include="Scripts - Web\controller.js" />
     <Content Include="Scripts - Web\solGuarEst.js" />
     <Content Include="Scripts - Web\homeEst.js" />
