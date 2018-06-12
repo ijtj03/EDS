@@ -45,7 +45,8 @@ mA.controller('DoFormCtrl', function($scope, $http) {
            $scope.form = function () {
                if ($scope.carga == 1) {
                    if ($scope.sub == 1) {
-                       const url3 = $scope.config.MyApi + "api/Formularios/GuardarForm";
+                       //const url3 = $scope.config.MyApi + "api/Formularios/GuardarForm";
+                       const url3 = "http://localhost:64698/api/Formularios/GuardarForm";
                        var consulta = {
                            Carnet: window.localStorage.getItem("idCarnet"),
                            IdCurso: $scope.idCurso,
