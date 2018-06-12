@@ -3,7 +3,7 @@ values ('2015012410' , 'esteban_hv.09@hotmail.com','Esteban', 'Jose','Herrera', 
 insert into estudiantes (carne, correo_electronico,  primer_nombre, segundo_nombre, primer_apellido , segundo_apellido) 
 values ('2015127287' , 'ijtj03@gmail.com' , 'Isaac' , 'Jose' , 'Trejos' , 'Jara');
 insert into estudiantes (carne, correo_electronico,  primer_nombre, primer_apellido , segundo_apellido)  
-values ('2015183074', 'and-h@hotmail.com' , 'André','Herrera', 'Chacón' );
+values ('2015183074', 'and-h@hotmail.com' , 'Andre','Herrera', 'Chacon' );
 INSERT estudiantes (carne, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico) 
 VALUES ('2015028430', 'David', 'Eduardo', 'Gomez', 'Vargas', 'daedgomez@gmail.com');
 
@@ -30,9 +30,9 @@ INSERT roles_por_usuario (usuario, rol) VALUES (1, 2);
 Insert into ESTADO(Id,Estado)VALUES(0,'Fallido');
 Insert into ESTADO(Id,Estado)VALUES(1,'Enviado');
 
-Insert into Curso(IdCurso,Codigo)VALUES(1,'CE0001')
-Insert into Curso(IdCurso,Codigo)VALUES(2,'CE0002')
-Insert into Curso(IdCurso,Codigo)VALUES(3,'CE0003')
+Insert into Curso(Codigo)VALUES('CE0001')
+Insert into Curso(Codigo)VALUES('CE0002')
+Insert into Curso(Codigo)VALUES('CE0003')
 
 Insert into Departamento(Nombre,Descripcion)VALUES('Computacion','Computacion')
 Insert into Departamento(Nombre,Descripcion)VALUES('Materiales','Materiales')
@@ -62,23 +62,19 @@ Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015012410',1
 Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015127287',2)
 Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015183074',3)
 
-Insert into UsuarioxEstudiante (IdCarnet,IdUsuario,HorasAsignadas,HorasLaboradas,Observaciones,Recomienda)
-Values ('2015127287',2,50,0,'',0)
-
-
 insert into EstadoSolicitud (Descripcion) values ('Enviado');
 insert into EstadoSolicitud (Descripcion) values ('Cancelado');
 insert into EstadoSolicitud (Descripcion) values ('Corregir');
 insert into EstadoSolicitud (Descripcion) values ('Aceptado');
 insert into EstadoSolicitud (Descripcion) values ('Denegado');
+insert into EstadoSolicitud (Descripcion) values ('Cancelar');
+insert into EstadoSolicitud (Descripcion) values ('Cumple con los requisitos')
+insert into EstadoSolicitud (Descripcion) values ('No cumple con los requisitos')
 
-insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud) values ('2015012410' , 1 , 3 , 'Esta Solicitud se hace para el Departamento de Admision y Registro' , '9/6/2018' , 'II');
-insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud) values ('2015127287' , 2 , 1 , 'Solicitud para escuela de Matematicas' , '7/6/2018' , 'I');
-insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud) values ('2015028430' , 3 , 1 , 'Solicitud para escuela de Matematicas' , '1/6/2018' , 'I');
+insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud,HorasSolicitadas) values ('2015012410' , 1 , 1 ,NULL, '9/6/2018' , 'II',50);
+insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud,HorasSolicitadas) values ('2015127287' , 2 , 1 ,NULL , '7/6/2018' , 'I',50);
+insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSolicitud ,PeriodoSolicitud,HorasSolicitadas) values ('2015028430' , 3 , 1 ,NULL , '1/6/2018' , 'I',50);
 
-
-
-insert into SolicitudxFormulario (IdSolicitud, IdFormulario) values (4,1);
-insert into SolicitudxFormulario (IdSolicitud, IdFormulario) values (5,2);
-insert into SolicitudxFormulario (IdSolicitud, IdFormulario) values (6,3);
-
+insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsignadas,HorasLaboradas) values (2,1,NULL,NULL,50,NULL)
+insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsignadas,HorasLaboradas) values (2,2,NULL,NULL,50,NULL)
+insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsignadas,HorasLaboradas) values (2,3,NULL,NULL,50,NULL)
