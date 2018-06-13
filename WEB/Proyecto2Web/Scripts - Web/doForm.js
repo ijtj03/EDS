@@ -1,6 +1,18 @@
 var mA = angular.module('DoForm', []);
 
-mA.controller('DoFormCtrl', function($scope, $http) {
+mA.controller('DoFormCtrl', function ($scope, $http) {
+    $scope.boton = function () {
+        if ($scope.s) {
+            document.getElementById("studentHours").disabled = true;
+            document.getElementById("scholarshipId").disabled = true;
+            document.getElementById("department").disabled = true;
+            
+        } else {
+            document.getElementById("studentHours").disabled = false;
+            document.getElementById("scholarshipId").disabled = false;
+            document.getElementById("department").disabled = false;
+        }
+    }
     $http.get('../Scripts - Web/config.json')
        .then(function(res){
            $scope.config = res.data;
@@ -15,7 +27,8 @@ mA.controller('DoFormCtrl', function($scope, $http) {
                .then(function (res) {
                    $scope.cursos = res.data;
                });
-           $scope.cImg = function () {
+           $scope.cImg = function (id) {
+               $scope.IdBeca = id;
                var imgPPA = document.getElementById('imgPPA').files[0];
                var reader = new FileReader();
                reader.onloadend = function () {
@@ -52,7 +65,7 @@ mA.controller('DoFormCtrl', function($scope, $http) {
                            IdCurso: $scope.idCurso,
                            IdForm: 0,
                            IdDep: $scope.idDep,
-                           IdBeca: 2,
+                           IdBeca: $scope.IdBeca,
                            Tel: $scope.tel,
                            Correo: $scope.email,
                            PromedioCurso: $scope.pc,
