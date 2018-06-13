@@ -21,7 +21,6 @@
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
 
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -85,7 +84,7 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <form ng-submit="form()">
+                    <form ng-submit="prueba()">
                         <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
                             <div class="widget personal-info">
                                 <h3 class="widget-header user">1. Datos del Estudiante</h3>
@@ -174,7 +173,7 @@
                                         <div class="form-group">
                                             <label for="courseId">Código del Curso a Asistir</label><br />
                                             <center>
-                                                <select ng-model="idCurso" class="form-control" requ>
+                                                <select ng-model="idCurso" class="form-control" required>
                                                     <option ng-repeat="x in cursos" value={{x.IdDep}}>{{x.Nombre}}</option>
                                                 </select>
                                             </center>
@@ -256,7 +255,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-12">
                                     <center>
-                                        <button type="button" class="btn btn-transparent" ng-click="cImg()">Cargar Imagenes</button>
+                                        <button type="button" class="btn btn-transparent" ng-click="cImg(2)">Cargar Imagenes</button>
                                     </center>
                                 </div>
                                 <h3 class="widget-header user"></h3>
@@ -292,7 +291,7 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
                                         <label class="switch ">
-                                            <input type="checkbox" id="scholarshipAnswer">
+                                            <input ng-click="boton()" ng-model="s" type="checkbox" id="scholarshipAnswer">
                                             <span class="slider round"></span>
                                         </label>
                                     </div>
@@ -311,7 +310,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <label for="schoolName">Nombre de Escuela, Área Académica o Departamento</label> <br /> 
-                                            <select ng-model="idDep"  class="nice-select" required>
+                                            <select id="department" ng-model="idDep"  class="nice-select" required>
                                                 <option ng-repeat="x in deps" value={{x.IdDep}}>{{x.Nombre}}</option>
                                             </select>
                                         </div>

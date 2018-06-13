@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="DoForm">
     <head>
         <!-- SITE TITTLE -->
         <meta charset="utf-8">
@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Horas Estudiante</title>
         <!-- PLUGINS CSS STYLE -->
-        <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -21,8 +20,7 @@
         <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
         <!-- CUSTOM CSS -->
         <link href="css/style.css" rel="stylesheet">
-        <!-- FAVICON -->
-        <link href="img/favicon.png" rel="shortcut icon">
+        
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -30,7 +28,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="body-wrapper">
+    <body class="body-wrapper" ng-controller="DoFormCtrl">
         <section>
             <div class="container">
                 <div class="row">
@@ -86,63 +84,39 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <form name="heForm">
+                    <form name="heForm" ng-submit="form()">
                         <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
                             <div class="widget personal-info">
                                 <h3 class="widget-header user">1. Datos del Estudiante</h3>
                                 <div class="row">        
-                                    <div class="col-sm-12 col-md-4">
+                                    <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <label for="studentId">Cédula</label>
-                                            <input type="number"  min="0"  class="form-control" id="studentId" required >
+                                            <input ng-model="ced" type="number" min="0" max="999999999" class="form-control" id="studentId" required>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-4">
-                                        <div class="form-group">
-                                            <label for="studentUid">Carné</label>
-                                            <input type="number" min="0" class="form-control" id="studentUid" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4">
+                                    <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <label for="studentPhone">Teléfono</label>
-                                            <input type="tel" class="form-control" id="studentPhone" required>
+                                            <input ng-model="tel" type="tel" class="form-control" id="studentPhone" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
-                                        <div class="form-group">
-                                            <label for="studentLastname">Primer Apellido</label>
-                                            <input type="text" maxlength="10" class="form-control" id="studentLastname" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4">
-                                        <div class="form-group"> 
-                                            <label for="studentSecondname">Segundo Apellido</label>
-                                            <input type="text" maxlength="10" class="form-control" id="studentSecondname" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4">
-                                        <div class="form-group">
-                                            <label for="studentName">Nombre</label>
-                                            <input type="text" maxlength="10" class="form-control" id="studentName" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <label for="studentEmail">Correo Electrónico (GMAIL)</label>
-                                            <input type="email" class="form-control" id="studentEmail" required>
+                                            <input ng-model="email" type="email" class="form-control" id="studentEmail" required>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-5">
+                                    <div class="col-sm-12 col-md-4">
                                         <div class="form-group">
                                             <label for="studentLastGrade">Promedio Ponderado del Semestre Anterior</label>
-                                            <input type="number" min="0" max="100" class="form-control" id="studentLastGrade" required>
+                                            <input ng-model="ppa" type="number" min="0" max="100" step="any" class="form-control" id="studentLastGrade" required>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-7">
+                                    <div class="col-sm-12 col-md-4">
                                         <div class="form-group">
                                             <label for="studentNote">Promedio Ponderado General</label>
-                                            <input type="number" min="0" max="100" class="form-control" id="studentGrade" required>
+                                            <input ng-model="ppg" type="number" min="0" max="100" step="any" class="form-control" id="studentGrade" required>
                                         </div>
                                     </div>
                                 </div>
@@ -213,7 +187,7 @@
                             </div>
                             <h3 class="widget-header user"></h3>
                             <p>Para el análisis de la solicitud, se requiere que presente los siguientes screenshots:</p>
-                            <div class="row">        
+                                <div class="row">
                                     <div class="col-sm-12 col-md-4">
                                         <label for="lastGradeFile">1.  Promedio Ponderado del semestre anterior.</label>
                                     </div>
@@ -232,16 +206,32 @@
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label for="bankAccountFile">
-                                            3.  Número cuenta bancaria a nombre del estudiante 
+                                            3.  Número cuenta bancaria a nombre del estudiante
                                             (sin información del saldo en la cuenta). El screenshot debe incluir el
                                             nombre del estudiante.
                                         </label>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group choose-file">
-                                            <input type="file" class="form-control-file d-inline" id="bankAccountFile">
+                                            <input ng-model="cuentaBanc" type="file" class="form-control-file d-inline" id="bankAccountFile">
                                         </div>
                                     </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <label for="bankAccountFile">
+                                            4.  Cedula
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group choose-file">
+                                            <input type="file" class="form-control-file d-inline" id="imgCed" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12">
+                                    <center>
+                                        <button type="button" class="btn btn-transparent" ng-click="cImg(1)">Cargar Imagenes</button>
+                                    </center>
+                                </div>
                             </div>
                             <h3 class="widget-header user"></h3>
                             <p>
@@ -276,28 +266,30 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
                                         <label class="switch " >   
-                                            <input type="checkbox" id="scholarshipAnswer">
+                                            <input ng-click="boton()" ng-model="s" type="checkbox" id="scholarshipAnswer">
                                             <span class="slider round"></span>
                                         </label>
                                     </div> 
                                     <div class="col-sm-12 col-md-4">
                                         <div class="form-group">
                                             <label for="student-hours">Cantidad de Horas</label>
-                                            <input type="number" min="0" max="150" class="form-control" id="studentHours" required>
+                                            <input ng-model="obh" type="number" min="0" max="150" class="form-control" id="studentHours" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-8">
                                         <div class="form-group">
                                             <label for="scholarshipId">Tipo de Beca(Código)</label>
-                                            <input type="text" minlength="2" maxlength="2" class="form-control" id="scholarshipId" required>
+                                            <input ng-model="ob" type="text" minlength="2" maxlength="2" class="form-control" id="scholarshipId" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="schoolName">Nombre de Escuela, Área Académica o Departamento</label>
-                                            <input type="text" maxlength="30" class="form-control" id="schoolName" required>
+                                            <label for="schoolName">Nombre de Escuela, Área Académica o Departamento</label> <br />
+                                            <select id="department" ng-model="idDep" class="nice-select" required>
+                                                <option ng-repeat="x in deps" value={{x.IdDep}}>{{x.Nombre}}</option>
+                                            </select>
                                         </div>
-                                    </div>             
+                                    </div>    
                                 </div>
                             </div>
                         </div>
@@ -342,8 +334,8 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12">
                                         <center>
-                                            <button type="submit" class="btn btn-transparent">Guardar</button>
-                                            <button type="submit" class="btn btn-transparent">Enviar</button>
+                                            <button type="submit" class="btn btn-transparent" ng-click="sub=1">Guardar</button>
+                                            <button type="submit" class="btn btn-transparent" ng-click="sub=0">Enviar</button>
                                         </center>
                                     </div>         
                                 </div>
@@ -374,18 +366,11 @@
                 </div>
             </div>
         </footer>
-        <script src="plugins/jquery/jquery.min.js"></script>
-        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-        <script src="plugins/tether/js/tether.min.js"></script>
-        <script src="plugins/raty/jquery.raty-fa.js"></script>
+        <!-- JAVASCRIPTS -->
+        <script src="../Scripts/angular.min.js"></script>
         <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
-        <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-        <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-        <script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-        <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-        <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../Scripts - Web/doForm.js"></script>
     </body>
 
