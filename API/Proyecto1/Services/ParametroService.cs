@@ -9,6 +9,50 @@ namespace Proyecto1.Services
 {
     public class ParametroService
     {
+        public Parametro GetLast()
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+            SqlCommand command2;
+            SqlDataReader read;
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+            command = new SqlCommand("SELECT MAX(IdParametro) FROM Parametro where [Delete]=0", conn);
+            int r = -1;
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                r = Convert.ToInt32(reader[0]);
+            }
+            reader.Close();
+            command2 = new SqlCommand("SELECT * FROM Parametro WHERE IdParametro="+r.ToString(), conn);
+            read = command2.ExecuteReader();
+            List<Parametro> ListForms = new List<Parametro>();
+            Parametro persona = new Parametro();
+            while (read.Read())
+            {
+                persona.IdParametro = Convert.ToInt32(read["IdParametro"]);
+                persona.HorasBecaTutoria = Convert.ToInt32(read["HorasBecaTutoria"]);
+                persona.HorasBecaTotales = Convert.ToInt32(read["HorasBecaTotales"]);
+                persona.HorasBecaEstudiante= Convert.ToInt32(read["HorasBecaEstudiante"]);
+                persona.HorasBecaAsis= Convert.ToInt32(read["HorasBecaAsis"]);
+                persona.HorasBecaAsEsp = Convert.ToInt32(read["HorasBecaAsEsp"]);
+                persona.FechaAjuste = Convert.ToString(read["HorasBecaAsEsp"]);
+                persona.FechaFinalCal = read["FechaFinalCal"].ToString();
+                persona.FechaFinalSol = Convert.ToString(read["FechaFinalSol"]);
+                persona.FechaInicialCal = read["FechaInicialCal"].ToString();
+                persona.FechaInicialSol = Convert.ToString(read["FechaInicialSol"]);
+
+            }
+            read.Close();
+            return persona; 
+
+        }
+
         public int GuardarParametros(Parametro param)
         {
             System.Data.SqlClient.SqlConnection conn;

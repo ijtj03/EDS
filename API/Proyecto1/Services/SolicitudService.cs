@@ -62,7 +62,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<RevisionSolicitud> ListRS = new List<RevisionSolicitud>();
 
-            command = new SqlCommand("select * from Solicitud inner join SolicitudxFormulario on Solicitud.IdSolicitud = SolicitudxFormulario.IdSolicitud inner join Formulario on SolicitudxFormulario.IdFormulario = Formulario.IdFormulario inner join EstudiantexFormulario on EstudiantexFormulario.IdFormulario = Formulario.IdFormulario inner join estudiantes on estudiantes.carne = EstudiantexFormulario.IdCarnet where Solicitud.[Delete] = 0 and Formulario.IdTipoBeca =" + TipoBeca.ToString(), conn);
+            command = new SqlCommand("select * from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado = ES.IdEstado inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on EF.IdCarnet = E.carne inner join Formulario as F on EF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and  TB.IdTipoBeca =" + TipoBeca.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
@@ -169,7 +169,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Requisitos> ListSolicitud = new List<Requisitos>();
 
-            command = new SqlCommand("select S.IdCarnet , TB.Nombre, E.primer_nombre, E.segundo_nombre , E.primer_apellido, E.segundo_apellido from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet inner join SolicitudxFormulario as SF on SF.IdSolicitud = S.IdSolicitud inner join Formulario as F on SF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and S.IdEstado = " + Estado.ToString(), conn);
+            command = new SqlCommand("select S.IdCarnet , S.Observacion, TB.Nombre, E.primer_nombre, E.segundo_nombre , E.primer_apellido, E.segundo_apellido from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado = ES.IdEstado inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on EF.IdCarnet = E.carne inner join Formulario as F on EF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and  S.IdEstado =" + Estado.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {

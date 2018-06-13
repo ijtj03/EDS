@@ -13,6 +13,15 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
             $http.get(url)
                 .then(function (res) {
                     $scope.forms = res.data;
+                    const uGL = $scope.config.MyApi + "api/Parametros/GetLast";
+                    $http.get(uGL)
+                        .then(function (res) {
+                            $scope.param = res.data;
+                            var dia = $scope.param.FechaFinalSol.substring(0, 2);
+                            var mes = $scope.param.FechaFinalSol.substring(3, 5);
+                            var anho = $scope.param.FechaFinalSol.substring(6, 10);
+                            console.log("FechaParam", dia, mes,anho);
+                        });
                 });
         });
     $scope.eliminarForm = function (idForm) {

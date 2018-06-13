@@ -29,5 +29,13 @@ namespace Proyecto1.Controllers
 
             return Ok(con.GuardarParametros(param));
         }
+        [HttpGet]
+        [Route("GetLast")]
+        public IHttpActionResult GetLast()
+        {
+            ParametroService con = new ParametroService();
+
+            return Ok(con.GetLast());
+        }
     }
 }

@@ -1,7 +1,7 @@
 {
   "Contacto": "Laura Cortes",
   "Telefono": "(506) 2222 7722",
-  "ApiIp": "192.168.100.22",
+  "ApiIp": "localhost",
   "MyApi": "http://localhost:64698/",
   "WebIp": "http://localhost:61087"
 }
