@@ -190,5 +190,96 @@ namespace Proyecto1.Services
 
             return listReports;
         }
+
+        public List<Reporte> ObtenerReporteProfesor(string cedula)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+            SqlDataReader read;
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter identificacion = new SqlParameter("@A", System.Data.SqlDbType.Int);
+            identificacion.Value = cedula;
+
+
+     
+            List<Reporte> listReports = new List<Reporte>();
+            command = new SqlCommand("EXEC ObtenerEvaluacionProfesor @Cedula = @C", conn);
+            command.Parameters.Add(identificacion);
+
+           
+
+            read = command.ExecuteReader();
+            while (read.Read())
+            {
+
+                Reporte reporte = new Reporte();
+                reporte.PrimerNombre = read["primer_nombre"].ToString();
+                reporte.PrimerNombre = read["segundo_nombre"].ToString();
+                reporte.PrimerApellido = read["primer_apellido"].ToString();
+                reporte.PrimerApellido = read["segundo_apellido"].ToString();
+                reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
+                reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
+                reporte.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
+                reporte.Observaciones =  read["Observaciones"].ToString();
+
+                listReports.Add(reporte);
+
+            }
+            read.Close();
+            conn.Close();
+
+            return listReports;
+        }
+
+        public List<Reporte> ObtenerReporteEstudiante(string carne)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+            SqlDataReader read;
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter Carne = new SqlParameter("@C", System.Data.SqlDbType.Int);
+            Carne.Value = carne;
+
+
+          
+            List<Reporte> listReports = new List<Reporte>();
+            command = new SqlCommand("EXEC ObtenerEvaluacionEstudiante @Carnet = @C", conn);
+            command.Parameters.Add(carne);
+
+          
+
+            read = command.ExecuteReader();
+            while (read.Read())
+            {
+
+                Reporte reporte = new Reporte();
+                reporte.PrimerNombre = read["primer_nombre"].ToString();
+                reporte.PrimerNombre = read["segundo_nombre"].ToString();
+                reporte.PrimerApellido = read["primer_apellido"].ToString();
+                reporte.PrimerApellido = read["segundo_apellido"].ToString();
+                reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
+                reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
+                reporte.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
+
+                listReports.Add(reporte);
+
+            }
+            read.Close();
+            conn.Close();
+
+            return listReports;
+        }
     }
 }
