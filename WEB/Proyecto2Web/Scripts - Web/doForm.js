@@ -71,8 +71,7 @@ mA.controller('DoFormCtrl', function ($scope, $http) {
            $scope.form = function () {
                if ($scope.carga == 1) {
                    if ($scope.sub == 1) {
-                       //const url3 = $scope.config.MyApi + "api/Formularios/GuardarForm";
-                       const url3 = "http://localhost:64698/api/Formularios/GuardarForm";
+                       const url3 = $scope.config.MyApi + "api/Formularios/GuardarForm";
                        if ($scope.s) {
                            var consulta = {
                                Carnet: window.localStorage.getItem("idCarnet"),
@@ -131,7 +130,81 @@ mA.controller('DoFormCtrl', function ($scope, $http) {
                            });
                    }
                    else {
-                       alert("enviado con exito");
+                       const uGL = $scope.config.MyApi + "api/Parametros/GetLast";
+                       var date = new Date();
+                       var day = date.getDay();
+                       var month = date.getMonth() + 1;
+                       var year = date.getFullYear();
+                       $http.get(uGL)
+                           .then(function (res) {
+                               $scope.param = res.data;
+                               var dia = parseInt($scope.param.FechaFinalSol.substring(0, 2));
+                               var mes = parseInt($scope.param.FechaFinalSol.substring(3, 5));
+                               var anho = parseInt($scope.param.FechaFinalSol.substring(6, 10));
+                               if (year < anho || (year == anho && month < mes) || (year == anho && month == mes && day < dia)) {
+                                   const url3 = $scope.config.MyApi + "api/Formularios/GuardarEnviarForm";
+                                   if ($scope.s) {
+                                       var consulta = {
+                                           Carnet: window.localStorage.getItem("idCarnet"),
+                                           IdCurso: $scope.idCurso,
+                                           IdForm: 0,
+                                           IdDep: $scope.idDep,
+                                           IdBeca: $scope.IdBeca,
+                                           Tel: $scope.tel,
+                                           Correo: $scope.email,
+                                           PromedioCurso: $scope.pc,
+                                           PromedioPonderadoAnterior: $scope.ppa,
+                                           PromedioPonderadoGen: $scope.ppg,
+                                           CuentaBancaria: $scope.cuentaBanc,
+                                           ImgCuentaBancaria: $scope.iCuenta,
+                                           ImgPromedioPonderadoAnterior: $scope.iPPA,
+                                           ImgPromedioPonderadoGeneral: $scope.iPPG,
+                                           ImgCedula: $scope.iCed,
+                                           OtraBeca: $scope.ob,
+                                           OtraBecaHoras: $scope.obh,
+                                           Cedula: $scope.ced,
+                                           TipoBeca: "HA"
+                                       };
+                                   } else {
+                                       var consulta = {
+                                           Carnet: window.localStorage.getItem("idCarnet"),
+                                           IdCurso: $scope.idCurso,
+                                           IdForm: 0,
+                                           IdDep: 1,
+                                           IdBeca: $scope.IdBeca,
+                                           Tel: $scope.tel,
+                                           Correo: $scope.email,
+                                           PromedioCurso: $scope.pc,
+                                           PromedioPonderadoAnterior: $scope.ppa,
+                                           PromedioPonderadoGen: $scope.ppg,
+                                           CuentaBancaria: $scope.cuentaBanc,
+                                           ImgCuentaBancaria: $scope.iCuenta,
+                                           ImgPromedioPonderadoAnterior: $scope.iPPA,
+                                           ImgPromedioPonderadoGeneral: $scope.iPPG,
+                                           ImgCedula: $scope.iCed,
+                                           OtraBeca: "",
+                                           OtraBecaHoras: -1,
+                                           Cedula: $scope.ced,
+                                           TipoBeca: "HA"
+                                       };
+                                   }
+
+                                   $http.post(url3, consulta)
+                                       .then(function successCallback(response) {
+                                           alert("Guardado con exito");
+                                           console.log(consulta);
+                                           const loc = $scope.config.WebIp + "/PaginaWeb/homeEst.html";
+                                           window.location = loc
+                                       }, function errorCallback(response) {
+                                           console.log(consulta);
+                                           alert("Ha ocurrido un error, intentelo mas tarde");
+                                       });
+
+                                   alert("Enviado y guardado con exito");
+                               } else {
+                                   alert("Ha ocurrido un error, intentelo mas tarde");
+                               }
+                           });
                    }
                } else {
                    alert("Debe de cargar las imagenes");
