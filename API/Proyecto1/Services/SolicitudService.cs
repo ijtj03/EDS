@@ -313,6 +313,33 @@ namespace Proyecto1.Services
 
         }
 
+        public void ReplicarSolicitud(int IdSolicitud)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter idsolicitud = new SqlParameter("@IS", System.Data.SqlDbType.Int);
+            idsolicitud.Value = IdSolicitud;
+
+            command = new SqlCommand("EXEC ReplicarSolicitud @IdSolicitud=@IS  ", conn);
+            command.Parameters.Add(idsolicitud);
+
+
+            command.ExecuteNonQuery();
+
+
+            conn.Close();
+
+
+        }
+
 
     }
 }
