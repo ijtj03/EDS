@@ -48,6 +48,22 @@ namespace Proyecto1.Controllers
             ReporteService con = new ReporteService();
             return Ok(con.GetReporteFinalGeneral(anno, periodo));
         }
+        [HttpGet]
+        [Route("GetHistoricoProfesor")]
+        public IHttpActionResult GetHistoricoProfesor(string cedula)
+        {
+
+            ReporteService con = new ReporteService();
+            return Ok(con.GetReporteProfesor(cedula));
+        }
+        [HttpGet]
+        [Route("GetHistoricoEstudiante")]
+        public IHttpActionResult GetHistoricoEstudiante(string carnet)
+        {
+
+            ReporteService con = new ReporteService();
+            return Ok(con.GetReporteEstudiante(carnet));
+        }
     }
     }
 
