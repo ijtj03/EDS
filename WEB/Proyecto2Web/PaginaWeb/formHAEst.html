@@ -84,7 +84,7 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <form ng-submit="prueba()">
+                    <form ng-submit="form()">
                         <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
                             <div class="widget personal-info">
                                 <h3 class="widget-header user">1. Datos del Estudiante</h3>
@@ -163,13 +163,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="col-sm-12 col-md-4">
-                                        <div class="form-group">
-                                            <label for="professorName">Nombre de Profesor</label>
-                                            <input ng-model="profe" type="text" maxlength="30" class="form-control" id="professorName" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4">
+                                    <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <label for="courseId">Código del Curso a Asistir</label><br />
                                             <center>
@@ -179,7 +173,7 @@
                                             </center>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-4">
+                                    <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <label for="courseGrade">Nota Obtenida en el Curso</label>
                                             <input ng-model="pc" type="number" min="0" max="100" step="any" class="form-control" id="courseGrade" required>

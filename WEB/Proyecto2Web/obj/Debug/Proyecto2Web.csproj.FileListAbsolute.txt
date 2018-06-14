@@ -36,3 +36,12 @@ D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\D
 D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Debug\Proyecto2Web.csproj.CopyComplete
 D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Debug\Proyecto2Web.dll
 D:\Documentos\TEC\Especificacion y Diseno de Software\EDS\WEB\Proyecto2Web\obj\Debug\Proyecto2Web.pdb
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\bin\Proyecto2Web.dll.config
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\bin\Proyecto2Web.dll
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\bin\Proyecto2Web.pdb
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\obj\Debug\Proyecto2Web.csprojResolveAssemblyReference.cache
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\obj\Debug\Proyecto2Web.csproj.CoreCompileInputs.cache
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\obj\Debug\Proyecto2Web.dll
+C:\Users\esteb\Documents\HBProyecto\EDS\WEB\Proyecto2Web\obj\Debug\Proyecto2Web.pdb

@@ -15,6 +15,16 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
                     $scope.forms = res.data;
                 });
         });
+    $scope.eliminarForm = function (idForm) {
+        const url = $scope.config.MyApi + "api/Formularios/EliFormGuardado?idForm=" + idForm;
+        $http.post(url)
+            .then(function successCallback(response) {
+                alert("Su formulario se ha eliminado");
+                window.location = $scope.config.WebIp + "/PaginaWeb/solicitudesGuarEst.html"
+            }, function errorCallback(response) {
+                alert("Ha ocurrido un erro intentelo mas tarde");
+            });
+    }
     $scope.enviarForm = function (idForm) {
         var p;
         var date = new Date();
@@ -27,7 +37,7 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
         const url = $scope.config.MyApi + "api/Formularios/EnviarForm?IdFormulario=" + idForm + "&Periodo=" + p + "&IdCarnet=" + window.localStorage.getItem("idCarnet");
         $http.get(url)
             .then(function successCallback(response) {
-                alert("Su solicitud se ha enviado");
+                alert("Su solicitud se ha realizado correctamente");
             }, function errorCallback(response) {
                 alert("Ha ocurrido un erro intentelo mas tarde");
 

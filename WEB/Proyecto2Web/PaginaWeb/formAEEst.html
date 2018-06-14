@@ -162,28 +162,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <label for="professorName">Nombre de Profesor</label>
-                                        <input ng-model="profe" type="text" maxlength="30" class="form-control" id="professorName" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <label for="courseId">Código del Curso a Asistir</label><br />
-                                        <center>
-                                            <select ng-model="idCurso" class="form-control" requ>
-                                                <option ng-repeat="x in cursos" value={{x.IdDep}}>{{x.Nombre}}</option>
-                                            </select>
-                                        </center>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="form-group">
-                                        <label for="courseGrade">Nota Obtenida en el Curso</label>
-                                        <input ng-model="pc" type="number" min="0" max="100" step="any" class="form-control" id="courseGrade" required>
-                                    </div>
-                                </div>
+                               <!-- Se quito los espacios del curso y esas cosas-->
                             </div>
                         </div>
                     </div>
@@ -219,7 +198,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group choose-file">
-                                <input type="file" class="form-control-file d-inline" id="lastGradeFile">
+                                <input type="file" class="form-control-file d-inline" id="imgPPA">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4">
@@ -227,7 +206,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group choose-file">
-                                <input type="file" class="form-control-file d-inline" id="gradeFile">
+                                <input type="file" class="form-control-file d-inline" id="imgPPG">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4">
@@ -239,7 +218,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group choose-file">
-                                <input type="file" class="form-control-file d-inline" id="bankAccountFile">
+                                <input type="file" class="form-control-file d-inline" id="imgCuenta">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4">
@@ -255,7 +234,7 @@
                     </div>
                     <div class="col-sm-12 col-md-12">
                         <center>
-                            <button type="button" class="btn btn-transparent" ng-click="cImg(1)">Cargar Imagenes</button>
+                            <button type="button" class="btn btn-transparent" ng-click="cImg(4)">Cargar Imagenes</button>
                         </center>
                     </div>
                 </div>
@@ -292,26 +271,26 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
                         <label class="switch ">
-                            <input ng-click="boton()" ng-model="s" type="checkbox" id="scholarshipAnswer">
+                            <input ng-click="boton()" ng-model="s" type="checkbox" id="scholarshipAnswer" >
                             <span class="slider round"></span>
                         </label>
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group">
                             <label for="student-hours">Cantidad de Horas</label>
-                            <input ng-model="obh" type="number" min="0" max="150" class="form-control" id="studentHours" required>
+                            <input ng-model="obh" type="number" min="0" max="150" class="form-control" id="studentHours" disabled>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-8">
                         <div class="form-group">
                             <label for="scholarshipId">Tipo de Beca(Código)</label>
-                            <input ng-model="ob" type="text" minlength="2" maxlength="2" class="form-control" id="scholarshipId" required>
+                            <input ng-model="ob" type="text" minlength="2" maxlength="2" class="form-control" id="scholarshipId" disabled>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="schoolName">Nombre de Escuela, Área Académica o Departamento</label> <br />
-                            <select id="department" ng-model="idDep" class="nice-select" required>
+                            <select id="department" ng-model="idDep" class="nice-select" disabled>
                                 <option ng-repeat="x in deps" value={{x.IdDep}}>{{x.Nombre}}</option>
                             </select>
                         </div>

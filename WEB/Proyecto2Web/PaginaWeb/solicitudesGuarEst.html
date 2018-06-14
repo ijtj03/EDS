@@ -95,7 +95,6 @@
                                 <th class="text-center">Tipo de Beca</th>
                                 <th class="text-center">Id Formulario</th>
                                 <th class="text-center"></th>
-                                <th class="text-center">Acciones</th>
                                 <th class="text-center"></th>
                             </tr>
 
@@ -104,9 +103,6 @@
                             <tr  ng-repeat="x in forms">
                                 <td class="product-category" data-title="Carné"><span class="categories">{{x.TipoBeca}}</span></td>
                                 <td class="product-category" data-title="Carné"><span class="categories">{{x.IdForm}}</span></td>
-                                <td class="action" data-title="Accion">
-                                    <button class="btn-transparent"><i class="fa fa-pencil"></i> Editar</button>
-                                </td>
                                 <td class="action" data-title="Accion">
                                     <button class="btn-transparent"  ng-click="eliminarForm(x.IdForm)"><i class="fa fa-trash"></i> Eliminar</button>
                                 </td>

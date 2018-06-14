@@ -20,6 +20,13 @@ namespace Proyecto1.Controllers
             FormularioService con = new FormularioService();
             con.GuardarForm(form);
         }
+        [HttpPost]
+        [Route("EliFormGuardado")]
+        public void GuardarEliFormGuardad0Form(int idForm)
+        {
+            FormularioService con = new FormularioService();
+            con.GuardarEliFormGuardad0Form( idForm);
+        }
         [HttpGet]
         [Route("GetAllForms")]
         public IHttpActionResult GetAllForms()

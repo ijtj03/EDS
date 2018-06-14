@@ -84,7 +84,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <form name="teForm">
+                <form name="teForm" ng-submit="form()">
                     <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
                         <div class="widget personal-info">
                             <h3 class="widget-header user">1. Datos del Estudiante</h3>
@@ -180,13 +180,7 @@
                                         </center>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="form-group">
-                                        <label for="courseName">Nombre del Curso</label>
-                                        <input ng-model="nc" type="text" maxlength="30" class="form-control" id="courseName" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4">
+                                <div class="col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <label for="courseGrade">Nota Obtenida en el Curso</label>
                                         <input ng-model="pc" type="number" min="0" max="100" class="form-control" id="courseGrade" required>
@@ -226,7 +220,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group choose-file">
-                                        <input type="file" class="form-control-file d-inline" id="lastGradeFile">
+                                        <input type="file" class="form-control-file d-inline" id="imgPPA">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-4">
@@ -234,7 +228,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group choose-file">
-                                        <input type="file" class="form-control-file d-inline" id="gradeFile">
+                                        <input type="file" class="form-control-file d-inline" id="imgPPG">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-4">
@@ -246,7 +240,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group choose-file">
-                                        <input type="file" class="form-control-file d-inline" id="bankAccountFile">
+                                        <input type="file" class="form-control-file d-inline" id="imgCuenta">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-4">
@@ -262,7 +256,7 @@
                             </div>
                             <div class="col-sm-12 col-md-12">
                                 <center>
-                                    <button type="button" class="btn btn-transparent" ng-click="cImg(1)">Cargar Imagenes</button>
+                                    <button type="button" class="btn btn-transparent" ng-click="cImg(3)">Cargar Imagenes</button>
                                 </center>
                             </div>
                         </div>
@@ -306,13 +300,13 @@
                         <div class="col-sm-12 col-md-4">
                             <div class="form-group">
                                 <label for="student-hours">Cantidad de Horas</label>
-                                <input type="number" min="0" max="150" class="form-control" id="studentHours" required>
+                                <input ng-model="obh" type="number" min="0" max="150" class="form-control" id="studentHours" required>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-8">
                             <div class="form-group">
                                 <label for="scholarshipId">Tipo de Beca(Código)</label>
-                                <input type="text" minlength="2" maxlength="2" class="form-control" id="scholarshipId" required>
+                                <input ng-model="ob" type="text" minlength="2" maxlength="2" class="form-control" id="scholarshipId" required>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-12">
@@ -367,8 +361,8 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
                             <center>
-                                <button type="submit" class="btn btn-transparent">Guardar</button>
-                                <button type="submit" class="btn btn-transparent">Enviar</button>
+                                <button type="submit" class="btn btn-transparent" ng-click="sub=1">Guardar</button>
+                                <button type="submit" class="btn btn-transparent" ng-click="sub=0">Enviar</button>
                             </center>
                         </div>
                     </div>

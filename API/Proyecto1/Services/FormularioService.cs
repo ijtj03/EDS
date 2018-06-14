@@ -11,6 +11,21 @@ namespace Proyecto1.Services
 {
     public class FormularioService
     {
+        public void GuardarEliFormGuardad0Form(int idForm)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+            command = new SqlCommand("update EstudiantexFormulario set [Delete]=1 where IdFormulario=" + idForm.ToString(), conn);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
         public void GuardarForm([FromBody] Formulario form)
         {
             System.Data.SqlClient.SqlConnection conn;

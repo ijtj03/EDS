@@ -30,10 +30,12 @@ INSERT roles_por_usuario (usuario, rol) VALUES (1, 2);
 Insert into ESTADO(Id,Estado)VALUES(0,'Fallido');
 Insert into ESTADO(Id,Estado)VALUES(1,'Enviado');
 
+Insert into Curso(Codigo)VALUES('--NA--')
 Insert into Curso(Codigo)VALUES('CE0001')
 Insert into Curso(Codigo)VALUES('CE0002')
 Insert into Curso(Codigo)VALUES('CE0003')
 
+Insert into Departamento(Nombre,Descripcion)VALUES('Ninguna','Ninguna');
 Insert into Departamento(Nombre,Descripcion)VALUES('Computacion','Computacion')
 Insert into Departamento(Nombre,Descripcion)VALUES('Materiales','Materiales')
 Insert into Departamento(Nombre,Descripcion)VALUES('Electronica','Electronica')
