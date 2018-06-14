@@ -13,15 +13,6 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
             $http.get(url)
                 .then(function (res) {
                     $scope.forms = res.data;
-                    const uGL = $scope.config.MyApi + "api/Parametros/GetLast";
-                    $http.get(uGL)
-                        .then(function (res) {
-                            $scope.param = res.data;
-                            var dia = $scope.param.FechaFinalSol.substring(0, 2);
-                            var mes = $scope.param.FechaFinalSol.substring(3, 5);
-                            var anho = $scope.param.FechaFinalSol.substring(6, 10);
-                            console.log("FechaParam", dia, mes,anho);
-                        });
                 });
         });
     $scope.eliminarForm = function (idForm) {
@@ -36,22 +27,38 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
     }
     $scope.enviarForm = function (idForm) {
         var p;
+        const uGL = $scope.config.MyApi + "api/Parametros/GetLast";
         var date = new Date();
-        var month = date.getMonth();
+        var day = date.getDay();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
         if (month > 6) {
             p = "II";
         } else {
             p = "I";
         }
-        const url = $scope.config.MyApi + "api/Formularios/EnviarForm?IdFormulario=" + idForm + "&Periodo=" + p + "&IdCarnet=" + window.localStorage.getItem("idCarnet");
-        $http.get(url)
-            .then(function successCallback(response) {
-                alert("Su solicitud se ha realizado correctamente");
-            }, function errorCallback(response) {
-                alert("Ha ocurrido un erro intentelo mas tarde");
+        $http.get(uGL)
+            .then(function (res) {
+                $scope.param = res.data;
+                var dia = parseInt($scope.param.FechaFinalSol.substring(0, 2));
+                var mes = parseInt($scope.param.FechaFinalSol.substring(3, 5));
+                var anho = parseInt($scope.param.FechaFinalSol.substring(6, 10));
+                if (year < anho || (year == anho && month < mes) || (year == anho && month == mes && day < dia)) {
+                    const url = $scope.config.MyApi + "api/Formularios/EnviarForm?IdFormulario=" + idForm + "&Periodo=" + p + "&IdCarnet=" + window.localStorage.getItem("idCarnet");
+                    $http.get(url)
+                        .then(function successCallback(response) {
+                            alert("Su solicitud se ha realizado correctamente");
+                        }, function errorCallback(response) {
+                            alert("Ha ocurrido un erro intentelo mas tarde");
 
-                console.log(ip);
-                console.log(body);
+                            console.log(ip);
+                            console.log(body);
+                        });
+                } else {
+                    alert("Esta fuera de fecha, envielo despues")
+                    console.log(year, month, day);
+                    console.log(anho, mes, dia);
+                }
             });
     }
 });
