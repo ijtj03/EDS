@@ -244,5 +244,43 @@ namespace Proyecto1.Services
 
 
         }
+
+        public List<Solicitud> GetAllSolicitudesEstudiante(string Estudiante)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+            SqlDataReader read;
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+            List<Solicitud> ListSolicitud = new List<Solicitud>();
+
+            command = new SqlCommand("select S.IdCarnet,S.IdSolicitud, TB.IdTipoBeca, TB.Nombre, S.IdEstado from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on E.carne = EF.IdCarnet inner join Formulario as F on EF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and S.IdCarnet = '" + Estudiante.ToString() + "'", conn);
+            read = command.ExecuteReader();
+            while (read.Read())
+            {
+                Solicitud sol = new Solicitud();
+                sol.IdCarnet = read["IdCarnet"].ToString();
+                sol.IdSolicitud = Convert.ToInt32( read["IdSolicitud"]);
+                sol.IdTipoBeca = Convert.ToInt32(read["IdTipoBeca"]);
+                sol.NombreBeca = read["Nombre"].ToString();
+                sol.IdEstado = Convert.ToInt32(read["IdEstado"]);
+
+                ListSolicitud.Add(sol);
+
+            }
+            read.Close();
+
+
+            conn.Close();
+            return ListSolicitud;
+
+
+        }
+
+
     }
 }

@@ -54,6 +54,15 @@ namespace Proyecto1.Controllers
             return Ok(con.GetAllAprobadasRechazadas(Estado));
         }
 
+        
+        [HttpGet]
+        [Route("GetAllSolicitudesEstudiante")]
+        public IHttpActionResult GetAllSolicitudesEstudiante(string Estudiante)
+        {
+            SolicitudService con = new SolicitudService();
+            return Ok(con.GetAllSolicitudesEstudiante(Estudiante));
+        }
+
         [HttpPost]
         [Route("CancelarSolicitudEstudiante")]
         public IHttpActionResult CancelarSolicitudEstudiante(int IdSolicitud)

@@ -14,6 +14,9 @@ namespace Proyecto1.Classes
         public string Observacion { get; set; }
         public string FechaSolicitud { get; set; }
         public string PeriodoSolicitud { get; set; }
+        public int IdTipoBeca { get; set; }
+        public string NombreBeca { get; set; }
+
 
     }
 }
