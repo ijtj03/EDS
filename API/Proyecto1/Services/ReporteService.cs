@@ -191,7 +191,7 @@ namespace Proyecto1.Services
             return listReports;
         }
 
-        public List<Reporte> ObtenerReporteProfesor(string cedula)
+        public List<Reporte> GetReporteProfesor(string cedula)
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;
@@ -237,7 +237,7 @@ namespace Proyecto1.Services
             return listReports;
         }
 
-        public List<Reporte> ObtenerReporteEstudiante(string carne)
+        public List<Reporte> GetReporteEstudiante(string carne)
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;

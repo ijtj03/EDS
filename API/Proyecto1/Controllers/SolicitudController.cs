@@ -13,13 +13,6 @@ namespace Proyecto1.Controllers
     [RoutePrefix("api/Solicitud")]
     public class SolicitudController : ApiController
     {
-       /* [HttpPost]
-        [Route("GuardarForm")]
-        public void PostSucursal([FromBody] Formulario form)
-        {
-            FormularioService con = new FormularioService();
-            con.GuardarForm(form);
-        }*/
         [HttpGet]
         [Route("GetAllSolicitudes")]
         public IHttpActionResult GetAllSolicitudes()
@@ -93,6 +86,14 @@ namespace Proyecto1.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [Route("ReplicarSolicitud")]
+        public IHttpActionResult ReplicarSolicitud(int IdSolicitud)
+        {
+            SolicitudService con = new SolicitudService();
+            con.ReplicarSolicitud(IdSolicitud);
+            return Ok();
+        }
 
 
     }
