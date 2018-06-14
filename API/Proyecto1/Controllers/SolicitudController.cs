@@ -83,5 +83,17 @@ namespace Proyecto1.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [Route("AceptarSolicitudUsuario")]
+        public IHttpActionResult AceptarSolicitud(int IdSolicitud, int IdUsuario)
+        {
+            SolicitudService con = new SolicitudService();
+
+            con.AceptarSolicitud(IdSolicitud,IdUsuario);
+            return Ok();
+        }
+
+
+
     }
 }

@@ -281,6 +281,38 @@ namespace Proyecto1.Services
 
         }
 
+        public void AceptarSolicitud(int IdSolicitud,int IdUsuario)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter idsolicitud = new SqlParameter("@IS", System.Data.SqlDbType.Int);
+            idsolicitud.Value = IdSolicitud;
+
+            SqlParameter idusuario = new SqlParameter("@IU", System.Data.SqlDbType.Int);
+            idsolicitud.Value = IdSolicitud;
+
+
+            command = new SqlCommand("EXEC AceptarSolicitudUsuario @IdSolicitud=@IS, @IdUsuario = @IU ", conn);
+            command.Parameters.Add(idsolicitud);
+            command.Parameters.Add(idusuario);
+
+
+            command.ExecuteNonQuery();
+
+
+            conn.Close();
+
+
+        }
+
 
     }
 }
