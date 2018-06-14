@@ -100,19 +100,17 @@ namespace Proyecto1.Services
                 RevisionSolicitud rs = new RevisionSolicitud();
 
                 rs.carne = read["carne"].ToString();
-                //rs.Carnet = read["Carnet"].ToString();
                 rs.Cedula = read["Cedula"].ToString();
                 rs.Correo = read["Correo"].ToString();
                 rs.correo_electronico = read["correo_electronico"].ToString();
                 rs.CuentaBancaria = Convert.ToInt32(read["CuentaBancaria"]);
                 rs.FechaSolicitud = read["FechaSolicitud"].ToString();
-                //rs.IdBeca = Convert.ToInt32(read["IdBeca"]) ;
                 rs.IdCarnet = read["IdCarnet"].ToString();
+                rs.NombreBeca = read["Nombre"].ToString();
                 rs.IdCurso = Convert.ToInt32(read["IdCurso"]);
-                //rs.IdDep = Convert.ToInt32(read["IdDep"]);
+                rs.IdDep = Convert.ToInt32(read["IdDepartamento"]);
                 rs.IdEstado = Convert.ToInt32(read["IdEstado"]);
-                //rs.IdForm = Convert.ToInt32(read["IdForm"]);
-                rs.IdFormulario = Convert.ToInt32(read["IdFormulario"]);
+                rs.IdForm = Convert.ToInt32(read["IdFormulario"]);
                 rs.IdSolicitud = Convert.ToInt32(read["IdSolicitud"]);
                 rs.ImgCedula = read["ImgCedula"].ToString();
                 rs.ImgCuentaBancaria = read["ImgCuentaBancaria"].ToString();
