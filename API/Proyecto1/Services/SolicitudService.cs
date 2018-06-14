@@ -289,7 +289,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Solicitud> ListSolicitud = new List<Solicitud>();
 
-            command = new SqlCommand("sselect ES.Descripcion,S.IdCarnet,S.IdSolicitud, TB.IdTipoBeca, TB.Nombre, S.IdEstado from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on S.IdFormulario = EF.IdFormulario inner join 	Formulario as F on S.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca  inner join EstadoSolicitud as ES on ES.IdEstado = S.IdEstado where S.[Delete] = 0 and S.IdCarnet =2015127287 " + Estudiante.ToString(), conn);
+            command = new SqlCommand("select ES.Descripcion,S.IdCarnet,S.IdSolicitud, TB.IdTipoBeca, TB.Nombre, S.IdEstado from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on S.IdFormulario = EF.IdFormulario inner join 	Formulario as F on S.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca  inner join EstadoSolicitud as ES on ES.IdEstado = S.IdEstado where S.[Delete] = 0 and S.IdCarnet =" + Estudiante.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
