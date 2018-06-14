@@ -66,5 +66,16 @@ namespace Proyecto1.Controllers
 
             return Ok(con.ActualizarFormularioEnviado(form));
         }
+        [HttpPost]
+        [Route("GuardarEnviarForm")]
+        public IHttpActionResult GuardarEnviarForm([FromBody] Formulario form)
+        {
+            FormularioService con = new FormularioService();
+            con.GuardarEnviarForm(form);
+            return Ok();
+            
+        }
+
+
     }
 }
