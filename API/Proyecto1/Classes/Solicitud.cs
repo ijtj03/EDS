@@ -11,6 +11,7 @@ namespace Proyecto1.Classes
         public string IdCarnet { get; set; }
         public int IdFormulario { get; set; }
         public int IdEstado { get; set; }
+        public string Estado { get; set; }
         public string Observacion { get; set; }
         public string FechaSolicitud { get; set; }
         public string PeriodoSolicitud { get; set; }
