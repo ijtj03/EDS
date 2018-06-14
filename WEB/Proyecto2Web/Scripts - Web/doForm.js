@@ -1,16 +1,19 @@
 var mA = angular.module('DoForm', []);
 
 mA.controller('DoFormCtrl', function ($scope, $http) {
+    var date = new Date();
+
+    console.log(date.getDate());
     $scope.boton = function () {
         if ($scope.s) {
-            document.getElementById("studentHours").disabled = true;
-            document.getElementById("scholarshipId").disabled = true;
-            document.getElementById("department").disabled = true;
-            
-        } else {
             document.getElementById("studentHours").disabled = false;
             document.getElementById("scholarshipId").disabled = false;
             document.getElementById("department").disabled = false;
+            
+        } else {
+            document.getElementById("studentHours").disabled = true;
+            document.getElementById("scholarshipId").disabled = true;
+            document.getElementById("department").disabled = true;
         }
     }
     $http.get('../Scripts - Web/config.json')
@@ -53,6 +56,7 @@ mA.controller('DoFormCtrl', function ($scope, $http) {
                    $scope.iCed = reader3.result;
                }; reader3.readAsDataURL(imgCed);
                $scope.carga = 1;
+               
                alert("Se cargaron las imagenes seleccionadas");
            }
            $scope.form = function () {
