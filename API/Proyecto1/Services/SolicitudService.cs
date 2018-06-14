@@ -11,8 +11,39 @@ namespace Proyecto1.Services
 {
     public class SolicitudService
     {
-        
-        
+
+        public void AceptarSolicitud(int IdSolicitud, int IdUsuario)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter idsolicitud = new SqlParameter("@IS", System.Data.SqlDbType.Int);
+            idsolicitud.Value = IdSolicitud;
+
+            SqlParameter idusuario = new SqlParameter("@IU", System.Data.SqlDbType.Int);
+            idsolicitud.Value = IdSolicitud;
+
+
+            command = new SqlCommand("EXEC AceptarSolicitudUsuario @IdSolicitud=@IS, @IdUsuario = @IU ", conn);
+            command.Parameters.Add(idsolicitud);
+            command.Parameters.Add(idusuario);
+
+
+            command.ExecuteNonQuery();
+
+
+            conn.Close();
+
+
+        }
+
         public List<Solicitud> GetAllSolicitudes()
         {
             System.Data.SqlClient.SqlConnection conn;
@@ -258,12 +289,13 @@ namespace Proyecto1.Services
             conn.Open();
             List<Solicitud> ListSolicitud = new List<Solicitud>();
 
-            command = new SqlCommand("select S.IdCarnet,S.IdSolicitud, TB.IdTipoBeca, TB.Nombre, S.IdEstado from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on E.carne = EF.IdCarnet inner join Formulario as F on EF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and S.IdCarnet = '" + Estudiante.ToString() + "'", conn);
+            command = new SqlCommand("select ES.Descripcion,S.IdCarnet,S.IdSolicitud, TB.IdTipoBeca, TB.Nombre, S.IdEstado from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on S.IdFormulario = EF.IdFormulario inner join 	Formulario as F on S.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca  inner join EstadoSolicitud as ES on ES.IdEstado = S.IdEstado where S.[Delete] = 0 and S.IdCarnet =" + Estudiante.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
                 Solicitud sol = new Solicitud();
                 sol.IdCarnet = read["IdCarnet"].ToString();
+                sol.Estado = read["Descripcion"].ToString();
                 sol.IdSolicitud = Convert.ToInt32( read["IdSolicitud"]);
                 sol.IdTipoBeca = Convert.ToInt32(read["IdTipoBeca"]);
                 sol.NombreBeca = read["Nombre"].ToString();
@@ -277,38 +309,6 @@ namespace Proyecto1.Services
 
             conn.Close();
             return ListSolicitud;
-
-
-        }
-
-        public void AceptarSolicitud(int IdSolicitud,int IdUsuario)
-        {
-            System.Data.SqlClient.SqlConnection conn;
-            SqlCommand command;
-
-            var conString = System.Configuration.
-                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
-            string strConnString = conString.ConnectionString;
-
-            conn = new SqlConnection(strConnString);
-            conn.Open();
-
-            SqlParameter idsolicitud = new SqlParameter("@IS", System.Data.SqlDbType.Int);
-            idsolicitud.Value = IdSolicitud;
-
-            SqlParameter idusuario = new SqlParameter("@IU", System.Data.SqlDbType.Int);
-            idsolicitud.Value = IdSolicitud;
-
-
-            command = new SqlCommand("EXEC AceptarSolicitudUsuario @IdSolicitud=@IS, @IdUsuario = @IU ", conn);
-            command.Parameters.Add(idsolicitud);
-            command.Parameters.Add(idusuario);
-
-
-            command.ExecuteNonQuery();
-
-
-            conn.Close();
 
 
         }

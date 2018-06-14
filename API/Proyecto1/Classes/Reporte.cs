@@ -16,6 +16,7 @@ namespace Proyecto1.Classes
         public string TipoBeca { get; set; }
         public int HorasAsignadas { get; set; }
         public int HorasLaboradas { get; set; }
-        public string Observaciones { get; set; }
+        public string Observaciones { get;  set; }
+
     }
 }
