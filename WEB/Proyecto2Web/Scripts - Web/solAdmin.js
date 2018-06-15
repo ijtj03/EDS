@@ -50,31 +50,86 @@ myApp.controller('solAdminCtrl', function ($scope, $http) {
 
             $scope.cumple = function (IdSolicitud) {
                 console.log(IdSolicitud);
-                window.localStorage.setItem("IdUsuario", 2015012410);
+                window.localStorage.setItem("IdUsuario", 1);
                 //window.localStorage.getItem("IdUsuario");
                 const url2 = url1 + "api/Solicitud/AceptarSolicitudUsuario?IdSolicitud=" + IdSolicitud + "&IdUsuario=" + window.localStorage.getItem("IdUsuario");
                 
-               /* $http.post(url2)
-                    .then(function successCallback(response) {
-                        alert("Se acepto el cumplimiento de requisitos");
-                        console.log(consulta);
-                        $scope.textbox = null;
-                        window.location.href = '#close';
+               $http.post(url2)
+                   .then(function successCallback(response) {
+                       
+                       alert("Se acepto el cumplimiento de requisitos");
+                       if ($scope.r == 1) {
+                           const loc = $scope.config.WebIp + "/PaginaWeb/SolHEAdm.html";
+                           window.location = loc;
+                           console.log(response.data);
+                           $scope.textbox = null;
+                       } else if ($scope.r == 2) {
+                           const loc = $scope.config.WebIp + "/PaginaWeb/SolHAAdm.html";
+                           window.location = loc;
+                           console.log(response.data);
+                           $scope.textbox = null;
+                       } else if ($scope.r == 3) {
+                           const loc = $scope.config.WebIp + "/PaginaWeb/SolTEAdm.html";
+                           window.location = loc;
+                           console.log(response.data);
+                           $scope.textbox = null;
+                       } else if ($scope.r == 4) {
+                           const loc = $scope.config.WebIp + "/PaginaWeb/SolAEAdm.html";
+                           window.location = loc;
+                           console.log(response.data);
+                           $scope.textbox = null;
+                       }
+                       
                     }, function errorCallback(response) {
                         console.log(consulta);
                         $scope.textbox = null;
                         alert("Ha ocurrido un error, intentelo mas tarde");
-                    });*/
+                    });
    
             }
 
-            $scope.nocumple = function (x ) {
+            $scope.nocumple = function (x, IdSolicitud) {
 
                 console.log(x);
 
-                if (x != null){
-                    window.location.href = '#close';
-                    $scope.textbox = null;
+                const url3 = url1 + "api/Solicitud/EstadoNoCumple";
+                if (x != null) {
+                    var consulta =
+                        {
+                            "IdSolicitud": IdSolicitud,
+                            "Descripcion": x
+                        };
+                    $http.post(url3, consulta)
+                        .then(function successCallback(response) {
+                            
+                            alert("Se realizo correctamente la solicitud");
+                            if ($scope.r == 1) {
+                                const loc = $scope.config.WebIp + "/PaginaWeb/SolHEAdm.html";
+                                window.location = loc;
+                                console.log(response.data);
+                                $scope.textbox = null;
+                            } else if ($scope.r == 2){
+                                const loc = $scope.config.WebIp + "/PaginaWeb/SolHAAdm.html";
+                                window.location = loc;
+                                console.log(response.data);
+                                $scope.textbox = null;
+                            } else if ($scope.r == 3){
+                                const loc = $scope.config.WebIp + "/PaginaWeb/SolTEAdm.html";
+                                window.location = loc;
+                                console.log(response.data);
+                                $scope.textbox = null;
+                            } else if ($scope.r == 4){
+                                const loc = $scope.config.WebIp + "/PaginaWeb/SolAEAdm.html";
+                                window.location = loc;
+                                console.log(response.data);
+                                $scope.textbox = null;
+                            }
+                            
+                        }, function errorCallback(response) {
+                            console.log(consulta);
+                            alert("Ha ocurrido un error, intentelo mas tarde");
+                        });
+                    
                 } else {
                     alert("No se ha llenado la descripcion");
                 }

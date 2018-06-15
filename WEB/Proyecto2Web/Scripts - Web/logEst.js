@@ -10,12 +10,22 @@ mA.controller('LogEstCtrl', function ($scope, $http) {
             $scope.config = res.data;
         });
     $scope.doLogin = function () {
-        const ip = "http://" + $scope.config.ApiIp;
+        const ip = "http://" + $scope.config.ApiIp +"ce/StudentAuth/Authenticate";
         const loc = $scope.config.WebIp + "/PaginaWeb/homeEst.html";
-        window.localStorage.setItem("idCarnet", $scope.carnet);
-        window.location = loc;
+        body = {
+            "carne": $scope.carnet,
+            "email": $scope.email,
+            "token": $scope.token
+        };
+        $http.post(ip, body)
+            .then(function successCallback(response) {
+                window.localStorage.setItem("idCarnet", $scope.carnet);
+                window.location = loc;
+            }, function errorCallback(response) {
+                alert("Los datos ingresados no coinsiden");
+            });
     }
-    $scope.doToken = function () {
+    $scope.doToken = function () {//
         const ip = "http://" + $scope.config.ApiIp + "/APILogin/ce/StudentAuth/Token/";
         body = {
             "carne": $scope.carnet,

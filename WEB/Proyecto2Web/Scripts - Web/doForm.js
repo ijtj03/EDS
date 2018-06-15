@@ -138,11 +138,19 @@ mA.controller('DoFormCtrl', function ($scope, $http) {
                        $http.get(uGL)
                            .then(function (res) {
                                $scope.param = res.data;
-                               var dia = parseInt($scope.param.FechaFinalSol.substring(0, 2));
-                               var mes = parseInt($scope.param.FechaFinalSol.substring(3, 5));
-                               var anho = parseInt($scope.param.FechaFinalSol.substring(6, 10));
+                               $scope.param = res.data;
+                               var pos1 = $scope.param.FechaFinalSol.indexOf("/");
+                               var pos2 = $scope.param.FechaFinalSol.lastIndexOf("/");
+                               var dia = parseInt($scope.param.FechaFinalSol.substring(0, pos1));
+                               var mes = parseInt($scope.param.FechaFinalSol.substring(pos1 + 1, pos2));
+                               var anho = parseInt($scope.param.FechaFinalSol.substring(pos2 + 1, pos2 + 5));
                                if (year < anho || (year == anho && month < mes) || (year == anho && month == mes && day < dia)) {
                                    const url3 = $scope.config.MyApi + "api/Formularios/GuardarEnviarForm";
+                                   if (month > 6) {
+                                       var p = "II";
+                                   } else {
+                                       var p = "I";
+                                   }
                                    if ($scope.s) {
                                        var consulta = {
                                            Carnet: window.localStorage.getItem("idCarnet"),
@@ -163,7 +171,8 @@ mA.controller('DoFormCtrl', function ($scope, $http) {
                                            OtraBeca: $scope.ob,
                                            OtraBecaHoras: $scope.obh,
                                            Cedula: $scope.ced,
-                                           TipoBeca: "HA"
+                                           TipoBeca: "HA",
+                                           Periodo: p
                                        };
                                    } else {
                                        var consulta = {
@@ -185,24 +194,22 @@ mA.controller('DoFormCtrl', function ($scope, $http) {
                                            OtraBeca: "",
                                            OtraBecaHoras: -1,
                                            Cedula: $scope.ced,
-                                           TipoBeca: "HA"
+                                           TipoBeca: "HA",
+                                           Periodo: p
                                        };
                                    }
 
                                    $http.post(url3, consulta)
                                        .then(function successCallback(response) {
-                                           alert("Guardado con exito");
-                                           console.log(consulta);
+                                           alert("Enviado y guardado con exito");
                                            const loc = $scope.config.WebIp + "/PaginaWeb/homeEst.html";
                                            window.location = loc
                                        }, function errorCallback(response) {
                                            console.log(consulta);
                                            alert("Ha ocurrido un error, intentelo mas tarde");
                                        });
-
-                                   alert("Enviado y guardado con exito");
                                } else {
-                                   alert("Ha ocurrido un error, intentelo mas tarde");
+                                   alert("Esta fuera de fecha, por favor compruebe las fechas para el envio de formularios");
                                }
                            });
                    }

@@ -93,7 +93,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<RevisionSolicitud> ListRS = new List<RevisionSolicitud>();
 
-            command = new SqlCommand("select * , D.Nombre as NombreDepartamento  from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado = ES.IdEstado inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on EF.IdCarnet = E.carne inner join Formulario as F on EF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca inner join Curso as C on C.IdCurso = F.IdCurso inner join Departamento as D on D.IdDepartamento = F.IdDepartamento where S.[Delete] = 0 and ES.IdEstado = 1 and TB.IdTipoBeca =" + TipoBeca.ToString(), conn);
+            command = new SqlCommand("select * , D.Nombre as NombreDepartamento  from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado = ES.IdEstado inner join estudiantes as E on E.carne = S.IdCarnet inner join Formulario as F on S.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca inner join Curso as C on C.IdCurso = F.IdCurso inner join Departamento as D on D.IdDepartamento = F.IdDepartamento where S.[Delete] = 0 and ES.IdEstado = 1 and TB.IdTipoBeca =" + TipoBeca.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
@@ -156,7 +156,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Cancelacion> ListSolicitud = new List<Cancelacion>();
 
-            command = new SqlCommand("select S.IdCarnet , S.Observacion, TB.Nombre, E.primer_nombre, E.segundo_nombre , E.primer_apellido, E.segundo_apellido from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet inner join SolicitudxFormulario as SF on SF.IdSolicitud = S.IdSolicitud inner join Formulario as F on SF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and S.IdEstado = "+ Estado.ToString(), conn);
+            command = new SqlCommand("select S.IdCarnet , S.Observacion, TB.Nombre, E.primer_nombre, E.segundo_nombre , E.primer_apellido, E.segundo_apellido from Solicitud as S inner join estudiantes as E on E.carne = S.IdCarnet  inner join Formulario as F on S.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and S.IdEstado = " + Estado.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
