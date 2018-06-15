@@ -339,7 +339,7 @@ namespace Proyecto1.Services
 
 
         }
-        public void EstadoNoCumple(int IdSolicitud)
+        public void EstadoNoCumple(Observacion observacion)
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;
@@ -352,11 +352,14 @@ namespace Proyecto1.Services
             conn.Open();
 
             SqlParameter idsolicitud = new SqlParameter("@IS", System.Data.SqlDbType.Int);
-            idsolicitud.Value = IdSolicitud;
+            idsolicitud.Value = observacion.IdSolicitud;
 
-            command = new SqlCommand("EXEC EstadoSolicitudNoCumple @IdSolicitud=@IS  ", conn);
+            SqlParameter descripcion = new SqlParameter("@O", System.Data.SqlDbType.VarChar);
+            descripcion.Value = observacion.Descripcion;
+
+            command = new SqlCommand("EXEC EstadoSolicitudNoCumple @IdSolicitud=@IS, @Observacion=O  ", conn);
             command.Parameters.Add(idsolicitud);
-
+            command.Parameters.Add(descripcion);
 
             command.ExecuteNonQuery();
 

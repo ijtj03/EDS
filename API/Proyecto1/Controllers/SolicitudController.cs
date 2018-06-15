@@ -96,10 +96,10 @@ namespace Proyecto1.Controllers
         }
         [HttpPost]
         [Route("EstadoNoCumple")]
-        public IHttpActionResult EstadoNoCumple(int IdSolicitud)
+        public IHttpActionResult EstadoNoCumple(Observacion observacion)
         {
             SolicitudService con = new SolicitudService();
-            con.EstadoNoCumple(IdSolicitud);
+            con.EstadoNoCumple(observacion);
             return Ok();
         }
 
