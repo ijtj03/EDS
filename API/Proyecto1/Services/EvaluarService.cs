@@ -46,7 +46,11 @@ namespace Proyecto1.Services
                 informacion.SegundoApellido = read["segundo_apellido"].ToString();
                 informacion.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 informacion.TipoBeca = read["Nombre"].ToString();
-                if (informacion.Observaciones=="") { informacion.Revisado = false; } else { informacion.Revisado = true; }
+                if (informacion.Observaciones=="") { informacion.Revisado = false;
+                    informacion.SegundoNombre = "No Revisado";
+                } else { informacion.Revisado = true;
+                    informacion.SegundoNombre ="Revisado";
+                }
                 listForms.Add(informacion);
 
             }
