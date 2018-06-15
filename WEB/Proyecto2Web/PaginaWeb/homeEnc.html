@@ -69,6 +69,7 @@
         <!-- Container Start -->
         <div class="container">
             <!-- Row Start -->
+            <h3>Estudiantes por revisar</h3>
             <div class="row">
                 <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
                     <div class="sidebar">
@@ -91,7 +92,6 @@
                                 <tr>
                                     <th class="text-center">Nombre</th>
                                     <th class="text-center">Tipo de Beca</th>
-                                    <th class="text-center">Revisado</th>
                                     <th class="text-center">Revisar</th>
                                 </tr>
                             </thead>
@@ -99,7 +99,6 @@
                                 <tr ng-repeat="x in evs">
                                     <td class="product-category" data-title="Nombre"><span class="categories">{{x.PrimerNombre}}{{x.PrimerApellido}}{{x.SegundoApellido}}</span></td>
                                     <td class="product-category" data-title="Tipo de Beca"><span class="categories">{{x.TipoBeca}}</span></td>
-                                    <td class="product-category" data-title="Estado"><span class="categories">{{x.SegundoNombre}}</span></td>
                                     <td class="action" data-title="Accion">
                                         <div class="">
                                             <ul class="list-inline justify-content-center">
