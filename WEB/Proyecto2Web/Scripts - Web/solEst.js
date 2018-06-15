@@ -22,7 +22,7 @@ mA.controller('SolEstCtrl', function ($scope, $http) {
             $http.post(url)
                 .then(function successCallback(response) {
                     alert("Estamos tramitando su gestion");
-                    window.location = $scope.config.WebIp + "/PaginaWeb/solicitudesGuarEst.html"
+                    window.location = $scope.config.WebIp + "/PaginaWeb/verSolicitudesEst.html"
                 }, function errorCallback(response) {
                     alert("Ha ocurrido un erro intentelo mas tarde");
                 });

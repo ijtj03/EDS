@@ -399,7 +399,7 @@ namespace Proyecto1.Services
             PromedioPonderadoGenenral.Value = form.PromedioPonderadoGen;
 
 
-            command = new SqlCommand("EXEC GuardarEnviarFormulario @IdCurso=@IdCur,@IdDepartamento=@IdDep,@IdTipoBeca=@IdBeca,@Telefono=@Tel,@Correo=@Corr,@PromedioCurso=@PC,@PromedioPonderadoAnterior=@PPA,@PromedioPonderadoGeneral=@PPG,@CuentaBancaria=@CB, @ImgCuentaBancaria=@ICB, @ImgPromedioPonderado=@IPPA, @ImgPromedioGeneral=@IPPG, @ImgCedula=@IC, @OtraBeca=@OB, @OtraBecaHoras=@OBH, @Cedula=@Ced,@Carne=@Carnet", conn);
+            command = new SqlCommand("EXEC GuardarEnviarFormulario @HorasSolicitadas=50, @IdCurso=@IdCur,@IdDepartamento=@IdDep,@IdTipoBeca=@IdBeca,@Telefono=@Tel,@Correo=@Corr,@PromedioCurso=@PC,@PromedioPonderadoAnterior=@PPA,@PromedioPonderadoGeneral=@PPG,@CuentaBancaria=@CB, @ImgCuentaBancaria=@ICB, @ImgPromedioPonderado=@IPPA, @ImgPromedioGeneral=@IPPG, @ImgCedula=@IC, @OtraBeca=@OB, @OtraBecaHoras=@OBH, @Cedula=@Ced,@Carne=@Carnet", conn);
 
             command.Parameters.Add(IdCurso);
             command.Parameters.Add(IdBeca);

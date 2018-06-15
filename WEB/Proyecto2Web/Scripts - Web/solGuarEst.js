@@ -40,6 +40,7 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
         $http.get(uGL)
             .then(function (res) {
                 $scope.param = res.data;
+                console.log($scope.param);
                 var dia = parseInt($scope.param.FechaFinalSol.substring(0, 2));
                 var mes = parseInt($scope.param.FechaFinalSol.substring(3, 5));
                 var anho = parseInt($scope.param.FechaFinalSol.substring(6, 10));
