@@ -339,7 +339,7 @@ namespace Proyecto1.Services
 
 
         }
-        public void CambiarEstadoSolicitudNoCumple(int IdSolicitud)
+        public void EstadoNoCumple(int IdSolicitud)
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;

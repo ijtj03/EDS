@@ -95,11 +95,11 @@ namespace Proyecto1.Controllers
             return Ok();
         }
         [HttpPost]
-        [Route("CambiarEstadoSolicitudNoCumple")]
-        public IHttpActionResult CambiarEstadoSolicitudNoCumple(int IdSolicitud)
+        [Route("EstadoNoCumple")]
+        public IHttpActionResult EstadoNoCumple(int IdSolicitud)
         {
             SolicitudService con = new SolicitudService();
-            con.CambiarEstadoSolicitudNoCumple(IdSolicitud);
+            con.EstadoNoCumple(IdSolicitud);
             return Ok();
         }
 
