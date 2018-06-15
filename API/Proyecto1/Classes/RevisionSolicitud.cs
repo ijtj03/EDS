@@ -19,11 +19,11 @@ namespace Proyecto1.Classes
         public string PeriodoSolicitud { get; set; }
 
         // Formulario
-        public string Carnet { get; set; }
+        
         public int IdCurso { get; set; }
         public int IdForm { get; set; }
         public int IdDep { get; set; }
-        public int IdBeca { get; set; }
+        public string NombreBeca { get; set; }
         public string Tel { get; set; }
         public string Correo { get; set; }
         public decimal PromedioCurso { get; set; }

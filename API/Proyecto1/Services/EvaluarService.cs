@@ -37,12 +37,20 @@ namespace Proyecto1.Services
             {
                
                 Evaluacion informacion = new Evaluacion();
+                informacion.Carnet = read["carne"].ToString();
+                informacion.IdEvaluacion = Convert.ToInt32(read["IdEvaluacion"]);
+                informacion.Observaciones = read["Observaciones"].ToString();
                 informacion.PrimerNombre = read["primer_nombre"].ToString();
                 informacion.SegundoNombre = read["segundo_nombre"].ToString();
                 informacion.PrimerApellido = read["primer_apellido"].ToString();
                 informacion.SegundoApellido = read["segundo_apellido"].ToString();
                 informacion.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 informacion.TipoBeca = read["Nombre"].ToString();
+                if (informacion.Observaciones=="") { informacion.Revisado = false;
+                    informacion.SegundoNombre = "No Revisado";
+                } else { informacion.Revisado = true;
+                    informacion.SegundoNombre ="Revisado";
+                }
                 listForms.Add(informacion);
 
             }
