@@ -1,3 +1,4 @@
+USE [HorasBecaDB]
 insert into estudiantes (carne, correo_electronico,  primer_nombre, segundo_nombre, primer_apellido , segundo_apellido) 
 values ('2015012410' , 'esteban_hv.09@hotmail.com','Esteban', 'Jose','Herrera', 'Vargas');
 insert into estudiantes (carne, correo_electronico,  primer_nombre, segundo_nombre, primer_apellido , segundo_apellido) 
@@ -80,3 +81,5 @@ insert into Solicitud (IdCarnet , IdFormulario, IdEstado , Observacion , FechaSo
 insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsignadas,HorasLaboradas) values (2,1,NULL,NULL,50,NULL)
 insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsignadas,HorasLaboradas) values (2,2,NULL,NULL,50,NULL)
 insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsignadas,HorasLaboradas) values (2,3,NULL,NULL,50,NULL)
+
+insert into Parametro (FechaAjuste,FechaInicialSol,FechaFinalSol,FechaInicialCal,FechaFinalCal,HorasBecaTotales,HorasBecaEstudiante,HorasBecaAsis,HorasBecaAsEsp,HorasBecaTutoria) values  ('06-06-2019','06-06-2019','06-06-2019','06-06-2019','06-06-2019',150,150,150,150,150)

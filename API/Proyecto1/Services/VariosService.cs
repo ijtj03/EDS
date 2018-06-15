@@ -23,7 +23,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Departamento> ListForms = new List<Departamento>();
 
-            command = new SqlCommand("Select * from Departamento where [Delete] = 0", conn);
+            command = new SqlCommand("Select * from Departamento where IdDepartamento!=1 and [Delete] = 0", conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
@@ -52,7 +52,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Departamento> ListForms = new List<Departamento>();
 
-            command = new SqlCommand("Select * from Curso where [Delete] = 0", conn);
+            command = new SqlCommand("Select * from Curso where IdCurso!=1 and [Delete] = 0", conn);
             read = command.ExecuteReader();
             while (read.Read())
             {

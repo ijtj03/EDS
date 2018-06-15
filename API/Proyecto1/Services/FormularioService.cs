@@ -402,7 +402,8 @@ namespace Proyecto1.Services
             Periodo.Value = form.Periodo;
 
 
-            command = new SqlCommand("EXEC GuardarEnviarFormulario @IdCurso=@IdCur,@IdDepartamento=@IdDep,@IdTipoBeca=@IdBeca,@Telefono=@Tel,@Correo=@Corr,@PromedioCurso=@PC,@PromedioPonderadoAnterior=@PPA,@PromedioPonderadoGeneral=@PPG,@CuentaBancaria=@CB, @ImgCuentaBancaria=@ICB, @ImgPromedioPonderado=@IPPA, @ImgPromedioGeneral=@IPPG, @ImgCedula=@IC, @OtraBeca=@OB, @OtraBecaHoras=@OBH, @Cedula=@Ced,@Carne=@Carnet,@Periodo=@P", conn);
+            command = new SqlCommand("EXEC GuardarEnviarFormulario @HorasSolicitadas=50, @IdCurso=@IdCur,@IdDepartamento=@IdDep,@IdTipoBeca=@IdBeca,@Telefono=@Tel,@Correo=@Corr,@PromedioCurso=@PC,@PromedioPonderadoAnterior=@PPA,@PromedioPonderadoGeneral=@PPG,@CuentaBancaria=@CB, @ImgCuentaBancaria=@ICB, @ImgPromedioPonderado=@IPPA, @ImgPromedioGeneral=@IPPG, @ImgCedula=@IC, @OtraBeca=@OB, @OtraBecaHoras=@OBH, @Cedula=@Ced,@Carne=@Carnet,@Periodo = @P", conn);
+
 
             command.Parameters.Add(IdCurso);
             command.Parameters.Add(IdBeca);
@@ -422,7 +423,7 @@ namespace Proyecto1.Services
             command.Parameters.Add(PromedioPonderadoGenenral);
             command.Parameters.Add(Telefono);
             command.Parameters.Add(Carnet);
-
+            command.Parameters.Add(Periodo);
             command.ExecuteNonQuery();
 
             conn.Close();
