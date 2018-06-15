@@ -94,7 +94,14 @@ namespace Proyecto1.Controllers
             con.ReplicarSolicitud(IdSolicitud);
             return Ok();
         }
-
+        [HttpPost]
+        [Route("CambiarEstadoSolicitudNoCumple")]
+        public IHttpActionResult CambiarEstadoSolicitudNoCumple(int IdSolicitud)
+        {
+            SolicitudService con = new SolicitudService();
+            con.CambiarEstadoSolicitudNoCumple(IdSolicitud);
+            return Ok();
+        }
 
     }
 }
