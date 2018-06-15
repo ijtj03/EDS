@@ -34,8 +34,8 @@ mA.controller('HomeEncCtrl', function ($scope, $http) {
             };
             $http.post(url9, c)
                 .then(function successCallback(response) {
-                    alert("Su clave ha sido enviada al correo");
-                    console.log(response.data.Message);
+                    alert("La revision se ha enviado con exito");
+                    window.location = loc;
                 }, function errorCallback(response) {
                     alert("Ha ocurrido un error por favor intentelo mas tarde");
                     window.location = loc;
@@ -50,7 +50,7 @@ mA.controller('HomeEncCtrl', function ($scope, $http) {
             $http.post(url9, c)
                 .then(function successCallback(response) {
                     alert("Su clave ha sido enviada al correo");
-                    console.log(response.data.Message);
+                    window.location = loc;
                 }, function errorCallback(response) {
                     alert("Ha ocurrido un error por favor intentelo mas tarde");
                     window.location = loc;
