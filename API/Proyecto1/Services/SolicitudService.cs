@@ -359,7 +359,7 @@ namespace Proyecto1.Services
             SqlParameter descripcion = new SqlParameter("@O", System.Data.SqlDbType.VarChar);
             descripcion.Value = observacion.Descripcion;
 
-            command = new SqlCommand("EXEC EstadoSolicitudNoCumple @IdSolicitud=@IS, @Observacion=O  ", conn);
+            command = new SqlCommand("EXEC EstadoSolicitudNoCumple @IdSolicitud=@IS, @Observacion=@O  ", conn);
             command.Parameters.Add(idsolicitud);
             command.Parameters.Add(descripcion);
 
@@ -370,7 +370,36 @@ namespace Proyecto1.Services
 
 
         }
-       
+        public void EstadoCumple(Observacion observacion)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter idsolicitud = new SqlParameter("@IS", System.Data.SqlDbType.Int);
+            idsolicitud.Value = observacion.IdSolicitud;
+
+            SqlParameter descripcion = new SqlParameter("@O", System.Data.SqlDbType.VarChar);
+            descripcion.Value = observacion.Descripcion;
+
+            command = new SqlCommand("EXEC EstadoSolicitudCumple @IdSolicitud=@IS, @Observacion=@O  ", conn);
+            command.Parameters.Add(idsolicitud);
+            command.Parameters.Add(descripcion);
+
+            command.ExecuteNonQuery();
+
+
+            conn.Close();
+
+
+        }
+
 
 
     }
