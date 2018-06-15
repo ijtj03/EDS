@@ -74,7 +74,7 @@ namespace Proyecto1.Services
             IdEvaluacion.Value = evaluacion.IdEvaluacion;
 
             SqlParameter Recomienda = new SqlParameter("@Reco", System.Data.SqlDbType.Int);
-            IdEvaluacion.Value = evaluacion.Recomienda;
+            Recomienda.Value = evaluacion.Recomienda;
 
             SqlParameter HorasLaboradas = new SqlParameter("@HorasLa", System.Data.SqlDbType.Int);
             HorasLaboradas.Value = evaluacion.HorasLaboradas;
@@ -82,7 +82,7 @@ namespace Proyecto1.Services
             SqlParameter Observaciones = new SqlParameter("@Obser", System.Data.SqlDbType.VarChar);
             Observaciones.Value = evaluacion.Observaciones;
 
-            command = new SqlCommand("EXEC EvaluarEstudiantes  @IdEvaluacion=@IdEva, @Recomienda=@Reco, @HorasLaboradas=@HorasLa, @Observaciones=@Obser");
+            command = new SqlCommand("EXEC EvaluarEstudiantes  @IdEvaluacion=@IdEva, @Recomienda=@Reco, @HorasLaboradas=@HorasLa, @Observaciones=@Obser", conn);
 
             command.Parameters.Add(IdEvaluacion);
             command.Parameters.Add(Recomienda);
