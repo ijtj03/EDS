@@ -37,6 +37,8 @@ namespace Proyecto1.Services
             {
                
                 Evaluacion informacion = new Evaluacion();
+                informacion.Carnet = read["carne"].ToString();
+                informacion.Observaciones = read["Observaciones"].ToString();
                 informacion.PrimerNombre = read["primer_nombre"].ToString();
                 informacion.SegundoNombre = read["segundo_nombre"].ToString();
                 informacion.PrimerApellido = read["primer_apellido"].ToString();
