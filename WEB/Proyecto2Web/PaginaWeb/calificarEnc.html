@@ -143,14 +143,37 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                    <div class="widget dashboard-container my-adslist">
+                        <h3 class="widget-header">Estudiante</h3>
+                        <table class="table table-responsive product-dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Tipo de Beca</th>
+                                    <th class="text-center">Horas Asignadas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="product-category" data-title="Nombre"><span class="categories">{{nC}}</span></td>
+                                    <td class="product-category" data-title="Tipo de Beca"><span class="categories">{{tB}}</span></td>
+                                    <td class="product-category" data-title="Estado"><span class="categories">{{hB}}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-12 offset-md-1 col-lg-12 offset-lg-0">
                     <div class="block comment">
                         <h4>Calificacion</h4>
                         <form ng-submit="cal()">
                             <!-- Message -->
                             <div class="form-group mb-30">
                                 <label for="message">Observaciones</label><br />
-                                <textarea ng-model="obs" required id="message" rows="5" cols="75"></textarea>
+                                <textarea ng-model="obs" required id="message" rows="5" cols="110"></textarea>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 col-md-10">
