@@ -94,6 +94,7 @@ namespace Proyecto1.Controllers
             con.ReplicarSolicitud(IdSolicitud);
             return Ok();
         }
+
         [HttpPost]
         [Route("EstadoNoCumple")]
         public IHttpActionResult EstadoNoCumple(Observacion observacion)
@@ -102,8 +103,9 @@ namespace Proyecto1.Controllers
             con.EstadoNoCumple(observacion);
             return Ok();
         }
+
         [HttpPost]
-        [Route("EstadoNoCumple")]
+        [Route("EstadoCumple")]
         public IHttpActionResult EstadoCumple(Observacion observacion)
         {
             SolicitudService con = new SolicitudService();
