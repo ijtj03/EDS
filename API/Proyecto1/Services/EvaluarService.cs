@@ -79,7 +79,7 @@ namespace Proyecto1.Services
             SqlParameter HorasLaboradas = new SqlParameter("@HorasLa", System.Data.SqlDbType.Int);
             HorasLaboradas.Value = evaluacion.HorasLaboradas;
 
-            SqlParameter Observaciones = new SqlParameter("@Obser", System.Data.SqlDbType.Int);
+            SqlParameter Observaciones = new SqlParameter("@Obser", System.Data.SqlDbType.VarChar);
             Observaciones.Value = evaluacion.Observaciones;
 
             command = new SqlCommand("EXEC EvaluarEstudiantes  @IdEvaluacion=@IdEva, @Recomienda=@Reco, @HorasLaboradas=@HorasLa, @Observaciones=@Obser");
