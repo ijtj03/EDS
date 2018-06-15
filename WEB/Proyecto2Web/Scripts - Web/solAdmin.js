@@ -50,9 +50,9 @@ myApp.controller('solAdminCtrl', function ($scope, $http) {
 
             $scope.cumple = function (IdSolicitud) {
                 console.log(IdSolicitud);
-                window.localStorage.setItem("IdUsuario", 1);
+                window.localStorage.setItem("IdUser", 1);
                 //window.localStorage.getItem("IdUsuario");
-                const url2 = url1 + "api/Solicitud/AceptarSolicitudUsuario?IdSolicitud=" + IdSolicitud + "&IdUsuario=" + window.localStorage.getItem("IdUsuario");
+                const url2 = url1 + "api/Solicitud/AceptarSolicitudUsuario?IdSolicitud=" + IdSolicitud + "&IdUsuario=" + window.localStorage.getItem("IdUser");
                 
                $http.post(url2)
                    .then(function successCallback(response) {

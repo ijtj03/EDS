@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="Requisitos">
 <head>
 
   <!-- SITE TITTLE -->
@@ -8,24 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Encargado</title>
   
-  <!-- PLUGINS CSS STYLE -->
-  <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Owl Carousel -->
-  <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-  <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
-  <!-- Fancy Box -->
-  <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-  <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-  <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
-  <!-- CUSTOM CSS -->
-  <link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <!-- Fancy Box -->
+    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link href="css/style.css" rel="stylesheet">
 
-  <!-- FAVICON -->
-  <link href="img/favicon.png" rel="shortcut icon">
+    <!-- JAVASCRIPTS -->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
+    <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+
+    <script src="../Scripts - Web/Requisitos.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +38,7 @@
 
 </head>
 
-<body class="body-wrapper">
+<body class="body-wrapper" ng-controller="RequisitosCtrl" ng-init="r=2">
 
 <section>
 	<div class="container">
@@ -124,11 +126,11 @@
             
           </thead>
           <tbody>
-                <tr>
-                  <td class="product-category" data-title="Carné"><span class="categories">Isaac Trejos Jara</span></td>
-                  <td class="product-category" data-title="Carné"><span class="categories">2015127287</span></td>
-                  <td class="product-category" data-title="Tipo de Beca"><span class="categories">HA</span></td>
-                </tr>
+              <tr ng-repeat="x in sol">
+                  <td class="product-category" data-title="Carné"><span class="categories">{{x.Nombre1 + " " + x.Apellido1 + " " + x.Apellido2}}</span></td>
+                  <td class="product-category" data-title="Carné"><span class="categories">{{x.IdCarnet}}</span></td>
+                  <td class="product-category" data-title="Tipo de Beca"><span class="categories">{{x.TBNombre}}</span></td>
+              </tr>
          </tbody>
 
         </table>
@@ -171,20 +173,7 @@
   <!-- Container End -->
 </footer>
 
-  <!-- JAVASCRIPTS -->
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="plugins/tether/js/tether.min.js"></script>
-  <script src="plugins/raty/jquery.raty-fa.js"></script>
-  <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
-  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-  <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-  <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-  <script src="js/scripts.js"></script>
+  
 
 </body>
 

@@ -39,7 +39,7 @@
 
 </head>
 
-<body class="body-wrapper" ng-controller="cancelarSolAdminCtrl" >
+<body class="body-wrapper" ng-controller="cancelarSolAdminCtrl">
 
     <section>
         <div class="container">
@@ -134,7 +134,7 @@
                                 <th class="text-center">Carné</th>
                                 <th class="text-center">Tipo de Beca</th>
                                 <th class="text-center">Estado</th>
-                                
+
 
 
                             </tr>
@@ -143,21 +143,20 @@
                         <tbody>
                             <tr ng-repeat="x in solicitudes">
                                 <td class="product-category" data-title="Estudiante">
-                                    <a href="#openModal1" class="open">Andre Herrera Chacon</a>
+                                    <a href="#openModal1" class="open" ng-click="modal(x)">{{x.Nombre1 + " " + x.Apellido1 + " " + x.Apellido2}}</a>
                                 </td>
                                 <td class="product-category" data-title="Carné">
-                                    <span class="categories">2015183074</span>
+                                    <span class="categories">{{x.IdCarnet}}</span>
                                 </td>
                                 <td class="product-category" data-title="Tipo de Beca">
-                                    <span class="categories">EA</span>
+                                    <span class="categories">{{x.TBNombre}}</span>
                                 </td>
                                 <td class="product-category" data-title="Switch">
                                     <div class="form-group mb-30">
-                                        <button type="button" class="btn-transparent" ng-click="">Cancelar</button>
+                                        <button type="button" class="btn-transparent" ng-click="cancelar(x)">Cancelar</button>
                                     </div>
                                 </td>
-                                
-                            </tr>    
+                            </tr>
                         </tbody>
 
                     </table>
@@ -175,8 +174,7 @@
                 <div class="widget personal-info">
                     <h3 class="widget-header user">DESCRIPCION CANCELACION</h3>
                     <p>
-                        Por motivos de salud no se podra llevar a cabo la
-                        asistencia solicitada este semestre.
+                        {{estudiante.Observacion}}
                     </p>
                 </div>
             </div>
