@@ -102,6 +102,14 @@ namespace Proyecto1.Controllers
             con.EstadoNoCumple(observacion);
             return Ok();
         }
+        [HttpPost]
+        [Route("EstadoNoCumple")]
+        public IHttpActionResult EstadoCumple(Observacion observacion)
+        {
+            SolicitudService con = new SolicitudService();
+            con.EstadoCumple(observacion);
+            return Ok();
+        }
 
     }
 }
