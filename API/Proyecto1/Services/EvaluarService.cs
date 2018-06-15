@@ -38,6 +38,7 @@ namespace Proyecto1.Services
                
                 Evaluacion informacion = new Evaluacion();
                 informacion.Carnet = read["carne"].ToString();
+                informacion.IdEvaluacion = Convert.ToInt32(read["IdEvaluacion"]);
                 informacion.Observaciones = read["Observaciones"].ToString();
                 informacion.PrimerNombre = read["primer_nombre"].ToString();
                 informacion.SegundoNombre = read["segundo_nombre"].ToString();
@@ -45,6 +46,7 @@ namespace Proyecto1.Services
                 informacion.SegundoApellido = read["segundo_apellido"].ToString();
                 informacion.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 informacion.TipoBeca = read["Nombre"].ToString();
+                if (informacion.Observaciones=="") { informacion.Revisado = false; } else { informacion.Revisado = true; }
                 listForms.Add(informacion);
 
             }
