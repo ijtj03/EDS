@@ -28,7 +28,14 @@ mA.controller('SolEstCtrl', function ($scope, $http) {
                 });
         }
     }
-    $scope.repSol = function (idForm) {
-        alert("Replica realizada con exito")
+    $scope.repSol = function (idSol) {
+        const url = $scope.config.MyApi + "api/Solicitud/ReplicarSolicitud?IdSolicitud=" + idSol;
+        $http.post(url)
+            .then(function successCallback(response) {
+                alert("Replica realizada con exito")
+                window.location = $scope.config.WebIp + "/PaginaWeb/verSolicitudesEst.html"
+            }, function errorCallback(response) {
+                alert("Ha ocurrido un erro intentelo mas tarde");
+            });
     }
 });
