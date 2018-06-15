@@ -40,10 +40,13 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
         $http.get(uGL)
             .then(function (res) {
                 $scope.param = res.data;
-                console.log($scope.param);
-                var dia = parseInt($scope.param.FechaFinalSol.substring(0, 2));
-                var mes = parseInt($scope.param.FechaFinalSol.substring(3, 5));
-                var anho = parseInt($scope.param.FechaFinalSol.substring(6, 10));
+                var pos1 = $scope.param.FechaFinalSol.indexOf("/");
+                var pos2 = $scope.param.FechaFinalSol.lastIndexOf("/");
+                var dia = parseInt($scope.param.FechaFinalSol.substring(0, pos1));
+                var mes = parseInt($scope.param.FechaFinalSol.substring(pos1+1, pos2));
+                var anho = parseInt($scope.param.FechaFinalSol.substring(pos2 + 1, pos2 + 5));
+                console.log(year, month, day);
+                console.log(anho, mes, dia);
                 if (year < anho || (year == anho && month < mes) || (year == anho && month == mes && day < dia)) {
                     const url = $scope.config.MyApi + "api/Formularios/EnviarForm?IdFormulario=" + idForm + "&Periodo=" + p + "&IdCarnet=" + window.localStorage.getItem("idCarnet");
                     $http.get(url)
@@ -57,8 +60,6 @@ mA.controller('SolGuarEstCtrl', function ($scope, $http) {
                         });
                 } else {
                     alert("Esta fuera de fecha, envielo despues")
-                    console.log(year, month, day);
-                    console.log(anho, mes, dia);
                 }
             });
     }
