@@ -17,6 +17,7 @@ namespace Proyecto1.Classes
         public string Observacion { get; set; }
         public string FechaSolicitud { get; set; }
         public string PeriodoSolicitud { get; set; }
+        public int HorasSolicitadas { get; set; }
 
         // Formulario
         
@@ -46,6 +47,12 @@ namespace Proyecto1.Classes
         public string segundo_nombre { get; set; }
         public string primer_apellido { get; set; }
         public string segundo_apellido { get; set; }
+
+        // Curso
+        public string Codigo { get; set; }
+
+        // Departamento
+        public string NombreDepartamento { get; set; }
 
     }
 }

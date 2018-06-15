@@ -28,10 +28,10 @@ namespace Proyecto1.Services
             idsolicitud.Value = IdSolicitud;
 
             SqlParameter idusuario = new SqlParameter("@IU", System.Data.SqlDbType.Int);
-            idsolicitud.Value = IdSolicitud;
+            idusuario.Value = IdSolicitud;
 
 
-            command = new SqlCommand("EXEC AceptarSolicitudUsuario @IdSolicitud=@IS, @IdUsuario = @IU ", conn);
+            command = new SqlCommand("EXEC AceptarSolicitud @IdSolicitud=@IS, @IdUsuario = @IU ", conn);
             command.Parameters.Add(idsolicitud);
             command.Parameters.Add(idusuario);
 
@@ -93,7 +93,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<RevisionSolicitud> ListRS = new List<RevisionSolicitud>();
 
-            command = new SqlCommand("select * from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado = ES.IdEstado inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on EF.IdCarnet = E.carne inner join Formulario as F on EF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca where S.[Delete] = 0 and  TB.IdTipoBeca =" + TipoBeca.ToString(), conn);
+            command = new SqlCommand("select * , D.Nombre as NombreDepartamento  from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado = ES.IdEstado inner join estudiantes as E on E.carne = S.IdCarnet inner join EstudiantexFormulario as EF on EF.IdCarnet = E.carne inner join Formulario as F on EF.IdFormulario = F.IdFormulario inner join TipoBeca as TB on TB.IdTipoBeca = F.IdTipoBeca inner join Curso as C on C.IdCurso = F.IdCurso inner join Departamento as D on D.IdDepartamento = F.IdDepartamento where S.[Delete] = 0 and ES.IdEstado = 1 and TB.IdTipoBeca =" + TipoBeca.ToString(), conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
@@ -128,7 +128,9 @@ namespace Proyecto1.Services
                 rs.segundo_apellido = read["segundo_apellido"].ToString();
                 rs.segundo_nombre = read["segundo_nombre"].ToString();
                 rs.Tel = read["Telefono"].ToString();
-
+                rs.Codigo = read["Codigo"].ToString();
+                rs.NombreDepartamento = read["NombreDepartamento"].ToString();
+                rs.HorasSolicitadas = Convert.ToInt32(read["HorasSolicitadas"]);
 
                 ListRS.Add(rs);
 
