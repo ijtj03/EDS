@@ -26,5 +26,12 @@ namespace Proyecto1.Controllers
             VariosService con = new VariosService();
             return Ok(con.GetAllCursos());
         }
+        [HttpGet]
+        [Route("GetRoles")]
+        public IHttpActionResult GetRoles()
+        {
+            VariosService con = new VariosService();
+            return Ok(con.GetRoles());
+        }
     }
 }

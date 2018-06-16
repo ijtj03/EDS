@@ -9,6 +9,6 @@ namespace Proyecto1.Classes
     {
         public int IdDep { get; set; }
         public string Nombre { get; set; }
-
+        
     }
 }

@@ -6,7 +6,7 @@ myApp.controller('RequisitosCtrl', function ($scope, $http) {
         .then(function (res) {
             $scope.config = res.data;
             const url1 = $scope.config.MyApi;
-
+            
 
             if ($scope.r == 1){
                 console.log("Estoy en Cumple Requisitos");
@@ -34,9 +34,5 @@ myApp.controller('RequisitosCtrl', function ($scope, $http) {
             }
 
         });
-
-
-
-
 
 });
