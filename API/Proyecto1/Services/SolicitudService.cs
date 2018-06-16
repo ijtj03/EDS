@@ -447,7 +447,8 @@ namespace Proyecto1.Services
             SqlCommand command;
 
             var conString = System.Configuration.
-                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+
+            ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
             string strConnString = conString.ConnectionString;
 
             conn = new SqlConnection(strConnString);

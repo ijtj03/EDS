@@ -87,6 +87,16 @@ namespace Proyecto1.Controllers
         }
 
         [HttpPost]
+        [Route("RechazarSolicitud")]
+        public IHttpActionResult RechazarSolicitud(int idSolicitud)
+        {
+            SolicitudService con = new SolicitudService();
+
+            con.RechazarSolicitud(idSolicitud);
+            return Ok();
+        }
+
+        [HttpPost]
         [Route("ReplicarSolicitud")]
         public IHttpActionResult ReplicarSolicitud(int IdSolicitud)
         {
@@ -119,6 +129,7 @@ namespace Proyecto1.Controllers
             SolicitudService con = new SolicitudService();
             return Ok(con.GetSolComision());
         }
+
 
     }
 }
