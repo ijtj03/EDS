@@ -106,7 +106,7 @@ namespace Proyecto1.Services
                 sol.App2 = read["segundo_apellido"].ToString();
                 sol.Curso = read["Codigo"].ToString();
                 sol.Nombre = read["primer_nombre"].ToString();
-                sol.id = Convert.ToInt32(read["IdSolcitud"]);
+                sol.id = Convert.ToInt32(read["IdSolicitud"]);
                 sol.PPA = Convert.ToInt32(read["PromedioPonderadoAnterior"]);
                 sol.PPC = Convert.ToInt32(read["PromedioCurso"]);
                 sol.PPG = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
