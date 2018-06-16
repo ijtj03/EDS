@@ -8,7 +8,7 @@ mA.controller('HomeEncCtrl', function ($scope, $http) {
             $scope.nC = window.localStorage.getItem("pN") + " " + window.localStorage.getItem("pA") + " " + window.localStorage.getItem("sA");
             $scope.tB = window.localStorage.getItem("tB");
             $scope.hB = window.localStorage.getItem("hB");
-            window.localStorage.setItem("IdUser", 2);//ESTO JAMAS VA AQUI<ES POR NO TENER LOGIN AUN>
+            //window.localStorage.setItem("IdUser", 2);//ESTO JAMAS VA AQUI<ES POR NO TENER LOGIN AUN>
             const ip = "http://" + $scope.config.ApiIp + "/APILogin/ce/Users/" + window.localStorage.getItem("IdUser");
             $http.get(ip)
                 .then(function (res) {

@@ -10,7 +10,7 @@ mA.controller('LogEstCtrl', function ($scope, $http) {
             $scope.config = res.data;
         });
     $scope.doLogin = function () {
-        const ip = "http://" + $scope.config.ApiIp +"ce/StudentAuth/Authenticate";
+        const ip = "http://" + $scope.config.ApiIp +"/APILogin/ce/StudentAuth/Authenticate";
         const loc = $scope.config.WebIp + "/PaginaWeb/homeEst.html";
         body = {
             "carne": $scope.carnet,
