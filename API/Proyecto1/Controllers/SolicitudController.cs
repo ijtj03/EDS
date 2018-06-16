@@ -78,11 +78,11 @@ namespace Proyecto1.Controllers
 
         [HttpPost]
         [Route("AceptarSolicitudUsuario")]
-        public IHttpActionResult AceptarSolicitud(int IdSolicitud, int IdUsuario)
+        public IHttpActionResult AceptarSolicitud(int IdSolicitud, int IdUsuario,int hAs)
         {
             SolicitudService con = new SolicitudService();
 
-            con.AceptarSolicitud(IdSolicitud,IdUsuario);
+            con.AceptarSolicitud(IdSolicitud,IdUsuario, hAs);
             return Ok();
         }
 

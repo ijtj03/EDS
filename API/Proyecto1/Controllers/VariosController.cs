@@ -27,6 +27,13 @@ namespace Proyecto1.Controllers
             return Ok(con.GetAllDeps());
         }
         [HttpGet]
+        [Route("GetAllUsers")]
+        public IHttpActionResult GetAllUsers()
+        {
+            VariosService con = new VariosService();
+            return Ok(con.GetAllUsers());
+        }
+        [HttpGet]
         [Route("GetAllCursos")]
         public IHttpActionResult GetAllCursos()
         {
