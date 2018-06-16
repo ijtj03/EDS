@@ -169,7 +169,7 @@
 
     <div id="openModal" class="modalDialog">
         <div class="modalDialog-div1">
-            <a href="#close" title="Close" class="close">X</a>
+            <a href="#close" title="Close" class="close" ng-click="borrar()">X</a>
             <section class="user-profile section">
                 <div class="container">
                     <div class="row">
@@ -287,7 +287,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn-transparent-green" ng-click="cumple(estudiante.IdSolicitud)">CUMPLE CON LOS REQUISITOS</button>
+                    <button type="button" class="btn-transparent-green" ng-click="cumple(textbox,estudiante.IdSolicitud)">CUMPLE CON LOS REQUISITOS</button>
                     <button type="button" class="btn-transparent-red" ng-click="nocumple(textbox,estudiante.IdSolicitud)">NO CUMPLE CON LOS REQUISITOS</button>
                 </div>
             </section>

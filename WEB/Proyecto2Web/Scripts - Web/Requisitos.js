@@ -10,7 +10,7 @@ myApp.controller('RequisitosCtrl', function ($scope, $http) {
 
             if ($scope.r == 1){
                 console.log("Estoy en Cumple Requisitos");
-                $http.get(url1 + "api/Solicitud/GetAllAprobadasRechazadas?Estado=4")
+                $http.get(url1 + "api/Solicitud/GetAllAprobadasRechazadas?Estado=7")
                     .then(function (res) {
                         $scope.sol = res.data;
                         console.log(res.data);
@@ -18,7 +18,7 @@ myApp.controller('RequisitosCtrl', function ($scope, $http) {
                     });
             } else if ($scope.r == 2) {
                 console.log("Estoy en No Cumple Requisitos");
-                $http.get(url1 + "api/Solicitud/GetAllAprobadasRechazadas?Estado=5" )
+                $http.get(url1 + "api/Solicitud/GetAllAprobadasRechazadas?Estado=8" )
                     .then(function (res) {
                         $scope.sol = res.data;
                         console.log(res.data);

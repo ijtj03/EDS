@@ -48,15 +48,64 @@ myApp.controller('solAdminCtrl', function ($scope, $http) {
 
             }   
 
-            $scope.cumple = function (IdSolicitud) {
+            $scope.borrar = function () {
+                console.log($scope.textbox);
+                if ($scope.r == 1) {
+                    $scope.textbox = "";
+                    const loc = $scope.config.WebIp + "/PaginaWeb/SolHEAdm.html";
+                    window.location = loc;
+                    console.log(response.data);
+                    console.log($scope.textbox);
+                } else if ($scope.r == 2) {
+                    $scope.textbox = "";
+                    const loc = $scope.config.WebIp + "/PaginaWeb/SolHAAdm.html";
+                    window.location = loc;
+                    console.log(response.data);
+                    
+                } else if ($scope.r == 3) {
+                    $scope.textbox = "";
+                    const loc = $scope.config.WebIp + "/PaginaWeb/SolTEAdm.html";
+                    window.location = loc;
+                    console.log(response.data);
+                    
+                } else if ($scope.r == 4) {
+                    $scope.textbox = "";
+                    const loc = $scope.config.WebIp + "/PaginaWeb/SolAEAdm.html";
+                    window.location = loc;
+                    console.log(response.data);
+                    
+                }
+            }
+
+            $scope.cumple = function (x,IdSolicitud) {
                 console.log(IdSolicitud);
                 window.localStorage.setItem("IdUser", 1);
                 //window.localStorage.getItem("IdUsuario");
-                const url2 = url1 + "api/Solicitud/AceptarSolicitudUsuario?IdSolicitud=" + IdSolicitud + "&IdUsuario=" + window.localStorage.getItem("IdUser");
+                const url2 = url1 + "api/Solicitud/EstadoCumple";
+
+                if (x == null) {
+                    var consulta =
+                        {
+                            "IdSolicitud": IdSolicitud,
+                            "Descripcion": ""
+                        };
+                } else {
+                    var consulta =
+                        {
+                            "IdSolicitud": IdSolicitud,
+                            "Descripcion": x
+                        };
+                }
                 
-               $http.post(url2)
+
+
+
+                $http.post(url2, consulta)
                    .then(function successCallback(response) {
+
+
                        
+
                        alert("Se acepto el cumplimiento de requisitos");
                        if ($scope.r == 1) {
                            const loc = $scope.config.WebIp + "/PaginaWeb/SolHEAdm.html";
