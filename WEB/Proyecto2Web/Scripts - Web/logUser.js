@@ -7,9 +7,11 @@ mA.controller('LogUserCtrl', function ($scope, $http) {
     $scope.password;
     $http.get('../Scripts - Web/config.json')
         .then(function (res) {
+            window.localStorage.clear();
             $scope.config = res.data;
         });
     $scope.sel = function () {
+        const loc = $scope.config.WebIp + "/PaginaWeb/";
         console.log($scope.selRol);
         if ($scope.selRol==2) {
             window.localStorage.setItem("userLoc", "homeAdm.html");
@@ -50,7 +52,7 @@ mA.controller('LogUserCtrl', function ($scope, $http) {
             };
 
             console.log(body);
-            $http.put(url4, body)
+            $http.post(url4, body)
                 .then(function successCallback(response) {
                     window.location = loc + window.localStorage.getItem("userLoc");
                 }, function errorCallback(response) {
@@ -72,7 +74,7 @@ mA.controller('LogUserCtrl', function ($scope, $http) {
         $http.post(ip, body)
             .then(function successCallback(response) {
                 $scope.user = response.data;
-                window.localStorage.setItem("idUser", $scope.user.usuario.id);
+                window.localStorage.setItem("IdUser", $scope.user.usuario.id);
                 if ($scope.user.usuario.rols.length > 1) {
                     document.getElementById("varios").hidden = false;
                     document.getElementById("info1").hidden = true;
