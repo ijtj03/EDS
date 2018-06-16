@@ -8,21 +8,18 @@ myApp.controller('RequisitosCtrl', function ($scope, $http) {
         .then(function (res) {
             $scope.config = res.data;
             const url1 = $scope.config.MyApi;
-            
+
 
             // /APILogin/ce/Users
 
-            $http.get(url1 +  "api/Varios/GetRoles" )
+            $http.get(url1 + "api/Varios/GetRoles")
                 .then(function (res) {
                     console.log(res.data);
                     $scope.roles = res.data;
                 });
 
-
-
-
             $scope.form = function () {
-                const url2 = "http://"+ $scope.config.ApiIp + "/APILogin/ce/Users";
+                const url2 = "http://" + $scope.config.ApiIp + "/APILogin/ce/Users";
 
                 var consulta = {
 
@@ -54,7 +51,7 @@ myApp.controller('RequisitosCtrl', function ($scope, $http) {
 
             }
 
-            
+
 
         });
 

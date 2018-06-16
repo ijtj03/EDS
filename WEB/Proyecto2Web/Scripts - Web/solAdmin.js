@@ -77,13 +77,13 @@ myApp.controller('solAdminCtrl', function ($scope, $http) {
                 }
             }
 
-            $scope.cumple = function (x,IdSolicitud) {
+            $scope.cumple = function (IdSolicitud) {
                 console.log(IdSolicitud);
                 window.localStorage.setItem("IdUser", 1);
                 //window.localStorage.getItem("IdUsuario");
                 const url2 = url1 + "api/Solicitud/EstadoCumple";
 
-                if (x == null) {
+                if ($scope.textbox == null) {
                     var consulta =
                         {
                             "IdSolicitud": IdSolicitud,
@@ -93,7 +93,7 @@ myApp.controller('solAdminCtrl', function ($scope, $http) {
                     var consulta =
                         {
                             "IdSolicitud": IdSolicitud,
-                            "Descripcion": x
+                            "Descripcion": $scope.textbox
                         };
                 }
                 

@@ -13,6 +13,13 @@ namespace Proyecto1.Controllers
     public class VariosController : ApiController
     {
         [HttpGet]
+        [Route("GetTiposBeca")]
+        public IHttpActionResult GetTiposBeca()
+        {
+            VariosService con = new VariosService();
+            return Ok(con.GetTiposBeca());
+        }
+        [HttpGet]
         [Route("GetAllDeps")]
         public IHttpActionResult GetAllDeps()
         {
