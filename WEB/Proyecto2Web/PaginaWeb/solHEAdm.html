@@ -169,7 +169,7 @@
 
     <div id="openModal" class="modalDialog">
         <div class="modalDialog-div1">
-            <a href="#close" title="Close" class="close" ng-click="borrar()">X</a>
+            <a href="#close" title="Close" class="close">X</a>
             <section class="user-profile section">
                 <div class="container">
                     <div class="row">
@@ -245,7 +245,7 @@
 
                                 <div class="form-group">
                                     <label class="form-tittle-1">Cédula</label>
-                                    <img ng-src="{{estudiante.ImgCedula}}"  style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal01').style.display='block'">
+                                    <img ng-src="{{estudiante.ImgCedula}}" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal01').style.display='block'">
                                     <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
                                         <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
                                         <div class="w3-modal-content w3-animate-zoom">
@@ -264,7 +264,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-tittle-1">Imagen Promedio Ponderado</label>
+                                    <label class="form-tittle-1">Imagen Promedio Ponderado Semestre Anterior</label>
                                     <img ng-src="{{estudiante.ImgPromedioPonderado}}" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal03').style.display='block'">
                                     <div id="modal03" class="w3-modal" onclick="this.style.display='none'">
                                         <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
@@ -275,11 +275,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-tittle-1">Imagen Promedio Ponderado General</label>
-                                    <img ng-src="{{estudiante.ImgPromedioPonderado}}" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal03').style.display='block'">
+                                    <img ng-src="{{estudiante.ImgPromedioPonderadoGeneral}}" style="width:50%;cursor:zoom-in" onclick="document.getElementById('modal03').style.display='block'">
                                     <div id="modal03" class="w3-modal" onclick="this.style.display='none'">
                                         <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
                                         <div class="w3-modal-content w3-animate-zoom">
-                                            <img ng-src="{{estudiante.ImgPromedioPonderado}}" style="width:100%">
+                                            <img ng-src="{{estudiante.ImgPromedioPonderadoGeneral}}" style="width:100%">
                                         </div>
                                     </div>
                                 </div>
@@ -287,7 +287,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn-transparent-green" ng-click="cumple(textbox,estudiante.IdSolicitud)">CUMPLE CON LOS REQUISITOS</button>
+                    <button type="button" class="btn-transparent-green" ng-click="cumple(estudiante.IdSolicitud)">CUMPLE CON LOS REQUISITOS</button>
                     <button type="button" class="btn-transparent-red" ng-click="nocumple(textbox,estudiante.IdSolicitud)">NO CUMPLE CON LOS REQUISITOS</button>
                 </div>
             </section>
