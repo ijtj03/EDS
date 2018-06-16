@@ -165,7 +165,7 @@ namespace Proyecto1.Services
             SqlParameter Periodo = new SqlParameter("@P", System.Data.SqlDbType.VarChar);
             Periodo.Value = periodo;
             List<Reporte> listReports = new List<Reporte>();
-            command = new SqlCommand("EXEC ReporteInicialGeneral @Anno=@A, @Periodo = @P", conn);
+            command = new SqlCommand("EXEC ReporteFinalGeneral @Anno=@A, @Periodo = @P", conn);
             command.Parameters.Add(Anno);
      
             command.Parameters.Add(Periodo);
@@ -204,7 +204,7 @@ namespace Proyecto1.Services
             conn = new SqlConnection(strConnString);
             conn.Open();
 
-            SqlParameter identificacion = new SqlParameter("@A", System.Data.SqlDbType.Int);
+            SqlParameter identificacion = new SqlParameter("@C", System.Data.SqlDbType.VarChar);
             identificacion.Value = cedula;
 
 
@@ -224,8 +224,6 @@ namespace Proyecto1.Services
                 reporte.PrimerNombre = read["segundo_nombre"].ToString();
                 reporte.PrimerApellido = read["primer_apellido"].ToString();
                 reporte.PrimerApellido = read["segundo_apellido"].ToString();
-                reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
-                reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 reporte.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
                 reporte.Observaciones =  read["Observaciones"].ToString();
 
@@ -250,16 +248,16 @@ namespace Proyecto1.Services
             conn = new SqlConnection(strConnString);
             conn.Open();
 
-            SqlParameter Carne = new SqlParameter("@C", System.Data.SqlDbType.Int);
-            Carne.Value = carne;
+            SqlParameter identificacion = new SqlParameter("@C", System.Data.SqlDbType.VarChar);
+            identificacion.Value = carne;
 
 
-          
+
             List<Reporte> listReports = new List<Reporte>();
             command = new SqlCommand("EXEC ObtenerEvaluacionEstudiante @Carnet = @C", conn);
-            command.Parameters.Add(carne);
+            command.Parameters.Add(identificacion);
 
-          
+
 
             read = command.ExecuteReader();
             while (read.Read())
@@ -270,9 +268,8 @@ namespace Proyecto1.Services
                 reporte.PrimerNombre = read["segundo_nombre"].ToString();
                 reporte.PrimerApellido = read["primer_apellido"].ToString();
                 reporte.PrimerApellido = read["segundo_apellido"].ToString();
-                reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
-                reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 reporte.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
+                reporte.Observaciones = read["Observaciones"].ToString();
 
                 listReports.Add(reporte);
 
