@@ -112,6 +112,13 @@ namespace Proyecto1.Controllers
             con.EstadoCumple(observacion);
             return Ok();
         }
+        [HttpGet]
+        [Route("GetSolComision")]
+        public IHttpActionResult GetSolComision()
+        {
+            SolicitudService con = new SolicitudService();
+            return Ok(con.GetSolComision());
+        }
 
     }
 }
