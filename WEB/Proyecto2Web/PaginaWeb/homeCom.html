@@ -105,12 +105,12 @@
                                         <div class="">
                                             <ul class="list-inline justify-content-center">
                                                 <li title="Aprobar Solicitud"  class="list-inline-item">
-                                                    <a href="#openModal1" class="edit">
+                                                    <a href="#openModal1" ng-click="revisando(x.id)" class="edit">
                                                         <i class="fa fa-check"></i>
                                                     </a>
                                                 </li>
                                                 <li title="Rechazar Solicitud" class="list-inline-item">
-                                                    <a href="" class="delete">
+                                                    <a ng-click="rechazar(x.id)" class="delete">
                                                         <i class="fa fa-close"></i>
                                                     </a>
                                                 </li>
@@ -133,24 +133,23 @@
             <a href="#close" title="Close" class="close">X</a>
             <div class="container">
                 <center>
-                    <div class="">
-                        <label>Seleccione al encargado de este estudiante</label>
-                        <select>
-                            <option>Encargados</option>
-                            <option value="1">Marco Rivera</option>
-                            <option value="2">Marco Herandez</option>
-                            <option value="4">Laura Cortes</option>
-                        </select>
-                    </div>
-                    <div>
-                        <br />
-                        <label>Horas a asignar:</label>
-                        <input type="number" max="150" />
-                    </div>
-                    <div>
-                        <br />
-                        <button>Completar</button>
-                    </div>
+                    <form ng-submit="aceptar()">
+                        <div class="">
+                            <label>Seleccione al encargado de este estudiante</label>
+                            <select required ng-model="usuario">
+                                <option ng-repeat="x in users" value={{x.IdDep}}>{{x.Nombre}}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <br />
+                            <label>Horas a asignar:</label>
+                            <input required type="number" max="150" min="0" ng-model="hAs"/>
+                        </div>
+                        <div>
+                            <br />
+                            <button type="submit">Completar</button>
+                        </div>
+                    </form>
                 </center>
             </div>
 
@@ -196,12 +195,6 @@
     <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
     <script src="../Scripts - Web/homeCom.js"></script>
-
-    <script>
-        function myfunction() {
-            var person = prompt("Observaciones", );
-        }
-    </script>
 
 </body>
 

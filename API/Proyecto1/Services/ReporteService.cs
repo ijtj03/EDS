@@ -41,11 +41,12 @@ namespace Proyecto1.Services
 
                 Reporte reporte = new Reporte();
                 reporte.PrimerNombre = read["primer_nombre"].ToString();
-                reporte.PrimerNombre = read["segundo_nombre"].ToString();
+                reporte.SegundoNombre = read["segundo_nombre"].ToString();
                 reporte.PrimerApellido = read["primer_apellido"].ToString();
-                reporte.PrimerApellido = read["segundo_apellido"].ToString();
+                reporte.SegundoApellido = read["segundo_apellido"].ToString();
                 reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
                 reporte.HorasAsignadas = Convert.ToInt32(read["HorasSolicitadas"]);
+                reporte.Carne = read["carne"].ToString();
                 listReports.Add(reporte);
 
             }

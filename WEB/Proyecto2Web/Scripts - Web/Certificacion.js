@@ -1,8 +1,8 @@
 ﻿// /APILogin/ce/Users
 
-var myApp = angular.module('Reportes', []);
+var myApp = angular.module('Certificacion', []);
 
-myApp.controller('ReportesInicialCtrl', function ($scope, $http) {
+myApp.controller('CertificacionEstudianteCtrl', function ($scope, $http) {
 
     if (window.localStorage.getItem("IdUser") == null) {
         $http.get('../Scripts - Web/config.json')
@@ -64,14 +64,14 @@ myApp.controller('ReportesInicialCtrl', function ($scope, $http) {
             });
     }
 
-    
+
 
 });
 
-myApp.controller('ReportesFinalCtrl', function ($scope, $http) {
+myApp.controller('HistoricosProfesorCtrl', function ($scope, $http) {
 
     //console.log(window.localStorage.getItem("IdUser"));
-    if (window.localStorage.getItem("IdUser") == null ) {
+    if (window.localStorage.getItem("IdUser") == null) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;
@@ -130,6 +130,6 @@ myApp.controller('ReportesFinalCtrl', function ($scope, $http) {
                 window.location = loc;
             });
     }
-    
+
 
 });
