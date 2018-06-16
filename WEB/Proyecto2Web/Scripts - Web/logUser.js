@@ -38,7 +38,7 @@ mA.controller('LogUserCtrl', function ($scope, $http) {
     $scope.cPass = function () {
         if ($scope.nP == $scope.nP1 && $scope.nP1 != null) {
             const loc = $scope.config.WebIp + "/PaginaWeb/";
-            const url4 = "http://" + $scope.config.ApiIp + "/APILogin/ce/Users/" + window.localStorage.getItem("idUser");
+            const url4 = "http://" + $scope.config.ApiIp + "/APILogin/ce/Users/" + window.localStorage.getItem("IdUser");
             body = {
                 correo_electronico: $scope.user.usuario.correo_electronico,
                 contrasenna: btoa($scope.nP),
@@ -57,7 +57,7 @@ mA.controller('LogUserCtrl', function ($scope, $http) {
                     window.location = loc + window.localStorage.getItem("userLoc");
                 }, function errorCallback(response) {
                     alert("Hubo un error, intentelo mas tarde");
-                    window.location = loc + window.localStorage.getItem("userLoc");
+                    //window.location = loc + window.localStorage.getItem("userLoc");
                 });
         } else {
             alert("Las contraseñas no coinciden");
