@@ -7,6 +7,7 @@ namespace Proyecto1.Classes
 {
     public class SolsCom
     {
+        public int id { get; set; }
         public int PPG { get; set; }
         public int PPC { get; set; }
         public int PPA { get; set; }

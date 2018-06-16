@@ -97,7 +97,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<SolsCom> ListSolicitud = new List<SolsCom>();
 
-            command = new SqlCommand("select E.primer_nombre,E.primer_apellido,E.segundo_apellido,TB.Nombre,F.PromedioCurso,F.PromedioPonderadoAnterior, F.PromedioPonderadoGeneral,C.Codigo from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado=ES.IdEstado inner join estudiantes as E on E.carne=S.IdCarnet inner join Formulario as F on F.IdFormulario=S.IdFormulario inner join Curso as C on C.IdCurso=F.IdCurso inner join TipoBeca as TB on TB.IdTipoBeca=F.IdTipoBeca where Es.IdEstado=7 ", conn);
+            command = new SqlCommand("select S.IdSolicitud,E.primer_nombre,E.primer_apellido,E.segundo_apellido,TB.Nombre,F.PromedioCurso,F.PromedioPonderadoAnterior, F.PromedioPonderadoGeneral,C.Codigo from Solicitud as S inner join EstadoSolicitud as ES on S.IdEstado=ES.IdEstado inner join estudiantes as E on E.carne=S.IdCarnet inner join Formulario as F on F.IdFormulario=S.IdFormulario inner join Curso as C on C.IdCurso=F.IdCurso inner join TipoBeca as TB on TB.IdTipoBeca=F.IdTipoBeca where Es.IdEstado=7 ", conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
@@ -106,6 +106,7 @@ namespace Proyecto1.Services
                 sol.App2 = read["segundo_apellido"].ToString();
                 sol.Curso = read["Codigo"].ToString();
                 sol.Nombre = read["primer_nombre"].ToString();
+                sol.id = Convert.ToInt32(read["IdSolcitud"]);
                 sol.PPA = Convert.ToInt32(read["PromedioPonderadoAnterior"]);
                 sol.PPC = Convert.ToInt32(read["PromedioCurso"]);
                 sol.PPG = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
