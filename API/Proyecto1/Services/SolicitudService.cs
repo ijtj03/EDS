@@ -28,13 +28,13 @@ namespace Proyecto1.Services
             idsolicitud.Value = IdSolicitud;
 
             SqlParameter idusuario = new SqlParameter("@IU", System.Data.SqlDbType.Int);
-            idusuario.Value = IdSolicitud;
+            idusuario.Value = IdUsuario;
 
             SqlParameter hAs = new SqlParameter("@HAs", System.Data.SqlDbType.Int);
             hAs.Value = HA;
 
 
-            command = new SqlCommand("EXEC AceptarSolicitud @HA=HAs,@IdSolicitud=@IS, @IdUsuario = @IU ", conn);
+            command = new SqlCommand("EXEC AceptarSolicitud @HA=@HAs,@IdSolicitud=@IS, @IdUsuario = @IU ", conn);
             command.Parameters.Add(idsolicitud);
             command.Parameters.Add(idusuario);
             command.Parameters.Add(hAs);
