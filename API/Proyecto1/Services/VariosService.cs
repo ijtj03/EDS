@@ -23,7 +23,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Departamento> ListForms = new List<Departamento>();
 
-            command = new SqlCommand("select * from usuario", conn);
+            command = new SqlCommand("select u.primer_nombre,u.primer_apellido,u.segundo_apellido,u.id from usuario as u inner join roles_por_usuario as ru on ru.usuario=u.id where ru.rol=3", conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
