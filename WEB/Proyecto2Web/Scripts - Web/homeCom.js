@@ -1,7 +1,7 @@
 ﻿var mA = angular.module('HomeCom', []);
 
 mA.controller('HomeComCtrl', function ($scope, $http) {
-    if (window.localStorage.getItem("IdUser") == null) {
+    if (window.localStorage.getItem("IdUser") != null) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;
@@ -9,6 +9,12 @@ mA.controller('HomeComCtrl', function ($scope, $http) {
                 $http.get(url1)
                     .then(function (res) {
                         $scope.sols = res.data;
+                    });
+
+                const url2 = $scope.config.MyApi + "api/Varios/GetAllEnc";
+                $http.get(url2)
+                    .then(function (res) {
+                        $scope.users = res.data;
                     });
             });
     } else {
@@ -20,68 +26,41 @@ mA.controller('HomeComCtrl', function ($scope, $http) {
                 window.location = loc;
             });
     }
-    /*$scope.config;
-    $http.get('../Scripts - Web/config.json')
-        .then(function (res) {
-            $scope.config = res.data;
-            $scope.nC = window.localStorage.getItem("pN") + " " + window.localStorage.getItem("pA") + " " + window.localStorage.getItem("sA");
-            $scope.tB = window.localStorage.getItem("tB");
-            $scope.hB = window.localStorage.getItem("hB");
-            const ip = "http://" + $scope.config.ApiIp + "/APILogin/ce/Users/" + window.localStorage.getItem("IdUser");
-            $http.get(ip)
-                .then(function (res) {
-                    $scope.user = res.data;
-                });
-            const url1 = $scope.config.MyApi + "api/Evaluar/GetEstudiantesxEvaluar?encargado=" + window.localStorage.getItem("IdUser");
-            $http.get(url1)
-                .then(function (res) {
-                    $scope.evs = res.data;
-                });
-        });
-    $scope.calificar = function (idEv,pN,pA,sA,tB,hB) {
-        const loc = $scope.config.WebIp + "/PaginaWeb/calificarEnc.html";
-        window.localStorage.setItem("idEv", idEv);
-        window.localStorage.setItem("pN", pN);
-        window.localStorage.setItem("pA", pA);
-        window.localStorage.setItem("sA", sA);
-        window.localStorage.setItem("tB", tB);
-        window.localStorage.setItem("hB", hB);
-        window.location = loc;
+    $scope.revisando = function (idSol) {
+        $scope.idRevisando = idSol;
     }
-    $scope.cal = function () {
-        const loc = $scope.config.WebIp + "/PaginaWeb/homeEnc.html";
-        const url9 = $scope.config.MyApi + "api/Evaluar/EvaluarEstudiante";
-        if ($scope.rec) {
-            var c = {
-                IdEvaluacion: window.localStorage.getItem("idEv"),
-                Recomienda: 1,
-                HorasLaboradas: $scope.hl,
-                Observaciones: $scope.obs
-            };
-            $http.post(url9, c)
+    $scope.aceptar = function () {
+        if ($scope.usuario != null && $scope.usuario > 0) {
+            const url = $scope.config.MyApi + "api/Solicitud/AceptarSolicitudUsuario?IdSolicitud=" + $scope.idRevisando + "&IdUsuario=" + $scope.usuario + "&hAs=" + $scope.hAs;
+           const loc = $scope.config.WebIp + "/PaginaWeb/homeCom.html";
+            console.log(url);
+            $http.post(url)
                 .then(function successCallback(response) {
-                    alert("La revision se ha enviado con exito");
+                    alert("Se ha aceptado la beca");
                     window.location = loc;
                 }, function errorCallback(response) {
-                    alert("Ha ocurrido un error por favor intentelo mas tarde");
+                    alert("Ha ocurrido un error,  intentelo mas tarde");
                     window.location = loc;
                 });
         } else {
-            var c = {
-                IdEvaluacion: window.localStorage.getItem("idEv"),
-                Recomienda: 0,
-                HorasLaboradas: $scope.hl,
-                Observaciones: $scope.obs
-            };
-            $http.post(url9, c)
-                .then(function successCallback(response) {
-                    alert("Su clave ha sido enviada al correo");
-                    window.location = loc;
-                }, function errorCallback(response) {
-                    alert("Ha ocurrido un error por favor intentelo mas tarde");
-                    window.location = loc;
-                });
+            alert("Debe seleccionar el encargado");
         }
-        //window.location = loc;
-    }*/
+        
+    }
+    
+    $scope.rechazar = function (id) {
+        const url = $scope.config.MyApi + "api/Solicitud/RechazarSolicitud?idSolicitud=" +id;
+        const loc = $scope.config.WebIp + "/PaginaWeb/homeCom.html";
+        console.log(url);
+        $http.post(url)
+            .then(function successCallback(response) {
+                alert("Se ha recazado la beca");
+                window.location = loc;
+            }, function errorCallback(response) {
+                alert("Ha ocurrido un error,  intentelo mas tarde");
+                window.location = loc;
+            });
+       
+
+    }
 });
