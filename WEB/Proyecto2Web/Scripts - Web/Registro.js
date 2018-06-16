@@ -1,8 +1,8 @@
 ﻿// /APILogin/ce/Users
 
-var myApp = angular.module('Requisitos', []);
+var myApp = angular.module('Registro', []);
 
-myApp.controller('RequisitosCtrl', function ($scope, $http) {
+myApp.controller('RegistroCtrl', function ($scope, $http) {
 
     $http.get('../Scripts - Web/config.json')
         .then(function (res) {

@@ -16,11 +16,11 @@ namespace Proyecto1.Controllers
         
         [HttpGet]
         [Route("GetReporteInicial")]
-        public IHttpActionResult GetReporteInicial(int anno, string beca,string periodo)
+        public IHttpActionResult GetReporteInicial(int anno, int beca,string periodo)
         {
             
                 ReporteService con = new ReporteService();
-                return Ok(con.GetReporteInicialxTipoBeca(anno,periodo,beca)); 
+                return Ok(con.GetReporteInicialxTipoBeca(anno,beca,periodo)); 
         }
 
         [HttpGet]
@@ -33,11 +33,11 @@ namespace Proyecto1.Controllers
 
         [HttpGet]
         [Route("GetReporteFinal")]
-        public IHttpActionResult GetReporteFinal(int anno, string beca, string periodo)
+        public IHttpActionResult GetReporteFinal(int anno, int beca, string periodo)
         {
                 
             ReporteService con = new ReporteService();
-                return Ok(con.GetReporteFinalxTipoBeca(anno, periodo, beca));
+                return Ok(con.GetReporteFinalxTipoBeca(anno, beca, periodo));
 
         }
         [HttpGet]

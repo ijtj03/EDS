@@ -9,7 +9,7 @@ namespace Proyecto1.Services
 {
     public class ReporteService
     {
-        public List<Reporte> GetReporteInicialxTipoBeca(int anno, string beca, string periodo)
+        public List<Reporte> GetReporteInicialxTipoBeca(int anno, int beca, string periodo)
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;
@@ -97,7 +97,7 @@ namespace Proyecto1.Services
             return listReports;
         }
 
-        public List<Reporte> GetReporteFinalxTipoBeca(int anno, string beca, string periodo)
+        public List<Reporte> GetReporteFinalxTipoBeca(int anno, int beca, string periodo)
         {
             System.Data.SqlClient.SqlConnection conn;
             SqlCommand command;
@@ -129,12 +129,13 @@ namespace Proyecto1.Services
 
                 Reporte reporte = new Reporte();
                 reporte.PrimerNombre = read["primer_nombre"].ToString();
-                reporte.PrimerNombre = read["segundo_nombre"].ToString();
+                reporte.SegundoNombre = read["segundo_nombre"].ToString();
                 reporte.PrimerApellido = read["primer_apellido"].ToString();
-                reporte.PrimerApellido = read["segundo_apellido"].ToString();
+                reporte.SegundoApellido = read["segundo_apellido"].ToString();
                 reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
                 reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 reporte.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
+                reporte.Carne = read["carne"].ToString();
 
                 listReports.Add(reporte);
 

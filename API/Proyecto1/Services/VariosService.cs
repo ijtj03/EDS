@@ -23,7 +23,7 @@ namespace Proyecto1.Services
             conn.Open();
             List<Departamento> ListForms = new List<Departamento>();
 
-            command = new SqlCommand("select * from rol where sistema != 1 ", conn);
+            command = new SqlCommand("select * from TipoBeca where [Delete]=0", conn);
             read = command.ExecuteReader();
             while (read.Read())
             {
