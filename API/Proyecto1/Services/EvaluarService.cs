@@ -70,25 +70,26 @@ namespace Proyecto1.Services
             conn = new SqlConnection(strConnString);
             conn.Open();
 
-            SqlParameter IdEvaluacion = new SqlParameter("@IdEva", System.Data.SqlDbType.Int);
-            IdEvaluacion.Value = evaluacion.IdEvaluacion;
+            SqlParameter idEvaluacion = new SqlParameter("@IE", System.Data.SqlDbType.Int);
+            idEvaluacion.Value = evaluacion.IdEvaluacion;
 
-            SqlParameter Recomienda = new SqlParameter("@Reco", System.Data.SqlDbType.Int);
-            Recomienda.Value = evaluacion.Recomienda;
+            SqlParameter recomienda = new SqlParameter("@R", System.Data.SqlDbType.Int);
+            recomienda.Value = evaluacion.Recomienda;
 
-            SqlParameter HorasLaboradas = new SqlParameter("@HorasLa", System.Data.SqlDbType.Int);
-            HorasLaboradas.Value = evaluacion.HorasLaboradas;
+            SqlParameter horasLaboradas = new SqlParameter("@HL", System.Data.SqlDbType.Int);
+            horasLaboradas.Value = evaluacion.HorasLaboradas;
 
-            SqlParameter Observaciones = new SqlParameter("@Obser", System.Data.SqlDbType.VarChar);
-            Observaciones.Value = evaluacion.Observaciones;
+            SqlParameter observaciones = new SqlParameter("@O", System.Data.SqlDbType.VarChar);
+            observaciones.Value = evaluacion.Observaciones;
 
-            command = new SqlCommand("EXEC EvaluarEstudiantes  @IdEvaluacion=@IdEva, @Recomienda=@Reco, @HorasLaboradas=@HorasLa, @Observaciones=@Obser", conn);
+            command = new SqlCommand("EXEC EvaluarEstudiantes @IdEvaluacion = @IE,@Recomienda = @R,@HorasLaboradas = @HL,@Observaciones = @O  ", conn);
+            command.Parameters.Add(idEvaluacion);
+            command.Parameters.Add(recomienda);
+            command.Parameters.Add(horasLaboradas);
+            command.Parameters.Add(observaciones);
 
-            command.Parameters.Add(IdEvaluacion);
-            command.Parameters.Add(Recomienda);
-            command.Parameters.Add(HorasLaboradas);
-            command.Parameters.Add(Observaciones);
             command.ExecuteNonQuery();
+
 
             conn.Close();
         }
@@ -105,7 +106,7 @@ namespace Proyecto1.Services
             conn = new SqlConnection(strConnString);
             conn.Open();
             List<Evaluacion> listForms = new List<Evaluacion>();
-            command = new SqlCommand("SELECT * FROM Evaluacione", conn);
+            command = new SqlCommand("SELECT * FROM Evaluacion", conn);
             read = command.ExecuteReader();
             while (read.Read())
             {

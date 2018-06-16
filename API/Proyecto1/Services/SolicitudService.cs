@@ -441,6 +441,34 @@ namespace Proyecto1.Services
 
 
         }
+        public void RechazarSolicitud(int idSolicitud)
+        {
+            System.Data.SqlClient.SqlConnection conn;
+            SqlCommand command;
+
+            var conString = System.Configuration.
+                ConfigurationManager.ConnectionStrings["HorasBecaAPI"];
+            string strConnString = conString.ConnectionString;
+
+            conn = new SqlConnection(strConnString);
+            conn.Open();
+
+            SqlParameter idsolicitud = new SqlParameter("@IS", System.Data.SqlDbType.Int);
+            idsolicitud.Value = idSolicitud;
+
+            
+
+            command = new SqlCommand("EXEC RechazarSolicitud @IdSolicitud=@IS  ", conn);
+            command.Parameters.Add(idsolicitud);
+          
+
+            command.ExecuteNonQuery();
+
+
+            conn.Close();
+
+
+        }
 
 
 
