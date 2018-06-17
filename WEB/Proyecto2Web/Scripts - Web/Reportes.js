@@ -58,7 +58,7 @@ myApp.controller('ReportesInicialCtrl', function ($scope, $http) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;
-                const loc = $scope.config.WebIp + "/PaginaWeb/index.html";
+                const loc = $scope.config.WebIp + "/PaginaWeb/logUsers.html";
                 alert("Debe iniciar sesion");
                 window.location = loc;
             });
@@ -125,7 +125,7 @@ myApp.controller('ReportesFinalCtrl', function ($scope, $http) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;
-                const loc = $scope.config.WebIp + "/PaginaWeb/index.html";
+                const loc = $scope.config.WebIp + "/PaginaWeb/logUsers.html";
                 alert("Debe iniciar sesion");
                 window.location = loc;
             });

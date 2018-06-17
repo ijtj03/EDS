@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="HomeAdm">
 <head>
 
   <!-- SITE TITTLE -->
@@ -24,6 +24,12 @@
   <link href="css/style.css" rel="stylesheet">
 
  
+    <!-- JAVASCRIPTS -->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
+    <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="../Scripts - Web/homeAdm.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +40,7 @@
 
 </head>
 
-<body class="body-wrapper">
+<body class="body-wrapper" ng-controller="HomeAdmCtrl">
 
 <section>
 	<div class="container">
@@ -118,12 +124,9 @@
 					<!-- User Widget -->
 					<div class="widget user-dashboard-profile">
 						<!-- User Image -->
-						<div class="profile-thumb">
-							<img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
-						</div>
 						<!-- User Name -->
-						<h5 class="text-center">Nombre del admin</h5>
-						<p>Indentificacion</p>
+						<h5 class="text-center">{{admin.primer_nombre}} {{admin.primer_apellido}}</h5>
+						<p>{{admin.Cedula}} </p>
 						
 					</div>
 				</div>
