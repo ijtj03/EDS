@@ -11,33 +11,33 @@ myApp.controller('CertificacionEstudianteCtrl', function ($scope, $http) {
                 const url1 = $scope.config.MyApi;
 
 
-                if ($scope.ano == null && $scope.tb == null && $scope.periodo == null) {
+                if ($scope.carne == null ) {
                     document.getElementById("tabla").hidden = true;
                 }
 
 
 
-                $http.get(url1 + "api/Varios/GetTiposBeca")
+                /*$http.get(url1 + "api/Varios/GetTiposBeca")
                     .then(function (res) {
                         console.log(res.data);
                         $scope.tiposbeca = res.data;
 
                     });
-
+                */
 
 
                 $scope.actualizar = function () {
 
-                    console.log($scope.ano, $scope.tb, $scope.periodo);
+                    console.log($scope.carne);
 
-                    if ($scope.ano != null && $scope.tb != null && $scope.periodo != null) {
+                    if ($scope.carne != null || $scope.carne != "") {
 
-                        $http.get(url1 + "api/Reporte/GetReporteInicial?anno=" + $scope.ano + "&beca=" + $scope.tb + "&periodo=" + $scope.periodo)
+                        $http.get(url1 + "api/Reporte/GetHistoricoEstudiante?carnet=" + $scope.carne)
                             .then(function (res) {
                                 console.log(res.data);
-                                $scope.reportes = res.data;
+                                $scope.certificaciones = res.data;
 
-                                if ($scope.reportes.length == 0) {
+                                if ($scope.certificaciones.length == 0) {
                                     document.getElementById("tabla").hidden = true;
                                 } else {
                                     document.getElementById("tabla").hidden = false;
@@ -78,33 +78,25 @@ myApp.controller('HistoricosProfesorCtrl', function ($scope, $http) {
                 const url1 = $scope.config.MyApi;
 
 
-                if ($scope.ano == null && $scope.tb == null && $scope.periodo == null) {
+                if ($scope.cedula == null) {
                     document.getElementById("tabla").hidden = true;
                 }
 
 
 
-                $http.get(url1 + "api/Varios/GetTiposBeca")
-                    .then(function (res) {
-                        console.log(res.data);
-                        $scope.tiposbeca = res.data;
-
-                    });
-
-
-
                 $scope.actualizar = function () {
 
-                    console.log($scope.ano, $scope.tb, $scope.periodo);
+                    console.log($scope.cedula);
 
-                    if ($scope.ano != null && $scope.tb != null && $scope.periodo != null) {
-
-                        $http.get(url1 + "api/Reporte/GetReporteFinal?anno=" + $scope.ano + "&beca=" + $scope.tb + "&periodo=" + $scope.periodo)
+                    if ($scope.cedula != null || $scope.cedula != "") {
+                        
+                        $http.get(url1 + "api/Reporte/GetHistoricoProfesor?cedula=" + $scope.cedula )
                             .then(function (res) {
                                 console.log(res.data);
-                                $scope.reportes = res.data;
+                                $scope.historicos = res.data;
+                                console.log($scope.historicos);
 
-                                if ($scope.reportes.length == 0) {
+                                if ($scope.historicos.length == 0) {
                                     document.getElementById("tabla").hidden = true;
                                 } else {
                                     document.getElementById("tabla").hidden = false;

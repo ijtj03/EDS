@@ -205,7 +205,7 @@ namespace Proyecto1.Services
             conn = new SqlConnection(strConnString);
             conn.Open();
 
-            SqlParameter identificacion = new SqlParameter("@A", System.Data.SqlDbType.Int);
+            SqlParameter identificacion = new SqlParameter("@C", System.Data.SqlDbType.VarChar);
             identificacion.Value = cedula;
 
 
@@ -222,13 +222,16 @@ namespace Proyecto1.Services
 
                 Reporte reporte = new Reporte();
                 reporte.PrimerNombre = read["primer_nombre"].ToString();
-                reporte.PrimerNombre = read["segundo_nombre"].ToString();
+                reporte.SegundoNombre = read["segundo_nombre"].ToString();
                 reporte.PrimerApellido = read["primer_apellido"].ToString();
-                reporte.PrimerApellido = read["segundo_apellido"].ToString();
-                reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
-                reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
+                reporte.SegundoApellido = read["segundo_apellido"].ToString();
+                //reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
+                //reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 reporte.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
                 reporte.Observaciones =  read["Observaciones"].ToString();
+                reporte.Ano = read["Anho"].ToString();
+                reporte.TipoBeca = read["TBNombre"].ToString();
+                reporte.Periodo = read["PeriodoSolicitud"].ToString();
 
                 listReports.Add(reporte);
 
@@ -251,14 +254,14 @@ namespace Proyecto1.Services
             conn = new SqlConnection(strConnString);
             conn.Open();
 
-            SqlParameter Carne = new SqlParameter("@C", System.Data.SqlDbType.Int);
+            SqlParameter Carne = new SqlParameter("@C", System.Data.SqlDbType.VarChar);
             Carne.Value = carne;
 
 
           
             List<Reporte> listReports = new List<Reporte>();
             command = new SqlCommand("EXEC ObtenerEvaluacionEstudiante @Carnet = @C", conn);
-            command.Parameters.Add(carne);
+            command.Parameters.Add(Carne);
 
           
 
@@ -268,12 +271,15 @@ namespace Proyecto1.Services
 
                 Reporte reporte = new Reporte();
                 reporte.PrimerNombre = read["primer_nombre"].ToString();
-                reporte.PrimerNombre = read["segundo_nombre"].ToString();
+                reporte.SegundoNombre = read["segundo_nombre"].ToString();
                 reporte.PrimerApellido = read["primer_apellido"].ToString();
-                reporte.PrimerApellido = read["segundo_apellido"].ToString();
-                reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
-                reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
+                reporte.SegundoApellido = read["segundo_apellido"].ToString();
+                //reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
+                //reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 reporte.HorasLaboradas = Convert.ToInt32(read["HorasLaboradas"]);
+                reporte.Ano = read["Anho"].ToString();
+                reporte.TipoBeca = read["TBNombre"].ToString();
+                reporte.Periodo = read["PeriodoSolicitud"].ToString();
 
                 listReports.Add(reporte);
 

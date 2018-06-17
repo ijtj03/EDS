@@ -17,6 +17,9 @@ namespace Proyecto1.Classes
         public int HorasAsignadas { get; set; }
         public int HorasLaboradas { get; set; }
         public string Observaciones { get;  set; }
+        public string Ano { get; set;}
+        public string Periodo { get; set; }
+        
 
     }
 }
