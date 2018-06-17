@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="Certificacion">
 <head>
 
   <!-- SITE TITTLE -->
@@ -8,8 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Certificación Estudiantes</title>
 
-  <!-- PLUGINS CSS STYLE -->
-  <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+  
   <!-- Bootstrap -->
   <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -24,8 +23,7 @@
   <!-- CUSTOM CSS -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- FAVICON -->
-  <link href="img/favicon.png" rel="shortcut icon">
+  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +34,7 @@
 
 </head>
 
-<body class="body-wrapper">
+<body class="body-wrapper" ng-controller="CertificacionEstudianteCtrl">
 
 <section>
 	<div class="container">
@@ -112,7 +110,7 @@
     <div class="col-lg-12">
         <div class="widget search p-0" >
             <div class="input-group">
-                <input type="number" class="form-control" id="expire" placeholder="Carné de Estudiante">
+                <input ng-model="search" ng-change="actualizar" type="number" class="form-control" id="expire" placeholder="Carné de Estudiante">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
               </div>
           </div>
@@ -190,20 +188,7 @@
   <!-- Container End -->
 </footer>
 
-  <!-- JAVASCRIPTS -->
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="plugins/tether/js/tether.min.js"></script>
-  <script src="plugins/raty/jquery.raty-fa.js"></script>
-  <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
-  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-  <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-  <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-  <script src="js/scripts.js"></script>
+  
 
 </body>
 
