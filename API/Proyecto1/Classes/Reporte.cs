@@ -12,7 +12,7 @@ namespace Proyecto1.Classes
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
         public string Carne { get; set; }
-        public int PromedioPonderado { get; set; }
+        public decimal PromedioPonderado { get; set; }
         public string TipoBeca { get; set; }
         public int HorasAsignadas { get; set; }
         public int HorasLaboradas { get; set; }

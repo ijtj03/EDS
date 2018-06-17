@@ -1,4 +1,4 @@
-﻿namespace Proyecto1.Services
+﻿namespace Proyecto1.Classes
 {
     public class Evaluacion
     {
