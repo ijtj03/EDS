@@ -5,17 +5,17 @@ insert into estudiantes (carne, correo_electronico,  primer_nombre, segundo_nomb
 values ('2015127287' , 'ijtj03@gmail.com' , 'Isaac' , 'Jose' , 'Trejos' , 'Jara');
 insert into estudiantes (carne, correo_electronico,  primer_nombre, primer_apellido , segundo_apellido)  
 values ('2015183074', 'and-h@hotmail.com' , 'Andre','Herrera', 'Chacon' );
-INSERT estudiantes (carne, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico) 
+/*INSERT estudiantes (carne, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico) 
 VALUES ('2015028430', 'David', 'Eduardo', 'Gomez', 'Vargas', 'daedgomez@gmail.com');
-
+*/
 
 INSERT usuario (correo_electronico, cedula, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido) 
 VALUES ('lcortes@itcr.ac.cr', '116608924','ZzZEihOPJEsejtOvvwwgZznM/Qd4X6gCC0YVI3W98uNOjIJYETb7a6thErlkUWtbvUP/HTV1TCiX+dy2gSnHWRdUbQPgWimmBZdAhHs0+87+WQRo/sH0VGop6bbTDens', 'Laura', 'Maria', 'Cortes', 'Ugalde');
-INSERT usuario (correo_electronico, cedula, contrasenna, primer_nombre, primer_apellido, segundo_apellido) 
+/*INSERT usuario (correo_electronico, cedula, contrasenna, primer_nombre, primer_apellido, segundo_apellido) 
 VALUES ('mrivera@itcr.ac.cr', '999999999','ZzZEihOPJEsejtOvvwwgZznM/Qd4X6gCC0YVI3W98uNOjIJYETb7a6thErlkUWtbvUP/HTV1TCiX+dy2gSnHWRdUbQPgWimmBZdAhHs0+87+WQRo/sH0VGop6bbTDens', 'Marco', 'Rivera', 'Meneses');
 INSERT usuario (correo_electronico, cedula, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido) 
 VALUES ('esteban_hv.09@hotmail,com', '116880380','ZzZEihOPJEsejtOvvwwgZznM/Qd4X6gCC0YVI3W98uNOjIJYETb7a6thErlkUWtbvUP/HTV1TCiX+dy2gSnHWRdUbQPgWimmBZdAhHs0+87+WQRo/sH0VGop6bbTDens', 'Esteban', 'Jose', 'Herrera', 'Vargas');
-
+*/
 INSERT sistema_informacion (nombre) VALUES ('Inclusiones');
 INSERT sistema_informacion (nombre) VALUES ('Horas Beca');
 
@@ -35,11 +35,21 @@ Insert into Curso(Codigo)VALUES('--NA--')
 Insert into Curso(Codigo)VALUES('CE0001')
 Insert into Curso(Codigo)VALUES('CE0002')
 Insert into Curso(Codigo)VALUES('CE0003')
+Insert into Curso(Codigo)VALUES('CE0004')
+Insert into Curso(Codigo)VALUES('CE0005')
+Insert into Curso(Codigo)VALUES('CE0006')
+Insert into Curso(Codigo)VALUES('CE0007')
 
 Insert into Departamento(Nombre,Descripcion)VALUES('Ninguna','Ninguna');
 Insert into Departamento(Nombre,Descripcion)VALUES('Computacion','Computacion')
 Insert into Departamento(Nombre,Descripcion)VALUES('Materiales','Materiales')
 Insert into Departamento(Nombre,Descripcion)VALUES('Electronica','Electronica')
+Insert into Departamento(Nombre,Descripcion)VALUES('ATI','ATI')
+Insert into Departamento(Nombre,Descripcion)VALUES('Mecatronica','Mecatronica')
+Insert into Departamento(Nombre,Descripcion)VALUES('Matematica','Matematica')
+Insert into Departamento(Nombre,Descripcion)VALUES('Fisica','Fisica')
+Insert into Departamento(Nombre,Descripcion)VALUES('Cultura y Deporte','Cultura y Deporte')
+
 
 
 Insert into TipoBeca(Nombre,Descripcion)VALUES('Horas Estudiante','Descripcion')
@@ -47,6 +57,7 @@ Insert into TipoBeca(Nombre,Descripcion)VALUES('Horas Asistente','Descripcion')
 Insert into TipoBeca(Nombre,Descripcion)VALUES('Tutoria Estudiantil','Descripcion')
 Insert into TipoBeca(Nombre,Descripcion)VALUES('Asistencia Especial','Descripcion')
 
+/*
 Insert into Formulario(Cedula,Correo,CuentaBancaria,IdCurso,IdDepartamento,IdTipoBeca,ImgCedula
 						,ImgCuentaBancaria,ImgPromedioPonderado,ImgPromedioGeneral,OtraBeca,OtraBecaHoras
 						,PromedioCurso,PromedioPonderadoAnterior,PromedioPonderadoGeneral,Telefono)
@@ -59,7 +70,7 @@ Insert into Formulario(Cedula,Correo,CuentaBancaria,IdCurso,IdDepartamento,IdTip
 						,ImgCuentaBancaria,ImgPromedioPonderado,ImgPromedioGeneral,OtraBeca,OtraBecaHoras
 						,PromedioCurso,PromedioPonderadoAnterior,PromedioPonderadoGeneral,Telefono)
 Values('111111111','ijtj03@gmail.com',11111111,3,3,3,'abc','abc','abc','abc','ob',12,90.1,90.1,90.1,22222222)
-
+*/
 
 Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015012410',1)
 Insert into EstudiantexFormulario (IdCarnet,IdFormulario) values ('2015127287',2)
@@ -83,3 +94,5 @@ insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsig
 insert into Evaluacion (IdUsuario,IdSolicitud,Observaciones,Recomienda,HorasAsignadas,HorasLaboradas) values (2,3,NULL,NULL,50,NULL)
 
 insert into Parametro (FechaAjuste,FechaInicialSol,FechaFinalSol,FechaInicialCal,FechaFinalCal,HorasBecaTotales,HorasBecaEstudiante,HorasBecaAsis,HorasBecaAsEsp,HorasBecaTutoria) values  ('06-06-2019','06-06-2019','06-06-2019','06-06-2019','06-06-2019',150,150,150,150,150)
+
+	
