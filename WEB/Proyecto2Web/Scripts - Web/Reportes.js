@@ -4,7 +4,7 @@ var myApp = angular.module('Reportes', []);
 
 myApp.controller('ReportesInicialCtrl', function ($scope, $http) {
 
-    if (window.localStorage.getItem("IdUser") == null) {
+    if (window.localStorage.getItem("IdUser") != null) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;
@@ -71,7 +71,7 @@ myApp.controller('ReportesInicialCtrl', function ($scope, $http) {
 myApp.controller('ReportesFinalCtrl', function ($scope, $http) {
 
     //console.log(window.localStorage.getItem("IdUser"));
-    if (window.localStorage.getItem("IdUser") == null ) {
+    if (window.localStorage.getItem("IdUser") != null ) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;

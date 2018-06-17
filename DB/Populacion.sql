@@ -10,11 +10,11 @@ VALUES ('2015028430', 'David', 'Eduardo', 'Gomez', 'Vargas', 'daedgomez@gmail.co
 
 
 INSERT usuario (correo_electronico, cedula, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido) 
-VALUES ('lcortes@itcr.ac.cr', '116608924','', 'Laura', 'Maria', 'Cortes', 'Ugalde');
+VALUES ('lcortes@itcr.ac.cr', '116608924','ZzZEihOPJEsejtOvvwwgZznM/Qd4X6gCC0YVI3W98uNOjIJYETb7a6thErlkUWtbvUP/HTV1TCiX+dy2gSnHWRdUbQPgWimmBZdAhHs0+87+WQRo/sH0VGop6bbTDens', 'Laura', 'Maria', 'Cortes', 'Ugalde');
 INSERT usuario (correo_electronico, cedula, contrasenna, primer_nombre, primer_apellido, segundo_apellido) 
-VALUES ('mrivera@itcr.ac.cr', '999999999','123456', 'Marco', 'Rivera', 'Meneses');
+VALUES ('mrivera@itcr.ac.cr', '999999999','ZzZEihOPJEsejtOvvwwgZznM/Qd4X6gCC0YVI3W98uNOjIJYETb7a6thErlkUWtbvUP/HTV1TCiX+dy2gSnHWRdUbQPgWimmBZdAhHs0+87+WQRo/sH0VGop6bbTDens', 'Marco', 'Rivera', 'Meneses');
 INSERT usuario (correo_electronico, cedula, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido) 
-VALUES ('esteban_hv.09@hotmail,com', '116880380','123456', 'Esteban', 'Jose', 'Herrera', 'Vargas');
+VALUES ('esteban_hv.09@hotmail,com', '116880380','ZzZEihOPJEsejtOvvwwgZznM/Qd4X6gCC0YVI3W98uNOjIJYETb7a6thErlkUWtbvUP/HTV1TCiX+dy2gSnHWRdUbQPgWimmBZdAhHs0+87+WQRo/sH0VGop6bbTDens', 'Esteban', 'Jose', 'Herrera', 'Vargas');
 
 INSERT sistema_informacion (nombre) VALUES ('Inclusiones');
 INSERT sistema_informacion (nombre) VALUES ('Horas Beca');

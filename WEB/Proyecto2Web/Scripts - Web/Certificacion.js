@@ -4,7 +4,7 @@ var myApp = angular.module('Certificacion', []);
 
 myApp.controller('CertificacionEstudianteCtrl', function ($scope, $http) {
 
-    if (window.localStorage.getItem("IdUser") == null) {
+    if (window.localStorage.getItem("IdUser") != null) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;
@@ -30,7 +30,7 @@ myApp.controller('CertificacionEstudianteCtrl', function ($scope, $http) {
 
                     console.log($scope.carne);
 
-                    if ($scope.carne != null || $scope.carne != "") {
+                    if ($scope.carne != null && $scope.carne != "") {
 
                         $http.get(url1 + "api/Reporte/GetHistoricoEstudiante?carnet=" + $scope.carne)
                             .then(function (res) {
@@ -45,7 +45,7 @@ myApp.controller('CertificacionEstudianteCtrl', function ($scope, $http) {
 
                             });
                     } else {
-                        document.getElementById("tabla").hidden = true;
+                        alert("Debe de llenar el campo solicitado");
                     }
 
 
@@ -71,7 +71,7 @@ myApp.controller('CertificacionEstudianteCtrl', function ($scope, $http) {
 myApp.controller('HistoricosProfesorCtrl', function ($scope, $http) {
 
     //console.log(window.localStorage.getItem("IdUser"));
-    if (window.localStorage.getItem("IdUser") == null) {
+    if (window.localStorage.getItem("IdUser") != null) {
         $http.get('../Scripts - Web/config.json')
             .then(function (res) {
                 $scope.config = res.data;
@@ -88,7 +88,7 @@ myApp.controller('HistoricosProfesorCtrl', function ($scope, $http) {
 
                     console.log($scope.cedula);
 
-                    if ($scope.cedula != null || $scope.cedula != "") {
+                    if ($scope.cedula != null && $scope.cedula != "") {
                         
                         $http.get(url1 + "api/Reporte/GetHistoricoProfesor?cedula=" + $scope.cedula )
                             .then(function (res) {
@@ -104,7 +104,7 @@ myApp.controller('HistoricosProfesorCtrl', function ($scope, $http) {
 
                             });
                     } else {
-                        document.getElementById("tabla").hidden = true;
+                        alert("Debe de llenar el campo solicitado");
                     }
 
 
