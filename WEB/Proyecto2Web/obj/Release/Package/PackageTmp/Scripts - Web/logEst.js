@@ -10,35 +10,37 @@ mA.controller('LogEstCtrl', function ($scope, $http) {
             $scope.config = res.data;
         });
     $scope.doLogin = function () {
-        const ip = "http://" + $scope.config.ApiIp;
+        const ip = "http://" + $scope.config.ApiIp +"/APILogin/ce/StudentAuth/Authenticate";
+        const loc = $scope.config.WebIp + "/PaginaWeb/homeEst.html";
+        body = {
+            "carne": $scope.carnet,
+            "email": $scope.email,
+            "token": $scope.token
+        };
+        $http.post(ip, body)
+            .then(function successCallback(response) {
+                window.localStorage.setItem("idCarnet", $scope.carnet);
+                window.location = loc;
+            }, function errorCallback(response) {
+                alert("Los datos ingresados no coinsiden");
+            });
     }
-    $scope.doToken = function () {
-        const ip = "http://" + $scope.config.ApiIp;
+    $scope.doToken = function () {//
+        const ip = "http://" + $scope.config.ApiIp + "/APILogin/ce/StudentAuth/Token/";
         body = {
             "carne": $scope.carnet,
             "email": $scope.email
         };
-        hs= {
-            "Accept": "text / json",
-            "Content - Type": "application/json"
-        };
-        
         if ($scope.carnet != null && $scope.email != null) {
-           // $http.get(ip + "/CE-Authentication-API/ce/StudentAuth/Token/", body)
-            $http({
-                method: "GET",
-                url: ip + "/CE-Authentication-API/ce/StudentAuth/Token/",
-                params: {
-                    "email": $scope.email,
-                    "carne": $scope.carnet
-                }
-            })
+            $http.post(ip,body)
                 .then(function successCallback(response) {
                     alert("Su clave ha sido enviada al correo");
-                    console.log(response.data.Message,"Hola mundo");
+                    console.log(response.data.Message);
                 }, function errorCallback(response) {
                     alert("El carnet no coincide con el correo escrito");
+                    
                     console.log(ip);
+                    console.log(body);
                 });
         } else {
             alert("Debe tener el campo carnet y correo instititucional llenos");

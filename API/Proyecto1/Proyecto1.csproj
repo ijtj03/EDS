@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -96,7 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Views\Index.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -107,12 +107,14 @@
     <Compile Include="Classes\Estudiante.cs" />
     <Compile Include="Classes\Evaluacion.cs" />
     <Compile Include="Classes\Formulario.cs" />
+    <Compile Include="Classes\Observacion.cs" />
     <Compile Include="Classes\Parametro.cs" />
     <Compile Include="Classes\Reporte.cs" />
     <Compile Include="Classes\Requisitos.cs" />
     <Compile Include="Classes\RevisionSolicitud.cs" />
     <Compile Include="Classes\Departamento.cs" />
     <Compile Include="Classes\Solicitud.cs" />
+    <Compile Include="Classes\SolsCom.cs" />
     <Compile Include="Controllers\EvaluarController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Controllers\VariosController.cs" />

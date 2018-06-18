@@ -130,7 +130,7 @@
                                         <option>2020</option>
                                         <option>2019</option>
                                         <option>2018</option>
-                                        
+
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -144,7 +144,7 @@
                                     <strong style="color: aliceblue">Tipo de Beca : </strong>
                                     <select ng-change="actualizar()" ng-model="tb" class="nice-select">
                                         <option ng-repeat="x in tiposbeca" value={{x.IdDep}}>{{x.Nombre}}</option>
-                                        
+
                                     </select>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@
                                 <td class="product-category" data-title="Promedio"><span class="categories"></span>{{x.PromedioPonderado}}</td>
                                 <td class="product-category" data-title="Horas Asignadas"><span class="categories">{{x.HorasAsignadas}}</span></td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -195,7 +195,6 @@
     <!--============================
     =            Footer            =
     =============================-->
-
     <footer class="footer section section-sm">
         <!-- Container Start -->
         <div class="container">
@@ -211,11 +210,9 @@
                 <!-- Link list -->
                 <div class="col-lg-3 offset-lg-3 col-md-3">
                     <div class="block">
-                        <h4>Contacto</h4>
+                        <h4>Contacto: {{config.Contacto}}</h4>
                         <ul>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
+                            <h4>Telefono: {{config.Telefono}}</h4>
                         </ul>
                     </div>
                 </div>
@@ -223,6 +220,7 @@
         </div>
         <!-- Container End -->
     </footer>
+
 
 
 

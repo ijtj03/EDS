@@ -129,8 +129,8 @@
                             </center>
                             <div class="form-group">
                                 <center>
-                                    <label>Contraseña</label>
-                                    <input ng-model="password" required type="password" class="form-control" id="password">
+                                    <label>Token recibido en el correo</label>
+                                    <input ng-model="token" required type="password" class="form-control" id="password">
                                 </center>
                             </div>
                             <center>
@@ -148,7 +148,6 @@
     <!--============================
     =            Footer            =
     =============================-->
-
     <footer class="footer section section-sm">
         <!-- Container Start -->
         <div class="container">
@@ -164,11 +163,9 @@
                 <!-- Link list -->
                 <div class="col-lg-3 offset-lg-3 col-md-3">
                     <div class="block">
-                        <h4>Contacto</h4>
+                        <h4>Contacto: {{config.Contacto}}</h4>
                         <ul>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
+                            <h4>Telefono: {{config.Telefono}}</h4>
                         </ul>
                     </div>
                 </div>
@@ -178,7 +175,7 @@
     </footer>
 
     <!-- JAVASCRIPTS -->
-    <script src="../Scripts/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
     <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>

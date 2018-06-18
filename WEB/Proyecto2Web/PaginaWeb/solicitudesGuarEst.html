@@ -100,11 +100,11 @@
 
                         </thead>
                         <tbody>
-                            <tr  ng-repeat="x in forms">
+                            <tr ng-repeat="x in forms">
                                 <td class="product-category" data-title="Carné"><span class="categories">{{x.TipoBeca}}</span></td>
                                 <td class="product-category" data-title="Carné"><span class="categories">{{x.IdForm}}</span></td>
                                 <td class="action" data-title="Accion">
-                                    <button class="btn-transparent"  ng-click="eliminarForm(x.IdForm)"><i class="fa fa-trash"></i> Eliminar</button>
+                                    <button class="btn-transparent" ng-click="eliminarForm(x.IdForm)"><i class="fa fa-trash"></i> Eliminar</button>
                                 </td>
                                 <td class="action" data-title="Accion">
                                     <button class="btn-transparent" ng-click="enviarForm(x.IdForm)"><i class="fa fa-bars"></i> Enviar</button>
@@ -125,7 +125,6 @@
     <!--============================
     =            Footer            =
     =============================-->
-
     <footer class="footer section section-sm">
         <!-- Container Start -->
         <div class="container">
@@ -141,11 +140,9 @@
                 <!-- Link list -->
                 <div class="col-lg-3 offset-lg-3 col-md-3">
                     <div class="block">
-                        <h4>Contacto</h4>
+                        <h4>Contacto: {{config.Contacto}}</h4>
                         <ul>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
+                            <h4>Telefono: {{config.Telefono}}</h4>
                         </ul>
                     </div>
                 </div>

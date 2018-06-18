@@ -115,7 +115,7 @@
                                     <td class="product-category" data-title="Nombre">
                                         <button type="button" class="btn-transparent" ng-click="repSol(x.IdSolicitud)">Replicar</button>
                                     <td class="product-category" data-title="Nombre">
-                                        <button type="button" class="btn-transparent"  ng-click="cancelSol(x.IdSolicitud)">Cancelar</button>
+                                        <button type="button" class="btn-transparent" ng-click="cancelSol(x.IdSolicitud)">Cancelar</button>
                                     </td>
                                     <td class="product-category" data-title="Nombre"><span class="categories">{{x.Estado}}</span></td>
                                 </tr>
@@ -149,11 +149,9 @@
                 <!-- Link list -->
                 <div class="col-lg-3 offset-lg-3 col-md-3">
                     <div class="block">
-                        <h4>Contacto</h4>
+                        <h4>Contacto: {{config.Contacto}}</h4>
                         <ul>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
+                            <h4>Telefono: {{config.Telefono}}</h4>
                         </ul>
                     </div>
                 </div>
@@ -161,6 +159,7 @@
         </div>
         <!-- Container End -->
     </footer>
+
     <!-- JAVASCRIPTS -->
     <script src="../Scripts/angular.min.js"></script>
     <script src="plugins/bootstrap/dist/js/popper.min.js"></script>

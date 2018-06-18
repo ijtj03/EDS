@@ -39,7 +39,7 @@
     <![endif]-->
 </head>
 
-<body class="body-wrapper" ng-controller="ParametrosCtrl" >
+<body class="body-wrapper" ng-controller="ParametrosCtrl">
 
     <section>
         <div class="container">
@@ -129,7 +129,7 @@
                                             <center>
                                                 <label for="email">Fecha de Apertura de Solicitudes</label>
                                             </center>
-                                            <input ng-model="fas" required type="date" class="form-control" id="name" >
+                                            <input ng-model="fas" required type="date" class="form-control" id="name">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
@@ -196,7 +196,7 @@
                                             <input ng-model="ha" required type="number" class="form-control" min=0 id="name">
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="block comment">
@@ -225,7 +225,7 @@
                                             <input ng-model="hae" required type="number" class="form-control" min=0 id="name">
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="block comment">
@@ -240,11 +240,11 @@
                                             <input ng-model="ht" type="number" class="form-control" min=0 id="name">
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <center>
-                                <button type="submit" class="btn btn-transparent" >Terminar</button>
+                                <button type="submit" class="btn btn-transparent">Terminar</button>
                             </center>
                         </form>
                     </div>
@@ -262,7 +262,6 @@
     <!--============================
     =            Footer            =
     =============================-->
-
     <footer class="footer section section-sm">
         <!-- Container Start -->
         <div class="container">
@@ -278,11 +277,9 @@
                 <!-- Link list -->
                 <div class="col-lg-3 offset-lg-3 col-md-3">
                     <div class="block">
-                        <h4>Contacto</h4>
+                        <h4>Contacto: {{config.Contacto}}</h4>
                         <ul>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
+                            <h4>Telefono: {{config.Telefono}}</h4>
                         </ul>
                     </div>
                 </div>
@@ -290,6 +287,7 @@
         </div>
         <!-- Container End -->
     </footer>
+
 
 
 

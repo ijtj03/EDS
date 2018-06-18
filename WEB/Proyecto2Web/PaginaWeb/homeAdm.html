@@ -42,147 +42,146 @@
 
 <body class="body-wrapper" ng-controller="HomeAdmCtrl">
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="homeAdm.html">
-						<img src="images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item active">
-								<a class="nav-link" href="homeAdm.html">Inicio</a>
-							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Revision <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="solHAAdm.html">Horas Asistente</a>
-									<a class="dropdown-item" href="solTEAdm.html">Tutoria Estudiantil</a>
-									<a class="dropdown-item" href="solAEAdm.html">Horas Asitente Especial</a>
-									<a class="dropdown-item" href="solHEAdm.html">Horas Estudiante</a>
-									<a class="dropdown-item" href="cancelacionAdm.html">Cancelaciones</a>
-								</div>
-							</li>
-			                <li class="nav-item dropdown dropdown-slide">
-			                  <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup=  "true" aria-expanded="false">
-			                    Solicitudes <span><i class="fa fa-angle-down"></i></span>
-			                  </a>
-			                  <!-- Dropdown list -->
-			                  <div class="dropdown-menu dropdown-menu-right">
-			                    <a class="dropdown-item" href="cumReqAdm.html">Cumplen Requisitos</a>
-			                    <a class="dropdown-item" href="noCumReqAdm.html">No Cumplen Requisitos</a>
-			                  </div>
-			                </li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Reportes <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								<!-- Dropdown list -->
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="repInAdm.html">Reporte inicial Trabajo Social</a>
-									<a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
-									<a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
-									<a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
-								</div>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="configAdm.html">Ajustes</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="registroAdm.html">Regitro</a>
-							</li>
-						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="logUsers.html">Logout</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
-<!--==================================
-=            User Profile            =
-===================================-->
-<section class="dashboard section">
-	<!-- Container Start -->
-	<div class="container">
-		<!-- Row Start -->
-		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
-				<div class="sidebar">
-					<!-- User Widget -->
-					<div class="widget user-dashboard-profile">
-						<!-- User Image -->
-						<!-- User Name -->
-						<h5 class="text-center">{{admin.primer_nombre}} {{admin.primer_apellido}}</h5>
-						<p>{{admin.Cedula}} </p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-				<!-- Recently Favorited -->
-				<div class="card">
-					<div class="card-body">
-						<center>
-						    <h4 class="card-title"><a>Bienvenido al sistema para administradores</a></h4>
-						    <p class="card-text">Este es el sistema para la gestion de horas beca del Area de Ingenieria en Computadores</p>
-						</center>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Row End -->
-	</div>
-	<!-- Container End -->
-</section>
-<!--============================
-=            Footer            =
-=============================-->
-<!--============================
-=            Footer            =
-=============================-->
-
-<footer class="footer section section-sm">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
-        <!-- About -->
-        <div class="block about">
-          <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="">
-          <!-- description -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg  navigation">
+                        <a class="navbar-brand" href="homeAdm.html">
+                            <img src="images/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto main-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="homeAdm.html">Inicio</a>
+                                </li>
+                                <li class="nav-item dropdown dropdown-slide">
+                                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Revision <span><i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <!-- Dropdown list -->
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="solHAAdm.html">Horas Asistente</a>
+                                        <a class="dropdown-item" href="solTEAdm.html">Tutoria Estudiantil</a>
+                                        <a class="dropdown-item" href="solAEAdm.html">Horas Asitente Especial</a>
+                                        <a class="dropdown-item" href="solHEAdm.html">Horas Estudiante</a>
+                                        <a class="dropdown-item" href="cancelacionAdm.html">Cancelaciones</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown dropdown-slide">
+                                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Solicitudes <span><i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <!-- Dropdown list -->
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="cumReqAdm.html">Cumplen Requisitos</a>
+                                        <a class="dropdown-item" href="noCumReqAdm.html">No Cumplen Requisitos</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown dropdown-slide">
+                                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Reportes <span><i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <!-- Dropdown list -->
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="repInAdm.html">Reporte inicial Trabajo Social</a>
+                                        <a class="dropdown-item" href="repFiAdm.html">Reporte final Trabajo Social</a>
+                                        <a class="dropdown-item" href="cerEstAdm.html">Certificacion para estudiantes</a>
+                                        <a class="dropdown-item" href="hisProfAdm.html">Historicos profesores</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="configAdm.html">Ajustes</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="registroAdm.html">Regitro</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav ml-auto mt-10">
+                                <li class="nav-item">
+                                    <a class="nav-link login-button" href="logUsers.html">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-3 offset-lg-3 col-md-3">
-        <div class="block">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Container End -->
-</footer>
+    </section>
+    <!--==================================
+    =            User Profile            =
+    ===================================-->
+    <section class="dashboard section">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+                    <div class="sidebar">
+                        <!-- User Widget -->
+                        <div class="widget user-dashboard-profile">
+                            <!-- User Image -->
+                            <!-- User Name -->
+                            <h5 class="text-center">{{admin.primer_nombre}} {{admin.primer_apellido}}</h5>
+                            <p>{{admin.Cedula}} </p>
 
-  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                    <!-- Recently Favorited -->
+                    <div class="card">
+                        <div class="card-body">
+                            <center>
+                                <h4 class="card-title"><a>Bienvenido al sistema para administradores</a></h4>
+                                <p class="card-text">Este es el sistema para la gestion de horas beca del Area de Ingenieria en Computadores</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Container End -->
+    </section>
+    <!--============================
+    =            Footer            =
+    =============================-->
+    <!--============================
+    =            Footer            =
+    =============================-->
+
+    <footer class="footer section section-sm">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
+                    <!-- About -->
+                    <div class="block about">
+                        <!-- footer logo -->
+                        <img src="images/logo-footer.png" alt="">
+                        <!-- description -->
+                    </div>
+                </div>
+                <!-- Link list -->
+                <div class="col-lg-3 offset-lg-3 col-md-3">
+                    <div class="block">
+                        <h4>Contacto: {{config.Contacto}}</h4>
+                        <ul>
+                            <h4>Telefono: {{config.Telefono}}</h4>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container End -->
+    </footer>
+
+
+
 
 </body>
 

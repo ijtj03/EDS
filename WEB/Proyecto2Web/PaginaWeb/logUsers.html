@@ -37,138 +37,134 @@
 <body class="body-wrapper" ng-controller="LogUserCtrl">
 
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="index.html">
-						<img src="images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!--===============================
-=            Hero Area            =
-================================-->
-
-<section class="hero-area bg-1 text-center overly">
-	<!-- Container Start -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<!-- Header Contetnt -->
-				<div class="content-block">
-					<h1>Horas Beca</h1>
-					<p>Ing Computadores</p>					
-				</div>
-				
-			</div>
-		</div>
-	</div>
-	<!-- Container End -->
-</section>
-
-<!--===================================
-=            Client Slider            =
-====================================-->
-
-
-<!--===========================================
-=            Popular deals section            =
-============================================-->
-<section class="user-profile section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-				<!-- Edit Personal Info -->
-				<div class="widget personal-info">
-					<h2 class="widget-header user">Ingreso de Usuarios</h2>
-                    <form ng-submit="doLogin()">
-                        <!-- First Name -->
-                        <div class="form-group" id="info1">
-                            <center>
-                                <label>Correo Electronico</label>
-                                <input required type="email" class="form-control" id="first-name" ng-model="email">
-                            </center>
-                        </div>
-                        <!-- Last Name -->
-                        <div class="form-group" id="info2">
-                            <center>
-                                <label>Contraseña</label>
-                                <input required type="password" class="form-control" id="password" ng-model="password">
-                                <button class="btn btn-transparent" id="btn1">Ingresar</button>
-                            </center>
-                        </div>
-                    </form>
-                    <form ng-submit="sel()">
-                        <div class="form-group" id="varios" hidden>
-                            <center>
-                                <label>Usted tiene varios roles en el sistema, indique con cual desea ingresar</label><br />
-                                <select required ng-model="selRol" class="nice-select">
-                                    <option ng-repeat="u in user.usuario.rols" value={{u.id_rol}}>{{u.nombre}}</option>
-                                </select><br />
-                                <button class="btn btn-transparent">Ingresar</button>
-                            </center>
-                        </div>
-                    </form>
-                    <form ng-submit="cPass()">
-                        <div class="form-group" id="newpass" hidden>
-                            <center>
-                                <label>Se debe de cambiar su clave</label><br />
-                                <label>Digite su nueva clave</label>
-                                <input required type="password" class="form-control" id="newP" ng-model="nP">
-                                <label>Escriba otra vez su clave</label>
-                                <input required type="password" class="form-control" id="newP1" ng-model="nP1">
-                                <button class="btn btn-transparent">Actualizar Clave</button>
-                            </center>
-                        </div>
-                    </form>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-</section>
-
-
-<!--============================
-=            Footer            =
-=============================-->
-
-<footer class="footer section section-sm">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
-        <!-- About -->
-        <div class="block about">
-          <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="">
-          <!-- description -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg  navigation">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-3 offset-lg-3 col-md-3">
-        <div class="block">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-          </ul>
+    </section>
+
+    <!--===============================
+    =            Hero Area            =
+    ================================-->
+
+    <section class="hero-area bg-1 text-center overly">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Header Contetnt -->
+                    <div class="content-block">
+                        <h1>Horas Beca</h1>
+                        <p>Ing Computadores</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- Container End -->
-</footer>
+        <!-- Container End -->
+    </section>
+
+    <!--===================================
+    =            Client Slider            =
+    ====================================-->
+    <!--===========================================
+    =            Popular deals section            =
+    ============================================-->
+    <section class="user-profile section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <!-- Edit Personal Info -->
+                    <div class="widget personal-info">
+                        <h2 class="widget-header user">Ingreso de Usuarios</h2>
+                        <form ng-submit="doLogin()">
+                            <!-- First Name -->
+                            <div class="form-group" id="info1">
+                                <center>
+                                    <label>Correo Electronico</label>
+                                    <input required type="email" class="form-control" id="first-name" ng-model="email">
+                                </center>
+                            </div>
+                            <!-- Last Name -->
+                            <div class="form-group" id="info2">
+                                <center>
+                                    <label>Contraseña</label>
+                                    <input required type="password" class="form-control" id="password" ng-model="password">
+                                    <button class="btn btn-transparent" id="btn1">Ingresar</button>
+                                </center>
+                            </div>
+                        </form>
+                        <form ng-submit="sel()">
+                            <div class="form-group" id="varios" hidden>
+                                <center>
+                                    <label>Usted tiene varios roles en el sistema, indique con cual desea ingresar</label><br />
+                                    <select required ng-model="selRol" class="nice-select">
+                                        <option ng-repeat="u in user.usuario.rols" value={{u.id_rol}}>{{u.nombre}}</option>
+                                    </select><br />
+                                    <button class="btn btn-transparent">Ingresar</button>
+                                </center>
+                            </div>
+                        </form>
+                        <form ng-submit="cPass()">
+                            <div class="form-group" id="newpass" hidden>
+                                <center>
+                                    <label>Se debe de cambiar su clave</label><br />
+                                    <label>Digite su nueva clave</label>
+                                    <input required type="password" class="form-control" id="newP" ng-model="nP">
+                                    <label>Escriba otra vez su clave</label>
+                                    <input required type="password" class="form-control" id="newP1" ng-model="nP1">
+                                    <button class="btn btn-transparent">Actualizar Clave</button>
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--============================
+    =            Footer            =
+    =============================-->
+    <footer class="footer section section-sm">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
+                    <!-- About -->
+                    <div class="block about">
+                        <!-- footer logo -->
+                        <img src="images/logo-footer.png" alt="">
+                        <!-- description -->
+                    </div>
+                </div>
+                <!-- Link list -->
+                <div class="col-lg-3 offset-lg-3 col-md-3">
+                    <div class="block">
+                        <h4>Contacto: {{config.Contacto}}</h4>
+                        <ul>
+                            <h4>Telefono: {{config.Telefono}}</h4>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container End -->
+    </footer>
+
 
 
 

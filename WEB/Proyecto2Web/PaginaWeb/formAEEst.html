@@ -162,7 +162,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                               <!-- Se quito los espacios del curso y esas cosas-->
+                                <!-- Se quito los espacios del curso y esas cosas-->
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
                         <label class="switch ">
-                            <input ng-click="boton()" ng-model="s" type="checkbox" id="scholarshipAnswer" >
+                            <input ng-click="boton()" ng-model="s" type="checkbox" id="scholarshipAnswer">
                             <span class="slider round"></span>
                         </label>
                     </div>
@@ -350,27 +350,34 @@
         </div>
         </div>
     </section>
+
     <footer class="footer section section-sm">
+        <!-- Container Start -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
+                    <!-- About -->
                     <div class="block about">
+                        <!-- footer logo -->
                         <img src="images/logo-footer.png" alt="">
+                        <!-- description -->
                     </div>
                 </div>
+                <!-- Link list -->
                 <div class="col-lg-3 offset-lg-3 col-md-3">
                     <div class="block">
-                        <h4>Contacto</h4>
+                        <h4>Contacto: {{config.Contacto}}</h4>
                         <ul>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
-                            <li><a>Telefono 1: (506)2222 2222</a></li>
+                            <h4>Telefono: {{config.Telefono}}</h4>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Container End -->
     </footer>
+
+
     <!-- JAVASCRIPTS -->
     <script src="../Scripts/angular.min.js"></script>
     <script src="plugins/bootstrap/dist/js/popper.min.js"></script>

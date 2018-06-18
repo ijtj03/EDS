@@ -1,181 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="LogUser">
 <head>
 
-  <!-- SITE TITTLE -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ingreso de Usuarios</title>
-  
-  <!-- PLUGINS CSS STYLE -->
-  <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Owl Carousel -->
-  <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-  <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
-  <!-- Fancy Box -->
-  <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-  <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-  <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
-  <!-- CUSTOM CSS -->
-  <link href="css/style.css" rel="stylesheet">
+    <!-- SITE TITTLE -->
+    <!-- PLUGINS CSS STYLE -->
+    <!-- Bootstrap -->
+    <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <!-- Fancy Box -->
+    <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+    <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link href="css/style.css" rel="stylesheet">
 
-  <!-- FAVICON -->
-  <link href="img/favicon.png" rel="shortcut icon">
+    <!-- JAVASCRIPTS -->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
+    <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <script src="../Scripts - Web/logUser.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
-<body class="body-wrapper" ng-app="myApp" ng-controller="myCtrl">
+<body class="body-wrapper" ng-controller="LogUserCtrl">
 
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg  navigation">
-					<a class="navbar-brand" href="index.html">
-						<img src="images/logo.png" alt="">
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!--===============================
-=            Hero Area            =
-================================-->
-
-<section class="hero-area bg-1 text-center overly">
-	<!-- Container Start -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<!-- Header Contetnt -->
-				<div class="content-block">
-					<h1>Horas Beca</h1>
-					<p>Ing Computadores</p>					
-				</div>
-				
-			</div>
-		</div>
-	</div>
-	<!-- Container End -->
-</section>
-
-<!--===================================
-=            Client Slider            =
-====================================-->
-
-
-<!--===========================================
-=            Popular deals section            =
-============================================-->
-<section class="user-profile section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-				<!-- Edit Personal Info -->
-				<div class="widget personal-info">
-					<h2 class="widget-header user">Ingreso de Usuarios</h2>
-					<form ng-submit="myFunc()">
-						<!-- First Name -->
-						<div class="form-group">
-							<center>
-							    <label>Identificacion</label>
-							    <input required type="number" class="form-control" id="first-name" ng-model="id">
-						    </center>
-						</div>
-						<!-- Last Name -->
-						<div class="form-group">
-							<center>
-							    <label>Contraseña</label>
-							    <input required type="password" class="form-control" id="password" ng-model="password">
-							    <button  class="btn btn-transparent">Ingresar</button>
-						    </center>
-						</div>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-</section>
-
-
-<!--============================
-=            Footer            =
-=============================-->
-
-<footer class="footer section section-sm">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
-        <!-- About -->
-        <div class="block about">
-          <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="">
-          <!-- description -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg  navigation">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-3 offset-lg-3 col-md-3">
-        <div class="block">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-            <li><a>Telefono 1: (506)2222 2222</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Container End -->
-</footer>
+    </section>
 
-  <!-- JAVASCRIPTS -->
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="plugins/tether/js/tether.min.js"></script>
-  <script src="plugins/raty/jquery.raty-fa.js"></script>
-  <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
-  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-  <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-  <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-  <script src="js/scripts.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script>
-    var app = angular.module("myApp", []);
-    app.controller("myCtrl", function($scope) {
-        $scope.myFunc = function () {
-          if($scope.id=="111111111" && $scope.password=="abc"){
-            window.location = "file:///D:/Documentos/TEC/Especificacion%20y%20Diseno%20de%20Software/EDS/PaginaWeb/homeAdm.html";
-          }else{
-            alert("La contraseña no coincide para ese  usuario");
-          }
-        }
-    });
-  </script>
+    <!--===============================
+    =            Hero Area            =
+    ================================-->
+
+    <section class="hero-area bg-1 text-center overly">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Header Contetnt -->
+                    <div class="content-block">
+                        <h1>Horas Beca</h1>
+                        <p>Ing Computadores</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Container End -->
+    </section>
+
+    <!--===================================
+    =            Client Slider            =
+    ====================================-->
+    <!--===========================================
+    =            Popular deals section            =
+    ============================================-->
+    <section class="user-profile section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <!-- Edit Personal Info -->
+                    <div class="widget personal-info">
+                        <h2 class="widget-header user">Ingreso de Usuarios</h2>
+                        <form ng-submit="doLogin()">
+                            <!-- First Name -->
+                            <div class="form-group" id="info1">
+                                <center>
+                                    <label>Correo Electronico</label>
+                                    <input required type="email" class="form-control" id="first-name" ng-model="email">
+                                </center>
+                            </div>
+                            <!-- Last Name -->
+                            <div class="form-group" id="info2">
+                                <center>
+                                    <label>Contraseña</label>
+                                    <input required type="password" class="form-control" id="password" ng-model="password">
+                                    <button class="btn btn-transparent" id="btn1">Ingresar</button>
+                                </center>
+                            </div>
+                        </form>
+                        <form ng-submit="sel()">
+                            <div class="form-group" id="varios" hidden>
+                                <center>
+                                    <label>Usted tiene varios roles en el sistema, indique con cual desea ingresar</label><br />
+                                    <select required ng-model="selRol" class="nice-select">
+                                        <option ng-repeat="u in user.usuario.rols" value={{u.id_rol}}>{{u.nombre}}</option>
+                                    </select><br />
+                                    <button class="btn btn-transparent">Ingresar</button>
+                                </center>
+                            </div>
+                        </form>
+                        <form ng-submit="cPass()">
+                            <div class="form-group" id="newpass" hidden>
+                                <center>
+                                    <label>Se debe de cambiar su clave</label><br />
+                                    <label>Digite su nueva clave</label>
+                                    <input required type="password" class="form-control" id="newP" ng-model="nP">
+                                    <label>Escriba otra vez su clave</label>
+                                    <input required type="password" class="form-control" id="newP1" ng-model="nP1">
+                                    <button class="btn btn-transparent">Actualizar Clave</button>
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--============================
+    =            Footer            =
+    =============================-->
+    <footer class="footer section section-sm">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-2">
+                    <!-- About -->
+                    <div class="block about">
+                        <!-- footer logo -->
+                        <img src="images/logo-footer.png" alt="">
+                        <!-- description -->
+                    </div>
+                </div>
+                <!-- Link list -->
+                <div class="col-lg-3 offset-lg-3 col-md-3">
+                    <div class="block">
+                        <h4>Contacto: {{config.Contacto}}</h4>
+                        <ul>
+                            <h4>Telefono: {{config.Telefono}}</h4>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container End -->
+    </footer>
+
+
 
 
 </body>
