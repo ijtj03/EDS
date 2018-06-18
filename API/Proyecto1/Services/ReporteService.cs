@@ -45,7 +45,7 @@ namespace Proyecto1.Services
                 reporte.PrimerApellido = read["primer_apellido"].ToString();
                 reporte.SegundoApellido = read["segundo_apellido"].ToString();
                 reporte.PromedioPonderado = Convert.ToInt32(read["PromedioPonderadoGeneral"]);
-                reporte.HorasAsignadas = Convert.ToInt32(read["HorasSolicitadas"]);
+                reporte.HorasAsignadas = Convert.ToInt32(read["HorasAsignadas"]);
                 reporte.Carne = read["carne"].ToString();
                 listReports.Add(reporte);
 
