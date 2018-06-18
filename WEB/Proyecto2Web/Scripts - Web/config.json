@@ -3,5 +3,9 @@
   "Telefono": "(506) 2222 7722",
   "ApiIp": "localhost",
   "MyApi": "http://localhost:64698/",
-  "WebIp": "http://localhost:61087"
+  "WebIp": "http://localhost:61087",
+  "TE": "En este tipo de beca se evalua el desempeño que tuvo el estudiante como tutor y si cumplio correctamente con lo solicitado",
+  "HA": "En este tipo de beca se evalua el cumplimiento de las horas por el estudiante hacia el profesor",
+  "HE": "En este tipo de beca se evalua el cumplimiento de horas y el desempeño que tuvo como asistente el estudiante",
+  "AE": "En este tipo de beca se evalua al estudiante por lo acorde a donde realizo la beca y si cumplio sus horas laboradas"
 }
